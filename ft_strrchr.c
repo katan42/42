@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 18:19:54 by katan             #+#    #+#             */
-/*   Updated: 2024/06/11 18:54:20 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/23 10:45:31 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int j;
-	
+	int	j;
+
 	j = ft_strlen(s);
 	while (j > 0)
 	{

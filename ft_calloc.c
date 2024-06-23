@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 19:09:55 by katan             #+#    #+#             */
-/*   Updated: 2024/06/13 20:19:35 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/23 23:43:57 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 20:07:39 by katan             #+#    #+#             */
-/*   Updated: 2024/06/10 15:22:57 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/23 06:24:54 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	j = 0;
 	if (little == NULL || little[0] == '\0')
 	{
-		return ((char*)big);
+		return ((char *)big);
 	}
 	while (big[i] != '\0' && i < len)
 	{
@@ -29,8 +29,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		{
 			while (big[i + j] == little[j] && i + j < len)
 			{
-				if (little[j+1] == '\0')
-					return ((char*)big + i);
+				if (little[j + 1] == '\0')
+					return ((char *)big + i);
 				j++;
 			}
 			j = 0;
@@ -39,5 +39,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-

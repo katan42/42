@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 20:37:19 by katan             #+#    #+#             */
-/*   Updated: 2024/06/13 17:29:20 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/23 06:35:02 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t				i;
 	const unsigned char	*str1;
 	const unsigned char	*str2;
 
-	i=0;
+	i = 0;
 	str1 = (const unsigned char *)s1;
 	str2 = (const unsigned char *)s2;
 	while (i < n)
@@ -54,4 +54,3 @@ int	main (void)
 	return (0);
 }
 */
-

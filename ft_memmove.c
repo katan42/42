@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 20:35:57 by katan             #+#    #+#             */
-/*   Updated: 2024/06/12 09:54:18 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/23 17:28:04 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,50 +14,39 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t  i;
-	char    *d;
-	char    *s;
-	
-	i = 0;
-	d = (char *)dest;
-	s = (char *)src;
+	unsigned char	*d;
+	unsigned char	*s;
 
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
 	if (d == s || n == 0)
-	{
 		return (dest);
-	}
 	if (d < s)
 	{
-		while (i < n)
-		{
-			d[i] = s[i];
-			i++;
-		}
+		while (n--)
+			*d++ = *s++;
 	}
 	else
 	{
-		i = n;
-		while ( i > 0)
+		while (n)
 		{
-			d[i - 1] = s[i - 1];
-			i--;
+			*(d + n - 1) = *(s + n - 1);
+			n--;
 		}
 	}
 	return (dest);
 }
-int main() {
-    char str1[] = "Hello, World!";
-    char str2[20];
+/*
+int	main(void)
+{
+	char	str1[] = "Hello, World!";
+	char	str2[] = "12345678901234567890";
 
     printf("Before memmove, str1: %s\n", str1);
-    
-    // Using ft_memmove to copy str1 to str2
     ft_memmove(str2, str1, 13);
     printf("After memmove to str2: %s\n", str2);
-
-    // Using ft_memmove for overlapping regions
-    ft_memmove(str1 + 7, str1, 6); // Move "Hello," into the middle of "World!"
-    printf("After overlapping memmove, str1: %s\n", str1);
-
-    return 0;
+    ft_memmove(str1 + 7, str1, 6);
+	printf("After overlapping memmove, str1: %s\n", str1);
+    return (0);
 }
+*/
