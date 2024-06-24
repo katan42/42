@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 15:29:57 by katan             #+#    #+#             */
-/*   Updated: 2024/06/23 06:33:28 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/24 20:51:05 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,17 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 
 	i = 0;
 	while (src[i] != '\0')
-	{
 		i++;
-	}
 	if (size == 0)
-	{
 		return (i);
-	}
 	j = 0;
 	while (j < size - 1 && src[j] != '\0')
 	{
 		dest[j] = src[j];
 		j++;
 	}
+	if (size > 0)
+		dest[j] = '\0';
 	return (i);
 }
 /*

@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 21:28:52 by katan             #+#    #+#             */
-/*   Updated: 2024/06/23 10:46:17 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/24 22:22:09 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char		*subs;
-	size_t		i;
+	size_t	slen;
+	size_t	sublen;
+	char	*str;
 
-	i = 0;
-	subs = (char *)malloc(sizeof(char) * (len + 1));
-	if (subs == 0)
-	{
+	if (!s)
 		return (NULL);
-	}
-	while (i < len)
-	{
-		subs[i] = s[start + i];
-		i++;
-	}
-	subs[i] = 0;
-	return (subs);
+	slen = ft_strlen(s);
+	if (start >= slen)
+		return (ft_strdup(""));
+	sublen = slen - start;
+	if (len > sublen)
+		len = sublen;
+	str = malloc(len + 1);
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, s + start, len + 1);
+	return (str);
 }
 /*
 int main(void) 
@@ -38,7 +39,7 @@ int main(void)
 	int start = 0;
 	int length = 5;
 
-	char* result = ft_substr(text, start, length);
+	char* result = ft_substr("tripouille", 0, 42000);
 	if (result != NULL) {
 	printf("Substring: %s\n", result);
 	free(result); // Free the allocated memory

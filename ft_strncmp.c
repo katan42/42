@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 12:16:45 by katan             #+#    #+#             */
-/*   Updated: 2024/05/23 12:31:42 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/24 22:50:47 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	else
 	{
-		return (s1[i] - s2[i]);
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	}
 }
 /*

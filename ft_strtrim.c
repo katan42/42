@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 22:17:37 by katan             #+#    #+#             */
-/*   Updated: 2024/06/24 00:55:16 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/24 23:10:57 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		i++;
 	}
-	while (s1[j - 1] && ft_strchr(set, s1[j - 1]))
+	while (j > i && ft_strchr(set, s1[j - 1]))
 	{
 		j--;
 	}
 	str = (char *)malloc(sizeof(char) * (j - i + 1));
+	if (!str)
+		return (NULL);
 	ft_strlcpy(str, s1 + i, j - i + 1);
 	str[j - i + 1] = '\0';
 	return (str);

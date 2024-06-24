@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 18:19:54 by katan             #+#    #+#             */
-/*   Updated: 2024/06/23 10:45:31 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/24 22:40:18 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	j;
+	char			*ptr;
+	unsigned char	a;
 
-	j = ft_strlen(s);
-	while (j > 0)
+	a = (unsigned char)c;
+	ptr = NULL;
+	while (*s || a == '\0')
 	{
-		if (s[j] == c)
+		if (*s == (unsigned char)a)
 		{
-			return ((char *)&s[j]);
+			ptr = (char *)s;
+			if (!*s)
+				break ;
 		}
-		j--;
+		s++;
 	}
-	return (NULL);
+	return (ptr);
 }
 /*int main(void)
 {

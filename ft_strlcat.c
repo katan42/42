@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 20:06:41 by katan             #+#    #+#             */
-/*   Updated: 2024/05/25 16:16:15 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/24 21:08:08 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,11 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	i = 0;
 	j = 0;
 	while (dest[j] != '\0')
-	{
 		j++;
-	}
 	dlen = j;
 	slen = ft_strlen(src);
 	if (n == 0 || n <= dlen)
-	{
-		return (slen + dlen);
-	}
+		return (n + slen);
 	while (src[i] != '\0' && i < n - dlen -1)
 	{
 		dest[j] = src[i];

@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 20:35:13 by katan             #+#    #+#             */
-/*   Updated: 2024/06/23 10:44:16 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/24 21:31:52 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*s;
 
 	i = 0;
+	if (!dest && !src)
+		return (dest);
 	d = (char *)dest;
 	s = (char *)src;
 	while (i < n)

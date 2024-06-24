@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:15:07 by katan             #+#    #+#             */
-/*   Updated: 2024/06/11 18:55:51 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/24 22:36:36 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 char	*ft_strchr(const char *s, int i)
 {
-	int	j;
+	unsigned char	c;
 
-	j = 0;
-	while (s[j] != '\0')
+	c = (unsigned char)i;
+	while (*s || c == '\0')
 	{
-		if (s[j] == i)
+		if (*s++ == c)
 		{
-			return ((char *)&s[j]);
+			return ((char *)--s);
 		}
-		j++;
 	}
 	return (NULL);
 }

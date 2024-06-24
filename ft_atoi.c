@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 17:06:35 by katan             #+#    #+#             */
-/*   Updated: 2024/06/13 14:57:30 by katan            ###   ########.fr       */
+/*   Updated: 2024/06/24 22:54:18 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_atoi(const char *str)
 	{
 		i++;
 	}
-	while (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign = sign * -1;
