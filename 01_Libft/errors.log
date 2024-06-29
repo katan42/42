@@ -1,0 +1,136 @@
+Errors in isdigit: /home/katan/francinette/temp/libft/war-machine/tests/Part1_functions/ft_isdigit
+Test 1:
+    i = 0;
+    while (i <= 47)
+    {
+        ft_print_result(ft_isdigit(i));
+        i++;
+    }
+Expected (cat -e test01.output):
+000000000000000000000000000000000000000000000000
+Your result (cat -e user_output_test01):
+111111111100000000000000000000000000000000000000
+Test 2:
+    i = '0';
+    while (i <= '9')
+    {
+        ft_print_result(ft_isdigit(i));
+        i++;
+    }
+Expected (cat -e test02.output):
+1111111111
+Your result (cat -e user_output_test02):
+0000000000
+Errors in isalnum: /home/katan/francinette/temp/libft/war-machine/tests/Part1_functions/ft_isalnum
+Test 1:
+    i = 0;
+    while (i <= 47)
+    {
+        ft_print_result(ft_isalnum(i));
+        i++;
+    }
+Expected (cat -e test01.output):
+000000000000000000000000000000000000000000000000
+Your result (cat -e user_output_test01):
+111111111100000000000000000000000000000000000000
+Test 2:
+    i = '0';
+    while (i <= '9')
+    {
+        ft_print_result(ft_isalnum(i));
+        i++;
+    }
+Expected (cat -e test02.output):
+1111111111
+Your result (cat -e user_output_test02):
+0000000000
+Errors in strlcpy: /home/katan/francinette/temp/libft/war-machine/tests/Part1_functions/ft_strlcpy
+Test 1:
+    ft_print_result(ft_strlcpy(dest, "lorem", 15));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test01.output):
+5$
+lorem^@^@^@^@^@^@^@^@^@^@
+Your result (cat -e user_output_test01):
+5$
+loremr^@^@^@^@^@^@^@^@^@
+Test 2:
+    ft_print_result(ft_strlcpy(dest, "", 15));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test02.output):
+0$
+^@rrrrr^@^@^@^@^@^@^@^@^@
+Your result (cat -e user_output_test02):
+0$
+rrrrrr^@^@^@^@^@^@^@^@^@
+Test 3:
+    ft_print_result(ft_strlcpy(dest, "lorem ipsum", 3));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test03.output):
+11$
+lo^@rrr^@^@^@^@^@^@^@^@^@
+Your result (cat -e user_output_test03):
+11$
+lorrrr^@^@^@^@^@^@^@^@^@
+Errors in strlcat: /home/katan/francinette/temp/libft/war-machine/tests/Part1_functions/ft_strlcat
+Test 5:
+    dest[10] = 'a';
+    ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 0));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test05.output):
+26$
+rrrrrr^@^@^@^@a^@^@^@^@
+Your result (cat -e user_output_test05):
+32$
+rrrrrr^@^@^@^@a^@^@^@^@
+Test 6:
+    dest[10] = 'a';
+    ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 1));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test06.output):
+27$
+rrrrrr^@^@^@^@a^@^@^@^@
+Your result (cat -e user_output_test06):
+32$
+rrrrrr^@^@^@^@a^@^@^@^@
+Test 7:
+    memset(dest, 'r', 15);
+    ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 5));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test07.output):
+31$
+rrrrrrrrrrrrrrr
+Your result (cat -e user_output_test07):
+41$
+rrrrrrrrrrrrrrr
+Errors in atoi: /home/katan/francinette/temp/libft/war-machine/tests/Part1_functions/ft_atoi
+Test 7:
+    ft_print_result(ft_atoi("+-54"));
+Expected (cat -e test07.output):
+0
+Your result (cat -e user_output_test07):
+-54
+Test 8:
+    ft_print_result(ft_atoi("-+48"));
+Expected (cat -e test08.output):
+0
+Your result (cat -e user_output_test08):
+-48
+Test 9:
+    ft_print_result(ft_atoi("--47"));
+Expected (cat -e test09.output):
+0
+Your result (cat -e user_output_test09):
+47
+Test 10:
+    ft_print_result(ft_atoi("++47"));
+Expected (cat -e test10.output):
+0
+Your result (cat -e user_output_test10):
+47
