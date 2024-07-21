@@ -6,11 +6,17 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 16:47:08 by katan             #+#    #+#             */
-/*   Updated: 2024/06/29 16:52:11 by katan            ###   ########.fr       */
+/*   Updated: 2024/07/21 15:53:55 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 void	ft_printstr(char *s, int *count)
-
+{
+	while (*s)
+	{
+		ft_printchar(*s,count);
+		s++;
+	}
+}

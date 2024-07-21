@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printchar.c                                     :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 16:46:32 by katan             #+#    #+#             */
-/*   Updated: 2024/07/21 13:09:20 by katan            ###   ########.fr       */
+/*   Created: 2024/07/21 14:38:48 by katan             #+#    #+#             */
+/*   Updated: 2024/07/21 17:24:45 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdio.h> 
 
-void	ft_printchar(char c, int *count)
+int main(void)
 {
-	write(1, &c, 1);
-	(*count)++;
+	printf("i have %d apples\n", 5);
+	printf("i  $ %d\n", -5);
+
+	printf("i have %u apples\n", 5);
+	printf("i  $ %u\n", -5);
+
+
+
 }
