@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 14:17:07 by katan             #+#    #+#             */
-/*   Updated: 2024/06/29 16:07:37 by katan            ###   ########.fr       */
+/*   Updated: 2024/07/23 17:53:44 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	ft_print_ptr(size_t ptr, int *count);
 void	ft_print_nbr(int n, int *count);
 void	ft_print_unsigned_nbr(unsigned int n, int *count);
 void	ft_print_hex(unsigned int n, int *count, char conversion);
-int		ft_print(const char *s, ...);
+int		ft_printf(const char *s, ...);
 #endif
