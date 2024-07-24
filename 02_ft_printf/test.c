@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 14:38:48 by katan             #+#    #+#             */
-/*   Updated: 2024/07/23 20:12:57 by katan            ###   ########.fr       */
+/*   Updated: 2024/07/24 17:02:26 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,17 @@ int main(void)
 	ft_printf("ft_printf(s):my name is %c\n", 'k');
 	printf("\n");
 
-
+	printf("printf(x)   : num in hexadecimal is %x\n", 5);
+	printf("printf(X)   : num in hexadecimal is %X\n", 5);
+	printf("printf(x)   : num in hexadecimal is %x\n", 9);
+	printf("printf(X)   : num in hexadecimal is %X\n", 9);
+	printf("printf(x)   : num in hexadecimal is %x\n", -5);
+	printf("printf(X)   : num in hexadecimal is %X\n", -5);
+	printf("printf(x)   : num in hexadecimal is %x\n", -2146483648);
+	printf("printf(X)   : num in hexadecimal is %X\n", -2146483648);
+	printf("printf(x)   : num in hexadecimal is %x\n", 255);
+	printf("printf(X)   : num in hexadecimal is %X\n", 255);
+	printf("printf(x)   : num in hexadecimal is %x\n", 2147483647);
+	printf("printf(X)   : num in hexadecimal is %X\n", 2147483647);
+	printf("\n");
 }
