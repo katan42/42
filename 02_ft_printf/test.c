@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 14:38:48 by katan             #+#    #+#             */
-/*   Updated: 2024/07/24 17:02:26 by katan            ###   ########.fr       */
+/*   Updated: 2024/07/24 20:13:36 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,14 @@
 
 int main(void)
 {
+	int	count;
+
 	printf("printf(d)   :I have %d apples\n", 5);
+    count = printf("%d\n", 5);
+	printf("%d\n", count);
 	ft_printf("ft_printf(d):I have %d apples\n", 5);
+	count = ft_printf("%d\n", 5);
+	ft_printf("%d\n", count);
 	printf("printf(d)   :I have $ %d\n", -5);
 	ft_printf("ft_printf(d):I have $ %d\n", -5);
 	printf("printf(d)   :I have $ %d\n", -2147483648);
@@ -26,8 +32,14 @@ int main(void)
 
 	printf("printf(i)   :I have %i apples\n", 2147483647);
 	ft_printf("ft_printf(i):I have %i apples\n", 2147483647);
+	
 	printf("printf(i)   :I have $ %i\n", -2147483648);
+	count = printf("printf(i)   :I have $ %i\n", -2147483648);
+	printf("The number of characters printed: %d\n", count);
+	
 	ft_printf("ft_printf(i):I have $ %i\n", -2147483648);
+	count = ft_printf("ft_printf(i):I have $ %i\n", -2147483648);
+	ft_printf("The number of characters printed: %d\n", count);
 	printf("\n");
 
 	printf("printf(u)   :I have %u apples\n", 5);

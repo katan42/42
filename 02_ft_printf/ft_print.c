@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 16:47:57 by katan             #+#    #+#             */
-/*   Updated: 2024/07/23 17:19:00 by katan            ###   ########.fr       */
+/*   Updated: 2024/07/24 19:42:34 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	ft_printf(const char *s, ...)
 		return (0);
 
 	i = 0;
+	count = 0;
 	va_start(args, s);
 
 	while (s[i] != '\0')
@@ -56,19 +57,3 @@ int	ft_printf(const char *s, ...)
 	va_end(args);
 	return (count);
 }
-/*
-#include <stdio.h>
-
-int main(void)
-{   
-	printf("printf(d):i have %d apples\n", 5);
-	ft_printf("printf(d):i have %d apples\n", 5);
-	printf("printf(d):i have $ %d\n", -5);
-	ft_printf("printf(d):i have $ %d\n", -5);
-
-	printf("i have %u apples\n", 5);
-	ft_printf("i have %u apples\n", 5);
-	printf("i  $ %u\n", -5);
-	ft_printf("i  $ %u\n", -5);
-}
-*/
