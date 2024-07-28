@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 16:47:57 by katan             #+#    #+#             */
-/*   Updated: 2024/07/24 19:42:34 by katan            ###   ########.fr       */
+/*   Updated: 2024/07/28 15:10:07 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ static void ft_printf_check(char s, va_list *args, int *count)
 		ft_print_nbr(va_arg(*args, int), count);
 	else if (s == 'u')
 		ft_print_unsigned_nbr(va_arg(*args, unsigned int), count);
+	else if (s == 'x')
+		ft_print_hex(va_arg(*args, int), count, 'x');
+	else if (s == 'X')
+		ft_print_hex(va_arg(*args, int), count, 'X');
 	else if (s == '%')
 		ft_printchar('%', count);
 }
