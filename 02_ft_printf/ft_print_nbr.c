@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 16:47:29 by katan             #+#    #+#             */
-/*   Updated: 2024/07/24 19:46:21 by katan            ###   ########.fr       */
+/*   Updated: 2024/07/29 17:48:31 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ void	ft_print_nbr(int n, int *count)
 	}
 	ft_printchar((n % 10) + '0', count);
 }
-

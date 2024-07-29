@@ -6,13 +6,13 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 16:47:57 by katan             #+#    #+#             */
-/*   Updated: 2024/07/28 15:10:07 by katan            ###   ########.fr       */
+/*   Updated: 2024/07/29 17:51:47 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void ft_printf_check(char s, va_list *args, int *count)
+static void	ft_printf_check(char s, va_list *args, int *count)
 {
 	if (s == 'c')
 		ft_printchar(va_arg(*args, int), count);
@@ -26,24 +26,23 @@ static void ft_printf_check(char s, va_list *args, int *count)
 		ft_print_hex(va_arg(*args, int), count, 'x');
 	else if (s == 'X')
 		ft_print_hex(va_arg(*args, int), count, 'X');
+	else if (s == 'p')
+		ft_print_ptr(va_arg(*args, size_t), count);
 	else if (s == '%')
 		ft_printchar('%', count);
 }
 
-
 int	ft_printf(const char *s, ...)
 {
-	va_list args;
+	va_list	args;
 	int		i;
 	int		count;
 
-	if(!s)
+	if (!s)
 		return (0);
-
 	i = 0;
 	count = 0;
 	va_start(args, s);
-
 	while (s[i] != '\0')
 	{
 		if (s[i] == '%')
@@ -57,7 +56,6 @@ int	ft_printf(const char *s, ...)
 		}
 		i++;
 	}
-
 	va_end(args);
 	return (count);
 }
