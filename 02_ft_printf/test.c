@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 14:38:48 by katan             #+#    #+#             */
-/*   Updated: 2024/07/29 18:55:00 by katan            ###   ########.fr       */
+/*   Updated: 2024/08/08 12:27:51 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ int main(void)
 {
 	int	count;
 	char *s2 = "Mussum Ipsum, cacilds vidis litro abertis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Atirei o pau no gatis, per gatis num morreus.";
-/*	
+	printf("%f\n", 2.0);
+	ft_printf("%f\n", 2.0);
+	count = ft_printf("%f\n", 2.0);
+	ft_printf("%d\n", count);
+	/*	
 	printf("printf(d)   :I have %d apples\n", 5);
     count = printf("%d\n", 5);
 	printf("%d\n", count);
@@ -81,7 +85,9 @@ int main(void)
 	printf("printf(x)   : 2147483647 in hexadecimal is %x\n", 2147483647);
 	printf("printf(X)   : 2147483647 in hexadecimal is %X\n", 2147483647);
 	printf("\n");
-*/
+	
+	printf(%p\n", NULL)
+	ft_printf("%p\n", NULL)
 
 	printf("%s", "");
 	printf("\n");
@@ -142,6 +148,6 @@ int main(void)
 	ft_printf(" NULL %s NULL ", NULL);
 	printf("\n");
 	printf("\n");
-
+*/
 
 }

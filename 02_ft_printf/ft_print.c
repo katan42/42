@@ -51,9 +51,7 @@ int	ft_printf(const char *s, ...)
 			ft_printf_check(s[i], &args, &count);
 		}
 		else
-		{
 			ft_printchar((char)s[i], &count);
-		}
 		i++;
 	}
 	va_end(args);
