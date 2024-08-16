@@ -6,7 +6,16 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:00:52 by katan             #+#    #+#             */
-/*   Updated: 2024/08/03 14:01:42 by katan            ###   ########.fr       */
+/*   Updated: 2024/08/16 18:52:20 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
+
+char *get_next_line(int fd)
+{
+	variables....
+
+	if (fd < 0)
+		return NULL;
+
+	
