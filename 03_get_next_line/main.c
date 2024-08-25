@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 16:52:01 by katan             #+#    #+#             */
-/*   Updated: 2024/08/25 20:05:43 by katan            ###   ########.fr       */
+/*   Updated: 2024/08/26 02:35:59 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <string.h>
-#include <fcntl.h>
 
 
 int main(int argc, char **argv)
@@ -33,9 +31,24 @@ int main(int argc, char **argv)
         return 1;
     }
 
+	printf("Reading from file descriptor: %d\n", fd);
+    printf("Buffer size: %d\n", BUFFER_SIZE);
+
+// // Attempt to read the first line
+//     line = get_next_line(fd);
+//     if (line == NULL)
+//     {
+//         printf("get_next_line returned NULL\n");
+//     }
+//     else
+//     {
+//         printf("Read line: %s", line);
+//         free(line);
+//     }
+
     while ((line = get_next_line(fd)))
     {
-        write(1, line, strlen(line));
+        write(1, line, ft_strlen(line));
         free(line);
     }
 
