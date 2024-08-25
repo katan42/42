@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:04:13 by katan             #+#    #+#             */
-/*   Updated: 2024/08/17 16:00:32 by katan            ###   ########.fr       */
+/*   Updated: 2024/08/25 20:05:56 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, S + start, len + 1);
+	ft_strlcpy(str, s + start, len + 1);
 	return (str);
 }
 
@@ -126,3 +126,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	str[i + j] = '\0';
 	return (str);
+}
