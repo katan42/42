@@ -6,15 +6,30 @@
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:00:52 by katan             #+#    #+#             */
-/*   Updated: 2024/08/26 02:33:29 by katan            ###   ########.fr       */
+/*   Updated: 2024/08/26 17:16:35 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char *fill_line_buffer(int fd, char *left, char *buffer)
+char	*ft_strchr(const char *s, int i)
 {
-	ssize_t buff_read;
+	unsigned char	c;
+
+	c = (unsigned char)i;
+	while (*s || c == '\0')
+	{
+		if (*s++ == c)
+		{
+			return ((char *)--s);
+		}
+	}
+	return (NULL);
+}
+
+static char	*fill_line_buffer(int fd, char *left, char *buffer)
+{
+	ssize_t	buff_read;
 	char	*temp;
 
 	buff_read = 1;
@@ -38,9 +53,9 @@ static char *fill_line_buffer(int fd, char *left, char *buffer)
 	return (left);
 }
 
-static char *set_line(char *line_buffer)
+static char	*set_line(char *line_buffer)
 {
-	char	*left;
+	char		*left;
 	ssize_t		i;
 
 	i = 0;
@@ -58,7 +73,7 @@ static char *set_line(char *line_buffer)
 	return (left);
 }
 
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
 	static char	*left;
 	char		*line;
@@ -68,14 +83,12 @@ char *get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (free(left), free(buffer), NULL);
 	if (!buffer)
-		return NULL;
+		return (NULL);
 	line = fill_line_buffer(fd, left, buffer);
 	free(buffer);
 	buffer = NULL;
 	if (!line)
-		return NULL;
+		return (NULL);
 	left = set_line(line);
-	
 	return (line);
 }
-

@@ -6,26 +6,11 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:04:13 by katan             #+#    #+#             */
-/*   Updated: 2024/08/25 20:05:56 by katan            ###   ########.fr       */
+/*   Updated: 2024/08/26 16:57:53 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-char	*ft_strchr(const char *s, int i)
-{
-	unsigned char	c;
-
-	c = (unsigned char)i;
-	while (*s || c == '\0')
-	{
-		if (*s++ == c)
-		{
-			return ((char *)--s);
-		}
-	}
-	return (NULL);
-}
 
 size_t	ft_strlen(const char *s)
 {
@@ -61,7 +46,7 @@ char	*ft_strdup(const char *s)
 	return (str);
 }
 
-size_t ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
