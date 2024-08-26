@@ -36,7 +36,8 @@ static char	*fill_line_buffer(int fd, char *left, char *buffer)
 	while (buff_read > 0)
 	{
 		buff_read = read(fd, buffer, BUFFER_SIZE);
-		if (buff_read == -1)
+		//buff_read == -1;
+		if (buff_read < 0)
 			return (free(left), NULL);
 		else if (buff_read == 0)
 			break ;
@@ -81,14 +82,14 @@ char	*get_next_line(int fd)
 
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (free(left), free(buffer), NULL);
+		return (free(left), left = NULL, free(buffer), NULL);
 	if (!buffer)
 		return (NULL);
 	line = fill_line_buffer(fd, left, buffer);
 	free(buffer);
 	buffer = NULL;
 	if (!line)
-		return (NULL);
+		return (left = NULL, NULL);
 	left = set_line(line);
 	return (line);
 }
