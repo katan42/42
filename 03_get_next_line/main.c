@@ -8,7 +8,7 @@ int main(void)
     char *line;
 
     // Open the file in read-only mode
-    fd = open("read_error.txt", O_RDONLY);
+    fd = open("test.txt", O_RDONLY);
     if (fd == -1)
     {
         perror("Error opening file");
@@ -18,8 +18,8 @@ int main(void)
     // Read lines from the file using get_next_line and print them
     while ((line = get_next_line(fd)) != NULL)
     {
-        printf("%s", line);
-        free(line); // Don't forget to free the memory allocated by get_next_line
+        printf("line: %s", line);
+		free(line);// Don't forget to free the memory allocated by get_next_line
     }
 
     // Close the file
