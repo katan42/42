@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:00:52 by katan             #+#    #+#             */
-/*   Updated: 2024/08/26 17:16:35 by katan            ###   ########.fr       */
+/*   Updated: 2024/08/30 15:24:16 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(const char *s, int i)
 {
 	unsigned char	c;
 
-	c = (unsigned char)i;
+	c = (unsigned char)
 	while (*s || c == '\0')
 	{
 		if (*s++ == c)
@@ -36,7 +36,6 @@ static char	*fill_line_buffer(int fd, char *left, char *buffer)
 	while (buff_read > 0)
 	{
 		buff_read = read(fd, buffer, BUFFER_SIZE);
-		//buff_read == -1;
 		if (buff_read < 0)
 			return (free(left), NULL);
 		else if (buff_read == 0)
@@ -48,6 +47,8 @@ static char	*fill_line_buffer(int fd, char *left, char *buffer)
 		left = ft_strjoin(temp, buffer);
 		free(temp);
 		temp = NULL;
+		if(!left)
+			return (free(buffer), NULL);
 		if (ft_strchr(left, '\n'))
 			break ;
 	}
@@ -62,7 +63,7 @@ static char	*set_line(char *line_buffer)
 	i = 0;
 	while (line_buffer[i] != '\n' && line_buffer[i] != '\0')
 		i++;
-	if (line_buffer[i] == 0 || line_buffer[1] == 0)
+	if (line_buffer[i] == 0)
 		return (NULL);
 	left = ft_substr(line_buffer, i + 1, ft_strlen(line_buffer) - i);
 	if (*left == 0)
@@ -81,10 +82,10 @@ char	*get_next_line(int fd)
 	char		*buffer;
 
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 )
 		return (free(left), left = NULL, free(buffer), NULL);
 	if (!buffer)
-		return (NULL);
+		return (free(left), NULL);
 	line = fill_line_buffer(fd, left, buffer);
 	free(buffer);
 	buffer = NULL;
