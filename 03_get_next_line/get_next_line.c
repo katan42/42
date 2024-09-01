@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:00:52 by katan             #+#    #+#             */
-/*   Updated: 2024/08/30 19:28:12 by katan            ###   ########.fr       */
+/*   Updated: 2024/08/31 11:43:06 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,11 @@ static char	*fill_line_buffer(int fd, char **left, char *buffer)
 		*left = ft_strjoin(temp, buffer);
 		free(temp);
 		temp = NULL;
-		if(!*left)
+		if (!*left)
 			return (NULL);
 		check_nl = ft_strchr(*left, '\n');
 		if (check_nl)
-			break;
+			break ;
 	}
 	return (*left);
 }
@@ -88,7 +88,7 @@ static char	*set_line(char *line_buffer)
 		return ((void *)1);
 	left = ft_substr(line_buffer, i + 1, ft_strlen(line_buffer) - i);
 	if (!left)
-			return (NULL);
+		return (NULL);
 	if (*left == 0)
 	{
 		free(left);

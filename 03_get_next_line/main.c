@@ -1,6 +1,6 @@
 #include <fcntl.h>
 #include <stdio.h>
-#include "get_next_line.h" // Make sure this includes the prototype for get_next_line
+#include "get_next_line.h"
 
 int main(void)
 {
@@ -19,7 +19,7 @@ int main(void)
     while ((line = get_next_line(fd)) != NULL)
     {
         printf("line: %s", line);
-		free(line);// Don't forget to free the memory allocated by get_next_line
+		free(line);
     }
 
     // Close the file
