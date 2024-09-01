@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:04:13 by katan             #+#    #+#             */
-/*   Updated: 2024/09/01 18:38:11 by katan            ###   ########.fr       */
+/*   Updated: 2024/08/30 19:31:58 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,44 +46,45 @@ char	*ft_strdup(const char *s)
 	return (str);
 }
 
-char	*ft_strchr(const char *s, int i)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned char	c;
+	size_t	i;
+	size_t	j;
 
-	c = (unsigned char)i;
-	while (*s || c == '\0')
+	i = 0;
+	while (src[i] != '\0')
+		i++;
+	if (size == 0)
+		return (i);
+	j = 0;
+	while (j < size - 1 && src[j] != '\0')
 	{
-		if (*s++ == c)
-		{
-			return ((char *)--s);
-		}
+		dest[j] = src[j];
+		j++;
 	}
-	return (NULL);
+	if (size > 0)
+		dest[j] = '\0';
+	return (i);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	slen;
+	size_t	sublen;
 	char	*str;
-	size_t	i;
 
 	if (!s)
 		return (NULL);
 	slen = ft_strlen(s);
 	if (start >= slen)
 		return (ft_strdup(""));
-	if (len > slen - start)
-		len = slen - start;
+	sublen = slen - start;
+	if (len > sublen)
+		len = sublen;
 	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		str[i] = s[start + i];
-		i++;
-	}
-	str[len] = '\0';
+	ft_strlcpy(str, s + start, len + 1);
 	return (str);
 }
 
