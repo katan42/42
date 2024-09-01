@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:00:52 by katan             #+#    #+#             */
-/*   Updated: 2024/09/01 21:28:19 by katan            ###   ########.fr       */
+/*   Updated: 2024/09/02 00:34:29 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,39 +29,40 @@ char	*get_exact_line(char *line)
 	return (exact_line);
 }
 
-static ssize_t read_to_buffer(int fd, char *buffer)
+static ssize_t	read_to_buffer(int fd, char *buffer)
 {
-    ssize_t buff_read;
+	ssize_t	buff_read;
 
-    buff_read = read(fd, buffer, BUFFER_SIZE);
-    if (buff_read < 0)
-        return (-1); 
-    buffer[buff_read] = '\0';
-    return (buff_read);
+	buff_read = read(fd, buffer, BUFFER_SIZE);
+	if (buff_read < 0)
+		return (-1);
+	buffer[buff_read] = '\0';
+	return (buff_read);
 }
 
-static char *fill_line_buffer(int fd, char **left, char *buffer)
+static char	*fill_line_buffer(int fd, char **left, char *buffer)
 {
-    ssize_t buff_read;
-    char    *temp;
+	ssize_t	buff_read;
+	char	*temp;
 
-    while ((buff_read = read_to_buffer(fd, buffer)) > 0)
-    {
-        if (!*left)
-            *left = ft_strdup("");
-        if (!*left) 
-            return (NULL);
-        temp = *left;
-        *left = ft_strjoin(temp, buffer);
-        free(temp);
-        if (!*left)
-            return (NULL);      
-        if (ft_strchr(*left, '\n'))
-            break ;
-    }
-    if (buff_read < 0)
-        return NULL;
-    return *left;
+	buff_read = read_to_buffer(fd, buffer);
+	while (buff_read > 0)
+	{
+		if (!*left)
+			*left = ft_strdup("");
+		if (!*left)
+			return (NULL);
+		temp = *left;
+		*left = ft_strjoin(temp, buffer);
+		free(temp);
+		if (!*left)
+			return (NULL);
+		if (ft_strchr(*left, '\n'))
+			break ;
+	}
+	if (buff_read < 0)
+		return (NULL);
+	return (*left);
 }
 
 static char	*set_line(char *line_buffer)
