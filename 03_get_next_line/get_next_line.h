@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:01:57 by katan             #+#    #+#             */
-/*   Updated: 2024/08/26 17:31:00 by katan            ###   ########.fr       */
+/*   Updated: 2024/09/02 01:00:43 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char	*get_next_line(int fd);
 char	*ft_strchr(const char *s, int i);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
-size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 
