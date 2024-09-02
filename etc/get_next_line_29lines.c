@@ -1,12 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:00:52 by katan             #+#    #+#             */
-/*   Updated: 2024/09/02 15:04:22 by katan            ###   ########.fr       */
+/*   Updated: 2024/09/02 13:00:57 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +26,28 @@ char	*get_exact_line(char *line)
 		return (NULL);
 	return (exact_line);
 }
-
-static char	*read_and_store_buffer(char **left, char *buffer)
+/*
+char	*ft_strchr(const char *s, int i)
 {
-	char	*temp;
+	unsigned char	c;
 
-	temp = *left;
-	*left = ft_strjoin(temp, buffer);
-	free(temp);
-	temp = NULL;
-	return (*left);
+	c = (unsigned char)i;
+	while (*s || c == '\0')
+	{
+		if (*s++ == c)
+		{
+			return ((char *)--s);
+		}
+	}
+	return (NULL);
 }
+*/
 
 static char	*fill_line_buffer(int fd, char **left, char *buffer)
 {
 	ssize_t	buff_read;
+	char	*temp;
+//	char	*check_nl;
 
 	buff_read = 1;
 	while (buff_read > 0)
@@ -57,9 +62,13 @@ static char	*fill_line_buffer(int fd, char **left, char *buffer)
 			*left = ft_strdup("");
 		if (!*left)
 			return (NULL);
-		*left = read_and_store_buffer(left, buffer);
+		temp = *left;
+		*left = ft_strjoin(temp, buffer);
+		free(temp);
+		temp = NULL;
 		if (!*left)
 			return (NULL);
+//		check_nl = ft_strchr(*left, '\n');
 		if (ft_strchr(*left, '\n'))
 			break ;
 	}

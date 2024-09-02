@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:00:52 by katan             #+#    #+#             */
-/*   Updated: 2024/09/02 15:04:22 by katan            ###   ########.fr       */
+/*   Updated: 2024/09/02 12:22:09 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,40 +29,43 @@ char	*get_exact_line(char *line)
 	return (exact_line);
 }
 
-static char	*read_and_store_buffer(char **left, char *buffer)
+static ssize_t	read_to_buffer(int fd, char *buffer)
 {
-	char	*temp;
+	ssize_t	buff_read;
 
-	temp = *left;
-	*left = ft_strjoin(temp, buffer);
-	free(temp);
-	temp = NULL;
-	return (*left);
+	buff_read = read(fd, buffer, BUFFER_SIZE);
+	if (buff_read < 0)
+		return (-1);
+	buffer[buff_read] = '\0';
+	return (buff_read);
 }
 
 static char	*fill_line_buffer(int fd, char **left, char *buffer)
 {
 	ssize_t	buff_read;
+	char	*temp;
 
 	buff_read = 1;
 	while (buff_read > 0)
 	{
-		buff_read = read(fd, buffer, BUFFER_SIZE);
-		if (buff_read < 0)
-			return (NULL);
-		else if (buff_read == 0)
-			break ;
-		buffer[buff_read] = '\0';
+		buff_read = read_to_buffer(fd, buffer);
 		if (!*left)
 			*left = ft_strdup("");
 		if (!*left)
 			return (NULL);
-		*left = read_and_store_buffer(left, buffer);
+		temp = *left;
+		*left = ft_strjoin(temp, buffer);
+		free(temp);
 		if (!*left)
 			return (NULL);
 		if (ft_strchr(*left, '\n'))
 			break ;
+		if (buff_read == 0)
+			break ;
 	}
+
+	if (buff_read < 0)
+		return (NULL);
 	return (*left);
 }
 
