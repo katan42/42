@@ -6,9 +6,10 @@ int main(void)
 {
     int fd;
     char *line;
+    int	i;
 
     // Open the file in read-only mode
-    fd = open("test.txt", O_RDONLY);
+    fd = open("text.txt", O_RDONLY);
     if (fd == -1)
     {
         perror("Error opening file");
@@ -16,12 +17,14 @@ int main(void)
     }
 
     // Read lines from the file using get_next_line and print them
+    i=0;
     while ((line = get_next_line(fd)) != NULL)
     {
-        printf("line: %s", line);
+		i++;    
+        printf("line %d: %s", i, line);
 		free(line);
     }
-
+	printf("fd: %d\n", fd);
     // Close the file
     close(fd);
     return (0);
