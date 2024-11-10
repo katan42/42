@@ -1,0 +1,944 @@
+Assignment name  : first_word
+Expected files   : first_word.c
+Allowed functions: write
+------------------------------------------------------------------------
+
+Write a program that takes a string and displays its first word, followed by a newline.
+
+A word is a section of string delimited by spaces/tabs or by the start/end of the string.
+
+If the number of parameters is not 1, or if there are no words, simply display a newline.
+
+#include <unistd.h>
+
+int main (int argc, char **argv)
+{
+	int i = 0;
+	
+	if (argc == 2)
+	{
+	    while (argv[1][i] == 32 || argv[1][i] == 9)
+			i++;
+	    while ((argv[1][i] != 32 && argv[1][i] != 9) && argv[1][i])
+	    {
+		    write(1, &argv[1][i], 1);
+		    i++;
+	    }
+	}
+	write(1, "\n", 1);
+
+} 
+    Logic:
+        argc (argument count): The number of command line arguments passed to the program. Will always be more than 1.
+        argv (argument vector): This is an array of strings that hold that actual arguments passed to the program. Each elements of this array is a string containing one of the command-line arguments. The first element, argv[0], is the name of the program and the remaining elements are actual arguments.
+        The program checks if exactly one argument (besides the program name) is provided. If not, the program does nothing except print a newline.
+        The first loop skips over any leading whitespace characters (space || tab) and continues looping until it encounters a character that is neither a space nor tab.
+        The second loop prints the first word in the string. It stops when it encounters a space, tab or the end of the string.
+    Assignment name  : first_word
+Expected files   : first_word.c
+Allowed functions: write
+------------------------------------------------------------------------
+
+Write a program that takes a string and displays its first word, followed by a newline.
+
+A word is a section of string delimited by spaces/tabs or by the start/end of the string.
+
+If the number of parameters is not 1, or if there are no words, simply display a newline.
+
+#include <unistd.h>
+
+int main (int argc, char **argv)
+{
+	int i = 0;
+	
+	if (argc == 2)
+	{
+	    while (argv[1][i] == 32 || argv[1][i] == 9)
+			i++;
+	    while ((argv[1][i] != 32 && argv[1][i] != 9) && argv[1][i])
+	    {
+		    write(1, &argv[1][i], 1);
+		    i++;
+	    }
+	}
+	write(1, "\n", 1);
+
+} 
+        Logic:
+            argc (argument count): The number of command line arguments passed to the program. Will always be more than 1.
+            argv (argument vector): This is an array of strings that hold that actual arguments passed to the program. Each elements of this array is a string containing one of the command-line arguments. The first element, argv[0], is the name of the program and the remaining elements are actual arguments.
+            The program checks if exactly one argument (besides the program name) is provided. If not, the program does nothing except print a newline.
+            The first loop skips over any leading whitespace characters (space || tab) and continues looping until it encounters a character that is neither a space nor tab.
+            The second loop prints the first word in the string. It stops when it encounters a space, tab or the end of the string.
+
+
+
+
+Assignment name  : fizzbuzz
+Expected files   : fizzbuzz.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a program that prints the numbers from 1 to 100, each separated by a newline.
+
+If the number is a multiple of 3, it prints 'fizz' instead.
+
+If the number is a multiple of 5, it prints 'buzz' instead.
+
+If the number is both a multiple of 3 and a multiple of 5, it prints 'fizzbuzz' instead.
+
+#include <unistd.h>
+
+void	ft_write_number(int number)
+{
+	char	str[10] = "0123456789";
+
+	if (number > 9)
+		ft_write_number(number / 10);
+	write (1, &str[number % 10], 1);
+}
+
+int		main()
+{
+	int i = 1;
+
+	while (i <= 100)
+	{
+		if (i % 15 == 0)
+			write (1, "fizzbuzz", 8);
+		else if (i % 3 == 0)
+			write (1, "fizz", 4);
+		else if (i % 5 == 0)
+			write (1, "buzz", 4);
+		else
+			ft_write_number(i);
+		i++;
+		write (1, "\n", 1);
+	}
+}
+Assignment name  : fizzbuzz
+Expected files   : fizzbuzz.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a program that prints the numbers from 1 to 100, each separated by a newline.
+
+If the number is a multiple of 3, it prints 'fizz' instead.
+
+If the number is a multiple of 5, it prints 'buzz' instead.
+
+If the number is both a multiple of 3 and a multiple of 5, it prints 'fizzbuzz' instead.
+
+#include <unistd.h>
+
+void	ft_write_number(int number)
+{
+	char	str[10] = "0123456789";
+
+	if (number > 9)
+		ft_write_number(number / 10);
+	write (1, &str[number % 10], 1);
+}
+
+int		main()
+{
+	int i = 1;
+
+	while (i <= 100)
+	{
+		if (i % 15 == 0)
+			write (1, "fizzbuzz", 8);
+		else if (i % 3 == 0)
+			write (1, "fizz", 4);
+		else if (i % 5 == 0)
+			write (1, "buzz", 4);
+		else
+			ft_write_number(i);
+		i++;
+		write (1, "\n", 1);
+	}
+}
+Logic:
+    ft_write_number prints an integer number character by character. It recursively handles multi-digit numbers by breaking them down into individual digits.
+        str[10] = "0123456789" is a string representing the possible digits.
+        The if (number > 9) condition checks if the number has more than one digit. If so, it recursively calls itself with number / 10 (i.e., reducing the number by one digit).
+        The write function writes the corresponding character for the last digit of number (number % 10) by referencing str[number % 10].
+    Purpose: This is the main logic of the program. It loops through numbers from 1 to 100 and prints:
+        "fizzbuzz" if the number is divisible by 15 (i.e., both 3 and 5).
+        "fizz" if the number is divisible by 3.
+        "buzz" if the number is divisible by 5.
+        Otherwise, it prints the number itself using the ft_write_number function.
+Logic:
+    ft_write_number prints an integer number character by character. It recursively handles multi-digit numbers by breaking them down into individual digits.
+        str[10] = "0123456789" is a string representing the possible digits.
+        The if (number > 9) condition checks if the number has more than one digit. If so, it recursively calls itself with number / 10 (i.e., reducing the number by one digit).
+        The write function writes the corresponding character for the last digit of number (number % 10) by referencing str[number % 10].
+    Purpose: This is the main logic of the program. It loops through numbers from 1 to 100 and prints:
+        "fizzbuzz" if the number is divisible by 15 (i.e., both 3 and 5).
+        "fizz" if the number is divisible by 3.
+        "buzz" if the number is divisible by 5.
+        Otherwise, it prints the number itself using the ft_write_number function.
+
+
+
+
+Implementation
+    Assignment name  : ft_putstr
+Expected files   : ft_putstr.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a function that displays a string on the standard output.
+
+The pointer passed to the function contains the address of the string's first character.
+
+#include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	int	i = 0;
+
+	while (str[i])
+		write(1, &str[i++], 1);
+}
+Implementation
+    Assignment name  : ft_putstr
+Expected files   : ft_putstr.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a function that displays a string on the standard output.
+
+The pointer passed to the function contains the address of the string's first character.
+
+#include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	int	i = 0;
+
+	while (str[i])
+		write(1, &str[i++], 1);
+}
+Logic
+    Iterate through string using a while loop and write each character to the terminal.
+Logic
+    Iterate through string using a while loop and write each character to the terminal.
+
+
+
+
+Implementation:
+    Assignment name  : ft_strcpy
+Expected files   : ft_strcpy.c
+Allowed functions:
+---------------------------------------------------------------------------
+
+Reproduce the behavior of the function strcpy (man strcpy).
+
+Your function must be declared as follows:
+    
+char	*ft_strcpy(char *s1, char *s2)
+{
+	int i = 0;
+	
+	while (s2[i] != '\0')
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	s1[i] = '\0';
+	return (s1);
+}
+Implementation:
+    Assignment name  : ft_strcpy
+Expected files   : ft_strcpy.c
+Allowed functions:
+---------------------------------------------------------------------------
+
+Reproduce the behavior of the function strcpy (man strcpy).
+
+Your function must be declared as follows:
+    
+char	*ft_strcpy(char *s1, char *s2)
+{
+	int i = 0;
+	
+	while (s2[i] != '\0')
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	s1[i] = '\0';
+	return (s1);
+}
+Logic
+    Declaration: char return type + destination string (s1) + source string (s2)
+Logic
+    Declaration: char return type + destination string (s1) + source string (s2)
+
+
+
+
+Implementation:
+    Assignment name  : ft_strlen
+Expected files   : ft_strlen.c
+Allowed functions:
+------------------------------------------------------------------------------
+
+Write a function that returns the length of a string.
+
+int ft_strlen(char *str)
+{
+	int	i = 0;
+
+	while (str[i])
+		i++;
+	return (i);
+}
+    Logic
+        Declaration: int return type (for length) + str to be counted
+        Create an index and initialize it to zero.
+        Iterate through string using a while loop while simultaneously incrementing the index.
+        Return the value of the index.
+Implementation:
+    Assignment name  : ft_strlen
+Expected files   : ft_strlen.c
+Allowed functions:
+------------------------------------------------------------------------------
+
+Write a function that returns the length of a string.
+
+int ft_strlen(char *str)
+{
+	int	i = 0;
+
+	while (str[i])
+		i++;
+	return (i);
+}
+    Logic
+        Declaration: int return type (for length) + str to be counted
+        Create an index and initialize it to zero.
+        Iterate through string using a while loop while simultaneously incrementing the index.
+        Return the value of the index.
+
+
+
+
+Implementation:
+    Assignment name  : ft_swap
+Expected files   : ft_swap.c
+Allowed functions:
+---------------------------------------------------------------------------
+
+Write a function that swaps the contents of two integers the addresses of which are passed as parameters.
+
+void	ft_swap(int *a, int *b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+Implementation:
+    Assignment name  : ft_swap
+Expected files   : ft_swap.c
+Allowed functions:
+---------------------------------------------------------------------------
+
+Write a function that swaps the contents of two integers the addresses of which are passed as parameters.
+
+void	ft_swap(int *a, int *b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+Logic:
+    Create a temp variable to store the value of a.
+    Assign the value of b to the variable of a.
+    Assign the value of temp to the value of b.
+Logic:
+    Create a temp variable to store the value of a.
+    Assign the value of b to the variable of a.
+    Assign the value of temp to the value of b.
+
+
+
+
+Implementation
+    Assignment name  : repeat_alpha
+Expected files   : repeat_alpha.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a program called repeat_alpha that takes a string and display it
+repeating each alphabetical character as many times as its alphabetical index, followed by a newline.
+
+'a' becomes 'a', 'b' becomes 'bb', 'e' becomes 'eeeee', etc...
+
+Case remains unchanged.
+
+If the number of arguments is not 1, just display a newline.
+
+#include <unistd.h>
+
+int main(int ac, char **av)
+{
+    int i;
+    int count;
+
+    if (ac == 2)
+    {
+        i = 0;
+        while (av[1][i])
+        {
+            if (av[1][i] >= 'a' && av[1][i] <= 'z')
+                count = av[1][i] - 'a' + 1;
+            else if (av[1][i] >= 'A' && av[1][i] <= 'Z')
+                count = av[1][i] - 'A' + 1;
+            else
+                count = 1;
+
+            while (count--)
+                write(1, &av[1][i], 1);
+            i++;
+        }
+    }
+    write(1, "\n", 1);
+    return 0;
+}
+Implementation
+    Assignment name  : repeat_alpha
+Expected files   : repeat_alpha.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a program called repeat_alpha that takes a string and display it
+repeating each alphabetical character as many times as its alphabetical index, followed by a newline.
+
+'a' becomes 'a', 'b' becomes 'bb', 'e' becomes 'eeeee', etc...
+
+Case remains unchanged.
+
+If the number of arguments is not 1, just display a newline.
+
+#include <unistd.h>
+
+int main(int ac, char **av)
+{
+    int i;
+    int count;
+
+    if (ac == 2)
+    {
+        i = 0;
+        while (av[1][i])
+        {
+            if (av[1][i] >= 'a' && av[1][i] <= 'z')
+                count = av[1][i] - 'a' + 1;
+            else if (av[1][i] >= 'A' && av[1][i] <= 'Z')
+                count = av[1][i] - 'A' + 1;
+            else
+                count = 1;
+
+            while (count--)
+                write(1, &av[1][i], 1);
+            i++;
+        }
+    }
+    write(1, "\n", 1);
+    return 0;
+}
+Logic:
+    i: This will be used to iterate over the characters in the input string (the first command-line argument).
+    count: This will store the number of times each character should be printed.
+    The program loops through the characters in the first command-line argument (av[1]).
+    For lowercase letters ('a' to 'z'): It calculates the character's position in the alphabet (i.e., 'a' is the 1st letter, 'b' is the 2nd, and so on). This is done by subtracting 'a' from the character and adding 1.
+    For uppercase letters ('A' to 'Z'): Similarly, it calculates the letter's position in the alphabet (i.e., 'A' is the 1st letter, 'B' is the 2nd, etc.).
+    For non-alphabet characters: It sets count to 1, meaning those characters are printed only once.
+    The program uses a loop to print each character as many times as specified by count (the character's position in the alphabet for letters, or 1 for non-letters).
+    The write() function sends the character to standard output (file descriptor 1).
+Logic:
+    i: This will be used to iterate over the characters in the input string (the first command-line argument).
+    count: This will store the number of times each character should be printed.
+    The program loops through the characters in the first command-line argument (av[1]).
+    For lowercase letters ('a' to 'z'): It calculates the character's position in the alphabet (i.e., 'a' is the 1st letter, 'b' is the 2nd, and so on). This is done by subtracting 'a' from the character and adding 1.
+    For uppercase letters ('A' to 'Z'): Similarly, it calculates the letter's position in the alphabet (i.e., 'A' is the 1st letter, 'B' is the 2nd, etc.).
+    For non-alphabet characters: It sets count to 1, meaning those characters are printed only once.
+    The program uses a loop to print each character as many times as specified by count (the character's position in the alphabet for letters, or 1 for non-letters).
+    The write() function sends the character to standard output (file descriptor 1).
+
+
+
+
+Implementation
+    Assignment name  : rev_print
+Expected files   : rev_print.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a function that takes a string, and displays the string in reverse
+followed by a newline.
+
+The original string must not be modified.
+
+You must return the string passed as a parameter.
+
+#include <unistd.h>
+
+char	*rev_print(char *str)
+{
+	int	i = 0;
+	
+	while(str[i])
+		i++;
+	while(--i >= 0)
+		write(1, &str[i], 1);
+	write(1, "\n", 1);
+	return (str);
+}
+Implementation
+    Assignment name  : rev_print
+Expected files   : rev_print.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a function that takes a string, and displays the string in reverse
+followed by a newline.
+
+The original string must not be modified.
+
+You must return the string passed as a parameter.
+
+#include <unistd.h>
+
+char	*rev_print(char *str)
+{
+	int	i = 0;
+	
+	while(str[i])
+		i++;
+	while(--i >= 0)
+		write(1, &str[i], 1);
+	write(1, "\n", 1);
+	return (str);
+}
+Logic
+    First, increment i to get the length of the string.
+    While i ≥ 0, print each character.
+    Finally, print a newline and return the string that was passed as a parameter.
+Logic
+    First, increment i to get the length of the string.
+    While i ≥ 0, print each character.
+    Finally, print a newline and return the string that was passed as a parameter.
+
+
+
+
+Implementation:
+    Assignment name  : rot_13
+Expected files   : rot_13.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a program that takes a string and displays it, replacing each of its
+letters by the letter 13 spaces ahead in alphabetical order.
+
+'z' becomes 'm' and 'Z' becomes 'M'. Case remains unaffected.
+
+The output will be followed by a newline.
+
+#include <unistd.h>
+
+int	main(int argc, char **argv)
+{
+	int i = 0;
+
+	if (argc > 1) //checks if there is at least more than one argument
+	{
+		while(argv[1][i])
+		{
+			if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
+				argv[1][i] = (argv[1][i] - 'a' + 13) % 26 + 'a';
+			else if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
+				argv[1][i] = (argv[1][i] - 'A' + 13) % 26 + 'A';
+			write(1, &argv[1][i], 1);
+			i++;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+Implementation:
+    Assignment name  : rot_13
+Expected files   : rot_13.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a program that takes a string and displays it, replacing each of its
+letters by the letter 13 spaces ahead in alphabetical order.
+
+'z' becomes 'm' and 'Z' becomes 'M'. Case remains unaffected.
+
+The output will be followed by a newline.
+
+#include <unistd.h>
+
+int	main(int argc, char **argv)
+{
+	int i = 0;
+
+	if (argc > 1) //checks if there is at least more than one argument
+	{
+		while(argv[1][i])
+		{
+			if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
+				argv[1][i] = (argv[1][i] - 'a' + 13) % 26 + 'a';
+			else if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
+				argv[1][i] = (argv[1][i] - 'A' + 13) % 26 + 'A';
+			write(1, &argv[1][i], 1);
+			i++;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+Logic
+    argv[1][i] = (argv[1][i] - 'a' + 13) % 26 + 'a';
+        argv[1][i] - 'a': Converts the character to its 0-25 index (e.g., 'a' becomes 0, 'b' becomes 1).
+        + 13: Rotates it by 13 places forward.
+        % 26: Ensures that, after adding 13 to the character's alphabetical position, the result "wraps around" if it goes beyond the end of the alphabet.
+            Say the input is 'n'.
+                The ASCII value of 'n' is 110.
+                'n' - 'a' gives 110 - 97 = 13 (this gives us the 0-based position of 'n' in the alphabet).
+                Add 13 to this: 13 + 13 = 26.
+                Without % 26, the value 26 would fall outside the range of the alphabet (since the highest valid position in a 0-based alphabet is 25 for 'z').
+                Applying % 26 ensures that 26 wraps back to the start of the alphabet. So:
+                    26 % 26 = 0.
+                    Adding 'a' back (0 + 'a') gives us 'a'.
+        + 'a': Converts the result back to the corresponding character in the alphabet.
+Logic
+    argv[1][i] = (argv[1][i] - 'a' + 13) % 26 + 'a';
+        argv[1][i] - 'a': Converts the character to its 0-25 index (e.g., 'a' becomes 0, 'b' becomes 1).
+        + 13: Rotates it by 13 places forward.
+        % 26: Ensures that, after adding 13 to the character's alphabetical position, the result "wraps around" if it goes beyond the end of the alphabet.
+            Say the input is 'n'.
+                The ASCII value of 'n' is 110.
+                'n' - 'a' gives 110 - 97 = 13 (this gives us the 0-based position of 'n' in the alphabet).
+                Add 13 to this: 13 + 13 = 26.
+                Without % 26, the value 26 would fall outside the range of the alphabet (since the highest valid position in a 0-based alphabet is 25 for 'z').
+                Applying % 26 ensures that 26 wraps back to the start of the alphabet. So:
+                    26 % 26 = 0.
+                    Adding 'a' back (0 + 'a') gives us 'a'.
+        + 'a': Converts the result back to the corresponding character in the alphabet.
+
+
+
+
+Assignment name  : rotone
+Expected files   : rotone.c
+Allowed functions: write
+-----------------------------------------------------------------------------
+
+Write a program that takes a string and displays it, replacing each of its
+letters by the next one in alphabetical order.
+
+'z' becomes 'a' and 'Z' becomes 'A'. Case remains unaffected.
+
+The output will be followed by a \n.
+
+If the number of arguments is not 1, the program displays \n.
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	rotone(char *s)
+{
+	while (*s)
+	{
+		if ((*s >= 'A' && *s <= 'Y') || (*s >= 'a' && *s <= 'y'))
+			ft_putchar(*s + 1);
+		else if (*s == 'Z' || *s == 'z')
+			ft_putchar(*s - 25);
+		else
+			ft_putchar(*s);
+		++s;
+	}
+}
+
+int		main(int ac, char **av)
+{
+	if (ac == 2)
+		rotone(av[1]);
+	ft_putchar('\n');
+	return (0);
+}
+Assignment name  : rotone
+Expected files   : rotone.c
+Allowed functions: write
+-----------------------------------------------------------------------------
+
+Write a program that takes a string and displays it, replacing each of its
+letters by the next one in alphabetical order.
+
+'z' becomes 'a' and 'Z' becomes 'A'. Case remains unaffected.
+
+The output will be followed by a \n.
+
+If the number of arguments is not 1, the program displays \n.
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	rotone(char *s)
+{
+	while (*s)
+	{
+		if ((*s >= 'A' && *s <= 'Y') || (*s >= 'a' && *s <= 'y'))
+			ft_putchar(*s + 1);
+		else if (*s == 'Z' || *s == 'z')
+			ft_putchar(*s - 25);
+		else
+			ft_putchar(*s);
+		++s;
+	}
+}
+
+int		main(int ac, char **av)
+{
+	if (ac == 2)
+		rotone(av[1]);
+	ft_putchar('\n');
+	return (0);
+}
+Logic:
+    For all letters except 'z' add 1, if the current letter is 'z', subtract 25 to return to 'a'.
+Logic:
+    For all letters except 'z' add 1, if the current letter is 'z', subtract 25 to return to 'a'.
+
+
+
+
+
+
+Implementation:
+    Assignment name  : search_and_replace
+Expected files   : search_and_replace.c
+Allowed functions: write, exit
+---------------------------------------------------------------------------
+
+Write a program called search_and_replace that takes 3 arguments, the first
+arguments is a string in which to replace a letter (2nd argument) by
+another one (3rd argument).
+
+If the number of arguments is not 3, just display a newline.
+
+If the second argument is not contained in the first one (the string)
+then the program simply rewrites the string followed by a newline.
+
+#include <unistd.h>
+
+int main(int argc, char **argv)
+{
+    int i = 0;
+
+    if (argc == 4 && !argv[2][1] && !argv[3][1])
+    {
+        while (argv[1][i]!='\0')
+        {
+            if (argv[1][i] == argv[2][0])
+                argv[1][i] = argv[3][0];
+            write (1, &argv[1][i], 1);
+            i++;
+        }
+    }
+    write (1, "\n", 1);
+}
+Implementation:
+    Assignment name  : search_and_replace
+Expected files   : search_and_replace.c
+Allowed functions: write, exit
+---------------------------------------------------------------------------
+
+Write a program called search_and_replace that takes 3 arguments, the first
+arguments is a string in which to replace a letter (2nd argument) by
+another one (3rd argument).
+
+If the number of arguments is not 3, just display a newline.
+
+If the second argument is not contained in the first one (the string)
+then the program simply rewrites the string followed by a newline.
+
+#include <unistd.h>
+
+int main(int argc, char **argv)
+{
+    int i = 0;
+
+    if (argc == 4 && !argv[2][1] && !argv[3][1])
+    {
+        while (argv[1][i]!='\0')
+        {
+            if (argv[1][i] == argv[2][0])
+                argv[1][i] = argv[3][0];
+            write (1, &argv[1][i], 1);
+            i++;
+        }
+    }
+    write (1, "\n", 1);
+}
+Logic
+    The program checks if there are exactly 4 command-line arguments, which includes the program name and three arguments.
+    It also checks that argv[2] and argv[3] (the second and third arguments) are single characters (!argv[2][1] && !argv[3][1]). This ensures that argv[2] and argv[3] contain only one character each.
+    Inside the loop, if the current character in argv[1][i] matches the single character in argv[2], it is replaced by the character in argv[3].
+    After the potential replacement, the character (whether changed or not) is written to the standard output using the write function.
+Logic
+    The program checks if there are exactly 4 command-line arguments, which includes the program name and three arguments.
+    It also checks that argv[2] and argv[3] (the second and third arguments) are single characters (!argv[2][1] && !argv[3][1]). This ensures that argv[2] and argv[3] contain only one character each.
+    Inside the loop, if the current character in argv[1][i] matches the single character in argv[2], it is replaced by the character in argv[3].
+    After the potential replacement, the character (whether changed or not) is written to the standard output using the write function.
+
+
+
+
+
+
+Implementation:
+    Assignment name  : ulstr
+Expected files   : ulstr.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a program that takes a string and reverses the case of all its letters.
+Other characters remain unchanged.
+
+You must display the result followed by a '\n'.
+
+If the number of arguments is not 1, the program displays '\n'.
+
+#include <unistd.h>
+
+int main(int argc, char **argv)
+{
+	int	i = 0;
+
+	if (argc == 2)
+	{
+		while (argv[1][i] != '\0')
+		{
+			if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
+				argv[1][i] -= 32;
+			else if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
+				argv[1][i] += 32;
+			write(1, &argv[1][i], 1);
+			i++;	
+		}
+	}
+	write(1, "\n", 1);
+} 
+Implementation:
+    Assignment name  : ulstr
+Expected files   : ulstr.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a program that takes a string and reverses the case of all its letters.
+Other characters remain unchanged.
+
+You must display the result followed by a '\n'.
+
+If the number of arguments is not 1, the program displays '\n'.
+
+#include <unistd.h>
+
+int main(int argc, char **argv)
+{
+	int	i = 0;
+
+	if (argc == 2)
+	{
+		while (argv[1][i] != '\0')
+		{
+			if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
+				argv[1][i] -= 32;
+			else if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
+				argv[1][i] += 32;
+			write(1, &argv[1][i], 1);
+			i++;	
+		}
+	}
+	write(1, "\n", 1);
+} 
+Logic
+    The program takes a string as input and reverses the case of all its letters (i.e., converts lowercase letters to uppercase and vice versa). Other characters remain unchanged. The result is then displayed followed by a newline character (\n).
+    Main function:
+        int main(int argc, char **argv)
+            argc (argument count) is the number of command-line arguments.
+            argv (argument vector) is an array of strings representing the command-line arguments.
+    Variable Initialization:
+        int i = 0;
+            i is used as an index to iterate through the characters of the input string.
+    Check the number of arguments:
+        if (argc == 2)
+            The program expects exactly one argument (the string to be processed). If the number of arguments is not 2, it skips to the end and prints a newline.
+    Iterate through the string:
+        while (argv[1][i] != '\0')
+            This loop continues until the end of the string ('\0' is the null terminator indicating the end of a string in C).
+    Reverse the case of each letter:
+        if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
+    argv[1][i] -= 32;
+else if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
+    argv[1][i] += 32;
+            If the character is a lowercase letter ('a' to 'z'), subtract 32 to convert it to uppercase.
+            If the character is an uppercase letter ('A' to 'Z'), add 32 to convert it to lowercase.
+    Output the modified character:
+        write(1, &argv[1][i], 1);
+            The write function is used to print the character to the standard output (file descriptor 1).
+    Increment the index:
+        i++;
+    Print a newline character:
+        write(1, "\n", 1);
+            This ensures the output ends with a newline.
+    The program checks if exactly one argument is provided. If so, it iterates through the string, reverses the case of each letter, and prints the modified string followed by a newline. If the number of arguments is not 1, it simply prints a newline.
+Logic
+    The program takes a string as input and reverses the case of all its letters (i.e., converts lowercase letters to uppercase and vice versa). Other characters remain unchanged. The result is then displayed followed by a newline character (\n).
+    Main function:
+        int main(int argc, char **argv)
+            argc (argument count) is the number of command-line arguments.
+            argv (argument vector) is an array of strings representing the command-line arguments.
+    Variable Initialization:
+        int i = 0;
+            i is used as an index to iterate through the characters of the input string.
+    Check the number of arguments:
+        if (argc == 2)
+            The program expects exactly one argument (the string to be processed). If the number of arguments is not 2, it skips to the end and prints a newline.
+    Iterate through the string:
+        while (argv[1][i] != '\0')
+            This loop continues until the end of the string ('\0' is the null terminator indicating the end of a string in C).
+    Reverse the case of each letter:
+        if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
+    argv[1][i] -= 32;
+else if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
+    argv[1][i] += 32;
+            If the character is a lowercase letter ('a' to 'z'), subtract 32 to convert it to uppercase.
+            If the character is an uppercase letter ('A' to 'Z'), add 32 to convert it to lowercase.
+    Output the modified character:
+        write(1, &argv[1][i], 1);
+            The write function is used to print the character to the standard output (file descriptor 1).
+    Increment the index:
+        i++;
+    Print a newline character:
+        write(1, "\n", 1);
+            This ensures the output ends with a newline.
+    The program checks if exactly one argument is provided. If so, it iterates through the string, reverses the case of each letter, and prints the modified string followed by a newline. If the number of arguments is not 1, it simply prints a newline.
+
+

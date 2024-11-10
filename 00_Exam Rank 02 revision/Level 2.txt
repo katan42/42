@@ -1,0 +1,910 @@
+Implementation
+    Assignment name  : alpha_mirror
+Expected files   : alpha_mirror.c
+Allowed functions: write
+---------------------------------------------------------------------------
+Write a program called alpha_mirror that takes a string and displays this string after replacing each alphabetical character by the opposite alphabetical character, followed by a newline.
+
+'a' becomes 'z', 'Z' becomes 'A'
+'d' becomes 'w', 'M' becomes 'N'
+ 
+and so on.
+ 
+Case is not changed.
+ 
+If the number of arguments is not 1, display only a newline.
+
+#include <unistd.h>
+
+int main(int argc, char **argv)
+{
+	int i = 0;
+
+	if (argc == 2)
+	{
+		while(argv[1][i]) 
+		{
+		        if(argv[1][i] >= 'a' && argv[1][i] <= 'z')
+				argv[1][i] = ('a' + 'z') - argv[1][i];
+			else if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
+				argv[1][i] = ('A' + 'Z') - argv[1][i];
+			write(1, &argv[1][i], 1);
+			i++;
+		}
+	}
+	write (1,"\n",1);
+	return (0);
+}		
+Logic
+    argv[1][i] = ('a' + 'z') - argv[1][i];: This reverses the character in the alphabet. For example, 'a' becomes 'z', 'b' becomes 'y', etc.
+
+
+
+Implementation
+    Assignment name  : camel_to_snake
+Expected files   : camel_to_snake.c
+Allowed functions: malloc, free, realloc, write
+---------------------------------------------------------------------------
+
+Write a program that takes a single string in lowerCamelCase format
+and converts it into a string in snake_case format.
+
+A lowerCamelCase string is a string where each word begins with a capital letter except for the first one.
+
+A snake_case string is a string where each word is in lower case, separated by an underscore "_".
+
+#include <unistd.h>
+
+int main(int argc, char **argv)
+{
+	int i = 0;
+
+	if (argc == 2)
+	{
+		while(argv[1][i])
+		{
+			if(argv[1][i] >= 65 && argv[1][i] <= 90)
+			{
+				argv[1][i] = argv[1][i] + 32;
+				write (1, "_", 1);
+			}
+			write(1, &argv[1][i], 1);
+			i++;
+		}
+	}
+	write (1, "\n", 1);
+	return (0);
+}
+Logic
+    The condition inside of the while loop checks for uppercase letters. ASCII 65 to 90 are uppercase letters.
+    If true, the character is converted to lowercase by adding 32 to its ASCII value (argv[1][i] + 32). In ASCII, lowercase letters are 32 positions higher than their uppercase counterparts.
+    Before printing the modified lowercase letter, an underscore (_) is printed with write (1, "_", 1);.
+
+
+
+Implementation 
+    Assignment name  : do_op
+Expected files   : *.c, *.h
+Allowed functions: atoi, printf, write
+------------------------------------------------------------------------------
+
+Write a program that takes three strings:
+- The first and the third one are representations of base-10 signed integers that fit in an int.
+- The second one is an arithmetic operator chosen from: + - * / %
+
+The program must display the result of the requested arithmetic operation,
+followed by a newline. If the number of parameters is not 3, the program
+just displays a newline.
+
+You can assume the string have no mistakes or extraneous characters. Negative
+numbers, in input or output, will have one and only one leading '-'. The
+result of the operation fits in an int.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+	if (argc == 4)
+	{
+		if (argv[2][0] == '+')
+			printf("%d", (atoi(argv[1]) + atoi(argv[3])));
+		if (argv[2][0] == '-')
+			printf("%d", (atoi(argv[1]) - atoi(argv[3])));
+		if (argv[2][0] == '*')
+			printf("%d", (atoi(argv[1]) * atoi(argv[3])));
+		if (argv[2][0] == '/')
+			printf("%d", (atoi(argv[1]) / atoi(argv[3])));
+		if (argv[2][0] == '%')
+			printf("%d", (atoi(argv[1]) % atoi(argv[3])));
+	}
+	printf("\n");
+	return (0);
+}
+Logic
+    It's a calculator, dummy.
+
+
+Implementation 
+    Assignment name  : ft_atoi
+Expected files   : ft_atoi.c
+Allowed functions: None
+---------------------------------------------------------------------------
+
+Write a function that converts the string argument str to an integer (type int)
+and returns it.
+
+It works much like the standard atoi(const char *str) function, see the man.
+
+Your function must be declared as follows:
+
+int	ft_atoi(char *str)
+{
+	int result = 0;
+	int sign = 1;
+
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+        	str++;
+	if (*str == '-')
+		sign = -1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
+	{
+		result = result * 10 + *str - '0';
+		str++;
+	}
+	return (sign * result);
+}
+Logic
+    'result' with store the final integer value.
+    'sign' is used to determine whether the number if negative or positve and it is set to 1.
+    Skip Whitespaces
+    Check for sign
+    Convert digits to integers.
+
+
+implementation 
+    Assignment name  : ft_strcmp
+Expected files   : ft_strcmp.c
+Allowed functions:
+---------------------------------------------------------------------------
+
+Reproduce the behavior of the function strcmp (man strcmp).
+
+Your function must be declared as follows:
+
+#include <stdio.h>
+
+int ft_strcmp(char *s1, char *s2)
+{
+	int i = 0;
+	
+	while(s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
+}	
+Logic
+    Increment the index while the characters in s1 and s2 are the same.
+    Return the difference.
+
+
+Implementation:
+    Assignment name : ft_strcspn
+Expected files : ft_strcspn.c
+Allowed functions: None
+---------------------------------------------------------------
+
+Reproduce exactly the behavior of the function strcspn
+(man strcspn).
+
+The function should be prototyped as follows:
+    
+#include <stdio.h>
+
+size_t  ft_strcspn(const char *s, const char *reject)
+{
+    int     i = 0;
+    int     j = 0;
+
+    while (s[i] != '\0')
+    {
+	j = 0;
+        while (reject[j] != '\0')
+        {
+            if(s[i] == reject[j])
+                return (i);
+            j++;
+        }
+        i++;
+    }
+    return (i);
+}
+Logic
+    This function calculates the length of the initial segment of a string s which does not contain any characters from another string reject. 
+    i is used to iterate over the characters of s.
+    j is used to iterate over the characters of reject.
+    This nested loop iterates through each character of the reject string.
+        Inside the inner loop, it checks if the current character of s (i.e., s[i]) is found in reject (i.e., reject[j]).
+        If a match is found, the function returns the current index i, which represents the length of the segment in s that does not contain any rejected characters.
+    If no match is found for s[i] in reject, the inner loop continues with the next character of reject.
+    If no match is found after checking all characters of reject, the outer loop continues with the next character of s.
+
+
+Implementation
+    Assignment name  : ft_strdup
+Expected files   : ft_strdup.c
+Allowed functions: malloc
+---------------------------------------------------------------------------
+
+Reproduce the behavior of the function strdup (man strdup).
+
+Your function must be declared as follows:
+    
+#include <stdlib.h>
+
+char	*ft_strdup(char *src)
+{
+	int	i = 0;
+	int	length = 0;
+	char	*strcpy;
+
+	while (src[length])
+		length++;
+	strcpy = malloc(sizeof(*strcpy) * (length + 1));
+	if (strcpy != NULL)
+	{
+		while (src[i])
+		{
+			strcpy[i] = src[i];
+			i++;
+		}
+		strcpy[i] = '\0';
+	}
+	return (strcpy);
+}
+Logic:
+    Get the length of the src string.
+    Malloc a string that is the size of char * length of the src string.
+    Create a loop, to copy each character from src to strcpy.
+    Null terminate strcpy.
+
+
+Implementation
+    Assignment name : ft_strpbrk
+Expected files : ft_strpbrk.c
+Allowed functions: None
+---------------------------------------------------------------
+
+Reproduce exactly the behavior of the function strpbrk
+(man strpbrk).
+
+The function should be prototyped as follows:
+    
+#include <stdio.h>
+#include <string.h>
+
+char *ft_strpbrk(const char *s1, const char *s2)
+{
+	int i = 0;
+	
+	if (!s1 || !s2)
+		return (0);
+	while(*s1)
+	{
+		i = 0;
+	   	while(s2[i])
+		{
+			if(*s1 == s2[i])
+				return (char *) s1;
+			i++;
+		}
+		s1++;	
+	}
+	return (NULL);
+}
+Logic:
+    This function is used to find the first occurrence of any character from the string s2 in the string s1.
+    The outer while loop iterates through each character of s1 until it reaches the null terminator (\0).
+    For each character in s1, the inner while loop iterates through each character of s2 to check if it matches the current character in s1.
+    If a match is found (*s1→s2[i]), the function returns the pointer to that character in s1.
+    After checking all characters in s2 for the current character in s1, the pointer s1 is incremented to move to the next character in s1.
+    If the function completes both loops without finding a match, it returns NULL.
+
+Implementation
+    Assignment name  : ft_strrev
+Expected files   : ft_strrev.c
+Allowed functions:
+---------------------------------------------------------------------------
+
+Write a function that reverses (in-place) a string.
+
+It must return its parameter.
+
+Your function must be declared as follows:
+    
+char *ft_strrev(char *str)
+{
+	int i = -1;
+	int length = 0;
+	char temporary;
+
+	while (str[length])
+		length++;
+	while (++i < length / 2)
+	{
+		temporary = str[i];
+		str[i] = str[length - 1 - i];
+		str[length - 1 - i] = temporary;
+	}
+	return (str);
+}
+Logic
+    The loop condition ++i < length / 2 ensures that the loop only runs for the first half of the string (because reversing only requires swapping up to the midpoint).
+    Inside the loop, the following steps are executed:
+    temporary = str[i];: The character at index i is temporarily stored.
+    str[i] = str[length - 1 - i];: The character from the opposite end of the string (length - 1 - i) is copied to index i.
+    str[length - 1 - i] = temporary;: The temporarily stored character is placed at the opposite end of the string (length - 1 - i).
+    This effectively swaps the characters from the beginning with the end, moving toward the center.
+
+Implementation
+    Assignment name	: ft_strspn
+Expected files	: ft_strspn.c
+Allowed functions: None
+---------------------------------------------------------------
+
+Reproduce exactly the behavior of the strspn function (man strspn).
+
+The function should be prototyped as follows:
+    
+#include <string.h>
+
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s != '\0')
+	{
+		if (*s == c)
+			return ((char *)s);
+		++s;
+	}
+	return (0);
+}
+
+size_t	ft_strspn(const char *s, const char *accept)
+{
+	size_t i = 0;
+
+	while (s[i] != '\0')
+	{
+		if (ft_strchr(accept, s[i]) == 0)
+			break;
+		++i;
+	}
+	return (i);
+}
+Logic
+    The strspn() function calculates the length (in bytes) of the initial segment of s which consists entirely of bytes in accept.
+    strchr function:
+        The loop iterates over the string s until the null terminator (\0) is reached.
+        If the character c is found, it returns a pointer to the first occurrence of c in s. The return type is cast to char * because the input parameter s is a const char * (a constant string), but you may want to return a non-constant pointer for further modification.
+        If c is not found, it returns 0 (which is equivalent to NULL).
+    strspn function:
+        The loop iterates through the string s until it encounters a character that is not in the string accept (determined by using the ft_strchr function).
+        For each character in s, it checks whether that character exists in accept using ft_strchr.
+        If a character in s does not exist in accept, the loop breaks, and the function returns the count i, which represents the number of initial characters in s that are part of the accept string.
+
+
+Implementation
+    Assignment name  : inter
+Expected files   : inter.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a program that takes two strings and displays, without doubles, the
+characters that appear in both strings, in the order they appear in the first one.
+
+The display will be followed by a \n.
+
+If the number of arguments is not 2, the program displays \n.
+
+#include <unistd.h>
+
+int main(int ac, char **av)
+{
+    int i;
+    int j;
+    unsigned char seen[256] = {0};
+    if (ac == 3)
+    {
+        i = 0;
+        while (av[1][i])
+        {
+            j = 0;
+            while (av[2][j])
+            {
+                if (av[1][i] == av[2][j])
+                {
+                    if (!seen[(unsigned char)av[1][i]])
+                    {
+                        write(1, &av[1][i], 1);
+                        seen[(unsigned char)av[1][i]] = 1;
+                    }
+                    break;
+                }
+                j++;
+            }
+            i++;
+        }
+    }
+    write(1, "\n", 1);
+    return (0);
+}
+Logic:
+    The program checks if exactly two arguments were provided (plus the program name itself, making 3 total). 
+    It then starts nested loops to iterate through each character of the first argument (av[1]) and the second argument (av[2]).  
+    For each character in the first argument, it checks if it exists in the second argument.
+        If a match is found and this character hasn't been seen before (checked using the seen array), it writes the character to the standard output (file descriptor 1) and marks it as seen.
+        It then breaks the inner loop and moves to the next character in the first argument.
+    Finally, it writes a newline character and exits the program.  
+    In essence, this program finds all characters that appear in both input strings, prints them in the order they appear in the first string, without duplicates. For example, if run with arguments "hello" and "world", it would output "lo\n".  
+
+
+Implementation
+    Assignment name  : is_power_of_2
+Expected files   : is_power_of_2.c
+Allowed functions: None
+---------------------------------------------------------------------------
+
+Write a function that determines if a given number is a power of 2.
+
+This function returns 1 if the given number is a power of 2, otherwise it returns 0.
+
+Your function must be declared as follows:
+    
+int is_power_of_2(unsigned int n)
+{
+    if (n == 0)
+        return 0;
+    return (n & (n - 1)) == 0;
+}
+Logic:
+    int is_power_of_2(unsigned int n) {
+    if (n == 0) 
+        return 0;
+    return (n & (n - 1)) == 0;
+}
+    This function is_power_of_2 takes an unsigned integer n as input and returns an integer (1 or 0) indicating whether n is a power of 2 or not.
+    1. First, there's a check for zero: 
+        if (n == 0) 
+    return 0;
+        This is because 0 is not considered a power of 2, so the function immediately returns 0 if n is 0.
+    2. The main logic of the function is in this line: 
+        return (n & (n - 1)) == 0;
+        This uses a bitwise operation trick to determine if a number is a power of 2. Here's how it works:
+        Powers of 2 in binary have only one bit set to 1, and all other bits are 0. For example:
+            1 = 0001
+            2 = 0010
+            4 = 0100
+            8 = 1000
+        When you subtract 1 from a power of 2, you get a number where all bits below the set bit become 1. For example:
+            2 - 1 = 0010 - 0001 = 0001
+            4 - 1 = 0100 - 0001 = 0011
+            8 - 1 = 1000 - 0001 = 0111
+        When you perform a bitwise AND (&) between a power of 2 and one less than itself, you always get 0.
+        This is not true for numbers that aren't powers of 2.
+    3. The function returns the result of this comparison (n & (n - 1)) == 0. If it's true (the result is 0), it means n is a power of 2, and the function returns 1. Otherwise, it returns 0. 
+
+
+Implementation
+    Assignment name  : last_word
+Expected files   : last_word.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a program that takes a string and displays its last word followed by a \n.
+
+A word is a section of string delimited by spaces/tabs or by the start/end of the string.
+
+If the number of parameters is not 1, or there are no words, display a newline.
+#include <unistd.h>
+
+void	last_word(char *str)
+{
+	int j = 0;
+	int i = 0;
+
+	while (str[i])
+	{
+		if (str[i] == ' ' && str[i + 1] >= 33 && str[i + 1] <= 126)
+			j = i + 1;
+		i++;
+	}
+	while (str[j] >= 33 && str[j] <= 127)
+	{
+		write(1, &str[j], 1);
+		j++;
+	}
+}
+
+int		main(int argc, char **argv)
+{
+	if (argc == 2)
+		last_word(argv[1]);
+	write(1, "\n", 1);
+	return (0);
+}
+Logic:
+    1. First, let's look at the last_word function:
+    void last_word(char *str) {
+    int j = 0;
+    int i = 0;
+    while (str[i]) {
+        if (str[i] == ' ' && str[i + 1] >= 33 && str[i + 1] <= 126)
+            j = i + 1;
+        i++;
+    }
+    while (str[j] >= 33 && str[j] <= 127) {
+        write(1, &str[j], 1);
+        j++;
+    }
+}
+    This function is designed to find and print the last word in a given string. Here's how it works:
+        a. It uses two integer variables, i and j. i is used to iterate through the entire string, while j keeps track of the start of the last word.
+        b. The first while loop goes through the entire string. It's looking for spaces followed by printable characters (ASCII values 33 to 126). When it finds such a combination, it updates j to point to the character after the space. This effectively finds the start of the last word.
+        c. After the first loop, j points to the start of the last word. The second while loop then prints each character of the last word using the write function, stopping when it reaches a non-printable character or the end of the string.
+    2. Now, let's look at the main function:
+    int main(int argc, char **argv) {
+    if (argc == 2)
+        last_word(argv[1]);
+    write(1, "\n", 1);
+    return (0);
+}
+    This function does the following:
+        a. It checks if there's exactly one command-line argument (argc→2).
+        b. If there is, it calls the last_word function with that argument.
+        c. It then prints a newline character.
+        d. Finally, it returns 0 to indicate successful execution.
+    The use of ASCII values 33-126 (or 127 in the second loop) ensures that only printable characters are considered part of a word, excluding spaces and control characters.
+
+
+Implementation
+    Assignment name  : max
+Expected files   : max.c
+Allowed functions:
+------------------------------------------------------------------------------
+
+Write the following function:
+
+int  max(int* tab, unsigned int len);
+
+The first parameter is an array of int, the second is the number of elements in the array.
+
+The function returns the largest number found in the array.
+
+If the array is empty, the function returns 0.
+
+int max(int *tab, unsigned int len)
+{
+	int result;
+	unsigned int i = 0;
+	
+	if (len == 0)
+		return (0);
+	result = tab[i];
+	while(i < len)
+	{
+		if (result <  tab[i])
+			result = tab[i];
+		i++;
+	}
+	return result;
+}
+Logic
+    1. The function is named max and takes two parameters: 
+        int *tab: A pointer to an integer array
+        unsigned int len: The length of the array
+    2. It declares two variables: 
+        int result: To store the maximum value found
+        unsigned int i: A counter for iterating through the array
+    3. There's an initial check: 
+        If the length of the array is 0, it returns 0 (this is a safe default, though it might be better to handle this case differently depending on the use case)
+    4. It initializes result with the first element of the array (tab[i] where i is 0) 
+    5. The main logic is in the while loop: 
+        It iterates through each element of the array
+        If the current element (tab[i]) is greater than the current result, it updates result
+        The counter i is incremented each iteration
+    6. After checking all elements, it returns the result, which will be the maximum value found 
+    This function effectively finds the largest number in the given array by comparing each element to the current maximum and updating it if a larger number is found.
+
+
+Implementation 
+    Assignment name  : print_bits
+Expected files   : print_bits.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a function that takes a byte, and prints it in binary WITHOUT A NEWLINE
+AT THE END.
+
+Your function must be declared as follows:
+
+void print_bits(unsigned char octet);
+
+Example, if you pass 2 to print_bits, it will print "00000010"
+
+#include <unistd.h>
+
+void print_bits(unsigned char octet)
+{
+	int i = 8;
+	unsigned char 	bit;
+
+	while (i--)
+	{
+		bit = (octet >> i & 1) + '0';
+		write(1, &bit, 1);
+	}
+}
+Logic
+    This function, print_bits, is designed to print the binary representation of an unsigned char (8-bit integer). Here's how it works:
+    int i = 8;: Initializes a counter to 8, as there are 8 bits in an unsigned char.
+    unsigned char bit;: Declares a variable to hold each bit as it's processed.
+    while (i--): This loop runs 8 times, decrementing i each time. It starts at 7 and ends at 0.
+    bit = (octet >> i & 1) + '0';: This line does the main work:
+        octet >> i: Right-shifts the octet by i positions, bringing the bit we're interested in to the rightmost position.
+        & 1: Masks all but the rightmost bit, effectively isolating it.
+        + '0': Adds the ASCII value of '0'. This converts the bit (0 or 1) to its ASCII character representation ('0' or '1').
+    write(1, &bit, 1);: Writes the bit character to the standard output (file descriptor 1).
+    The function will print the bits from most significant to least significant, effectively displaying the binary representation of the input byte.
+
+
+Implementation
+    Assignment name  : reverse_bits
+Expected files   : reverse_bits.c
+Allowed functions:
+---------------------------------------------------------------------------
+
+Write a function that takes a byte, reverses it, bit by bit (like the
+example) and returns the result.
+
+Your function must be declared as follows:
+
+unsigned char reverse_bits(unsigned char octet);
+
+Example:
+
+  1 byte
+_____________
+ 0100  0001
+     ||
+     \/
+ 1000  0010
+ 
+unsigned char	reverse_bits(unsigned char octet)
+{
+	int		i = 8;
+	unsigned char	res = 0;
+
+	while (i > 0)
+	{
+		res = res * 2 + (octet % 2);
+		octet = octet / 2;
+		i--;
+	}
+	return (res);
+}
+Logic
+    This function reverse_bits takes an unsigned char (which is typically 8 bits) and reverses the order of its bits. Here's how it works:
+    1. int i = 8;: This initializes a counter to 8, which is the number of bits in a byte.
+    2. unsigned char res = 0;: This initializes the result variable to 0.
+    3. The while loop runs 8 times, once for each bit in the input byte.
+    4. Inside the loop:
+        res = res * 2 + (octet % 2);: This line does the main work of reversing the bits.
+            octet % 2 gives us the least significant bit of octet (0 or 1).
+            res * 2 shifts all existing bits in res to the left by one position.
+            Adding these together effectively builds the reversed number bit by bit.
+        octet = octet / 2;: This right-shifts octet by one bit, discarding the least significant bit we just processed.
+        i--;: This decrements our loop counter.
+    5. After processing all 8 bits, the function returns res, which now contains the reversed bits of the original octet.
+    This algorithm works by repeatedly extracting the least significant bit from the input, adding it to the result (which gets shifted left each time), and then shifting the input right. This process effectively reverses the order of the bits.
+
+
+Implementation 
+    Assignment name  : snake_to_camel
+Expected files   : snake_to_camel.c
+Allowed functions: malloc, free, realloc, write
+---------------------------------------------------------------------------
+
+Write a program that takes a single string in snake_case format
+and converts it into a string in lowerCamelCase format.
+
+A snake_case string is a string where each word is in lower case, separated by
+an underscore "_".
+
+A lowerCamelCase string is a string where each word begins with a capital letter
+except for the first one.
+
+#include <unistd.h>
+
+int main(int argc, char **argv)
+{
+	int i = 0;
+	
+	if (argc == 2)
+	{
+		while(argv[1][i] != '\0')
+		{
+			if (argv[1][i] == '_')
+			{
+				i++;
+				argv[1][i] = argv[1][i]-32;
+			}
+			write (1, &argv[1][i], 1);
+			i++;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+Logic
+    This program does the following:
+        1. It checks if exactly one command-line argument is provided (argc→2).
+        2. If so, it iterates through each character of the argument string (argv[1]).
+        3. If it encounters an underscore ('_'), it skips the underscore and capitalizes the next character by subtracting 32 from its ASCII value (converting lowercase to uppercase).
+        4. It writes each character to the standard output (file descriptor 1) using the write() function.
+        5. After processing the entire string, it adds a newline character.
+    In essence, this program takes a string with underscores and converts it to a format where the character after each underscore is capitalized, removing the underscores in the process. For example:
+    Input: ./program hello_world
+    Output: helloWorld
+    The program uses low-level I/O with the write() function instead of standard C I/O functions like printf().
+
+
+Implementation
+    Assignment name  : swap_bits
+Expected files   : swap_bits.c
+Allowed functions:
+---------------------------------------------------------------------------
+
+Write a function that takes a byte, swaps its halves (like the example) and
+returns the result.
+
+Your function must be declared as follows:
+
+unsigned char swap_bits(unsigned char octet);
+
+Example:
+
+  1 byte
+_____________
+ 0100 | 0001
+     \ /
+     / \
+ 0001 | 0100
+ 
+unsigned char swap_bits(unsigned char octet)
+{
+	return ((octet >> 4) | (octet << 4));
+}
+
+
+Implementation
+    Assignment name  : union
+Expected files   : union.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a program that takes two strings and displays, without doubles, the
+characters that appear in either one of the strings.
+
+The display will be in the order characters appear in the command line, and
+will be followed by a \n.
+
+If the number of arguments is not 2, the program displays \n.
+
+#include <unistd.h>
+
+int main(int ac, char **av)
+{
+    if (ac == 3)
+    {
+        unsigned char seen[256] = {0};
+        int i = 0;
+        int j = 0;
+
+        while (av[1][i])
+        {
+            if (!seen[(unsigned char)av[1][i]])
+            {
+                write(1, &av[1][i], 1);
+                seen[(unsigned char)av[1][i]] = 1;
+            }
+            i++;
+        }
+        while (av[2][j])
+        {
+            if (!seen[(unsigned char)av[2][j]])
+            {
+                write(1, &av[2][j], 1);
+                seen[(unsigned char)av[2][j]] = 1;
+            }
+            j++;
+        }
+    }
+    write(1, "\n", 1);
+    return 0;
+}
+Logic
+    1. The main function takes two parameters: ac (argument count) and av (argument vector).
+    2. It checks if ac == 3, meaning the program expects two command-line arguments (plus the program name itself).
+    3. An array seen of 256 unsigned chars is initialized to zero. This array will be used to keep track of which characters have been encountered.
+    4. Two loops process the input strings:
+        The first loop iterates through av[1] (the first argument)
+        The second loop iterates through av[2] (the second argument)
+    5. In each loop:
+        If the current character hasn't been seen before (!seen[(unsigned char)av[1][i]] or !seen[(unsigned char)av[2][j]]), it is written to the standard output using the write function.
+        The character is then marked as seen in the seen array.
+    6. After processing both strings, a newline character is written to the output.
+    7. The code appears to be cut off at the end, but it likely returns 0 to indicate successful execution.
+    This program effectively prints all unique characters from both input strings, maintaining their original order of appearance. Characters that appear in both strings are only printed once, when they first appear in either string.
+
+
+Implementation 
+    Assignment name  : wdmatch
+Expected files   : wdmatch.c
+Allowed functions: write
+---------------------------------------------------------------------------
+
+Write a program that takes two strings and checks whether it's possible to
+write the first string with characters from the second string, while respecting the order in which these characters appear in the second string.
+
+If it's possible, the program displays the string, followed by a \n, otherwise it simply displays a \n.
+
+If the number of arguments is not 2, the program displays a \n.
+
+#include <unistd.h>
+
+int main(int ac, char **av)
+{
+    int i;
+    int j;
+    
+    if (ac == 3)
+    {
+        j = 0;
+        i = 0;
+        while (av[2][j])
+        {
+            if (av[1][i] == av[2][j])
+                i++;
+            j++;
+        }
+        if (av[1][i] == '\0')
+        {
+            i = 0;
+            while(av[1][i])
+            {
+                write(1, &av[1][i], 1);
+                i++;
+            }
+        }
+    }
+    write(1, "\n", 1);
+    return(0);
+}
+Logic
+    This program does the following:
+    1. It checks if it has exactly 3 command-line arguments (the program name itself and two additional arguments).
+    2. If so, it compares the second argument (av[1]) with the third argument (av[2]) in a specific way:
+        It checks if all characters in av[1] appear in av[2] in the same order, but not necessarily consecutively.
+    3. If all characters from av[1] are found in av[2] in the correct order, it prints av[1].
+    4. Finally, it prints a newline character.
+    Here's a more detailed breakdown:
+        ac is the argument count, and av is the array of argument strings.
+        The outer if (ac == 3) ensures the program has exactly three arguments.
+        The first while loop iterates through av[2], comparing it with av[1].
+        If a match is found, i (index for av[1]) is incremented.
+        After the loop, if av[1][i] == '\0', it means all characters in av[1] were found in av[2].
+        If so, it prints av[1] character by character using the write function.
+        Finally, it prints a newline character.
+    The program essentially checks if the second argument is a subsequence of the third argument, and if so, it prints the second argument.
+
