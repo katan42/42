@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_unsigned_nbr.c                            :+:      :+:    :+:   */
+/*   stack_operations_swap.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 16:47:35 by katan             #+#    #+#             */
-/*   Updated: 2024/07/21 17:42:09 by katan            ###   ########.fr       */
+/*   Created: 2024/11/18 16:00:09 by katan             #+#    #+#             */
+/*   Updated: 2024/11/18 16:00:10 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-void	ft_print_unsigned_nbr(unsigned int n, int *count)
-{
-	if (n >= 10)
-	{
-		ft_print_unsigned_nbr(n / 10, count);
-	}
-	ft_printchar((n % 10) + '0', count);
-}
+#include "push_swap.h"
+// sa (swap a): Swap the first 2 elements at the top of stack a.
+// Do nothing if there is only one or no elements.
+// sb (swap b): Swap the first 2 elements at the top of stack b.
+// Do nothing if there is only one or no elements.
+// ss : sa and sb at the same time.
