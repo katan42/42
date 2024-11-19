@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:16:35 by katan             #+#    #+#             */
-/*   Updated: 2024/11/19 00:32:31 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/19 16:20:36 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack
 	int	size;
 }	t_stack;
 
-void	push(t_stack *stack_a, t_stack *stack_b);
+void	push(t_stack *stack_1, t_stack *stack_2);
 void	push_a(t_stack *stack_a, t_stack *stack_b);
 void	push_b(t_stack *stack_a, t_stack *stack_b);
 void	reverse_rotate(t_stack *stack);
@@ -42,6 +42,8 @@ void	swap(t_stack *stack);
 void	swap_a(t_stack *stack_a);
 void	swap_b(t_stack *stack_b);
 void	swap_a_b(t_stack *stack_a,t_stack *stack_b);
+void	sort_three(t_stack *stack);
+void	sort_five(t_stack *stack_a, t_stack *stack_b);
 
 
 

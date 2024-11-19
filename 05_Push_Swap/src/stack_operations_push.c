@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_operations_push.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:59:36 by katan             #+#    #+#             */
-/*   Updated: 2024/11/19 00:31:25 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/19 15:30:26 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,29 @@
 // pb (push b): Take the first element at the top of a and put it at the top of b.
 // Do nothing if a is empty.
 
-void	push(t_stack *stack_a, t_stack *stack_b)
+void	push(t_stack *stack_1, t_stack *stack_2)
 {
 	int	i;
 
-	if (stack_b->size < 1)
+	if (stack_2->size < 1)
 		return ;
 	
-	i = stack_a->size;
+	i = stack_1->size;
 	while (i > 0)
 	{
-		stack_a->array[i] = stack_a->array[i-1];
+		stack_1->array[i] = stack_1->array[i-1];
 		i--;
 	}
-	stack_a->array[0] = stack_b->array[0];
-	stack_a->size++;
+	stack_1->array[0] = stack_2->array[0];
+	stack_1->size++;
 	
 	i = 0;
-	while (i < stack_b->size - 1)
+	while (i < stack_2->size - 1)
 	{
-       stack_b->array[i] = stack_b->array[i+1];
+       stack_2->array[i] = stack_2->array[i+1];
        i++;
 	}
-	stack_b->size--;
+	stack_2->size--;
 }
 
 void	push_a(t_stack *stack_a, t_stack *stack_b)

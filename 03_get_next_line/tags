@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/katan/0_42Cursus Git/03_get_next_line/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+BUFFER_SIZE	get_next_line.h	/^#  define BUFFER_SIZE /;"	d
+GET_NEXT_LINE_H	get_next_line.h	/^# define GET_NEXT_LINE_H$/;"	d
+fill_line_buffer	get_next_line.c	/^static char	*fill_line_buffer(int fd, char **left, char *buffer)$/;"	f	typeref:typename:char *	file:
+ft_strchr	get_next_line_utils.c	/^char	*ft_strchr(const char *s, int i)$/;"	f	typeref:typename:char *
+ft_strdup	get_next_line_utils.c	/^char	*ft_strdup(const char *s)$/;"	f	typeref:typename:char *
+ft_strjoin	get_next_line_utils.c	/^char	*ft_strjoin(char *s1, char *s2)$/;"	f	typeref:typename:char *
+ft_strlen	get_next_line_utils.c	/^size_t	ft_strlen(const char *s)$/;"	f	typeref:typename:size_t
+ft_substr	get_next_line_utils.c	/^char	*ft_substr(char const *s, unsigned int start, size_t len)$/;"	f	typeref:typename:char *
+get_exact_line	get_next_line.c	/^char	*get_exact_line(char *line)$/;"	f	typeref:typename:char *
+get_next_line	get_next_line.c	/^char	*get_next_line(int fd)$/;"	f	typeref:typename:char *
+main	main.c	/^int main(void)$/;"	f	typeref:typename:int
+read_and_store_buffer	get_next_line.c	/^static char	*read_and_store_buffer(char **left, char *buffer)$/;"	f	typeref:typename:char *	file:
+set_line	get_next_line.c	/^static char	*set_line(char *line_buffer)$/;"	f	typeref:typename:char *	file:

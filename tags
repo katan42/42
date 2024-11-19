@@ -1,0 +1,368 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/katan/0_42Cursus Git/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(LIBFT_DIR)/libft.a	05_Push_Swap/Makefile	/^$(LIBFT_DIR)\/libft.a:$/;"	t
+$(NAME)	01_Libft/Libft Submitted/Makefile	/^$(NAME): $(OBJ)$/;"	t
+$(NAME)	01_Libft/Makefile	/^$(NAME): $(OBJ)$/;"	t
+$(NAME)	02_ft_printf/Makefile	/^$(NAME): $(OBJ)$/;"	t
+$(NAME)	02_ft_printf/ft_printf_submitted/Makefile	/^$(NAME): $(OBJ)$/;"	t
+$(NAME)	05_Push_Swap/Libft/Makefile	/^$(NAME): $(OBJ)$/;"	t
+$(NAME)	05_Push_Swap/Makefile	/^$(NAME): $(OBJ) $(LIBFT_DIR)\/libft.a$/;"	t
+%.o	01_Libft/Libft Submitted/Makefile	/^%.o: %.c$/;"	t
+%.o	01_Libft/Makefile	/^%.o: %.c$/;"	t
+%.o	02_ft_printf/Makefile	/^%.o: %.c$/;"	t
+%.o	02_ft_printf/ft_printf_submitted/Makefile	/^%.o: %.c$/;"	t
+%.o	05_Push_Swap/Libft/Makefile	/^%.o: %.c$/;"	t
+%.o	05_Push_Swap/Makefile	/^%.o: %.c$/;"	t
+0	.vscode/c_cpp_properties.json	/^                "${workspaceFolder}\/**",$/;"	s	array:configurations.0.includePath
+0	.vscode/c_cpp_properties.json	/^        {$/;"	o	array:configurations
+0	.vscode/tasks.json	/^                "$gcc"$/;"	s	array:tasks.0.problemMatcher
+0	.vscode/tasks.json	/^                "-fdiagnostics-color=always",$/;"	s	array:tasks.0.args
+0	.vscode/tasks.json	/^        {$/;"	o	array:tasks
+1	.vscode/c_cpp_properties.json	/^                "${workspaceFolder}\/05_Push_Swap\/include"$/;"	s	array:configurations.0.includePath
+1	.vscode/tasks.json	/^                "-g",$/;"	s	array:tasks.0.args
+2	.vscode/tasks.json	/^                "${file}",$/;"	s	array:tasks.0.args
+3	.vscode/tasks.json	/^                "-o",$/;"	s	array:tasks.0.args
+4	.vscode/tasks.json	/^                "${fileDirname}\/${fileBasenameNoExtension}"$/;"	s	array:tasks.0.args
+BUFFER_SIZE	03_get_next_line/get_next_line.h	/^#  define BUFFER_SIZE /;"	d
+CC	05_Push_Swap/Makefile	/^CC = cc$/;"	m
+CFLAGS	05_Push_Swap/Makefile	/^CFLAGS = -Wall -Wextra -Werror $(INCLUDE)$/;"	m
+FT_LIST_H	00_Exam Rank 02 revision/ft_list_size/ft_list.h	/^# define FT_LIST_H$/;"	d
+FT_PRINTF_H	02_ft_printf/ft_printf.h	/^# define FT_PRINTF_H$/;"	d
+FT_PRINTF_H	02_ft_printf/ft_printf_submitted/ft_printf.h	/^# define FT_PRINTF_H$/;"	d
+GET_NEXT_LINE_H	03_get_next_line/get_next_line.h	/^# define GET_NEXT_LINE_H$/;"	d
+INCLUDE	05_Push_Swap/Makefile	/^INCLUDE = -I. -I$(LIBFT_DIR)$/;"	m
+LIBFT_DIR	05_Push_Swap/Makefile	/^LIBFT_DIR = Libft$/;"	m
+LIBFT_H	00_Exam Rank 02 revision/linkedlist_isk/libft.h	/^# define LIBFT_H$/;"	d
+LIBFT_H	01_Libft/Libft Submitted/libft.h	/^# define LIBFT_H$/;"	d
+LIBFT_H	01_Libft/libft.h	/^# define LIBFT_H$/;"	d
+LIBFT_H	05_Push_Swap/Libft/libft.h	/^# define LIBFT_H$/;"	d
+NAME	01_Libft/Libft Submitted/Makefile	/^NAME = libft.a $/;"	m
+NAME	01_Libft/Makefile	/^NAME = libft.a $/;"	m
+NAME	02_ft_printf/Makefile	/^NAME = libftprintf.a$/;"	m
+NAME	02_ft_printf/ft_printf_submitted/Makefile	/^NAME = libftprintf.a$/;"	m
+NAME	05_Push_Swap/Libft/Makefile	/^NAME = libft.a $/;"	m
+NAME	05_Push_Swap/Makefile	/^NAME = push_swap$/;"	m
+OBJ	01_Libft/Libft Submitted/Makefile	/^OBJ = $(SRC:.c=.o)$/;"	m
+OBJ	01_Libft/Makefile	/^OBJ = $(SRC:.c=.o)$/;"	m
+OBJ	02_ft_printf/Makefile	/^OBJ = $(SRC:.c=.o)$/;"	m
+OBJ	02_ft_printf/ft_printf_submitted/Makefile	/^OBJ = $(SRC:.c=.o)$/;"	m
+OBJ	05_Push_Swap/Libft/Makefile	/^OBJ = $(SRC:.c=.o)$/;"	m
+OBJ	05_Push_Swap/Makefile	/^OBJ = $(SRC:.c=.o)$/;"	m
+PUSH_SWAP_H	05_Push_Swap/include/push_swap.h	/^# define PUSH_SWAP_H$/;"	d
+SRC	01_Libft/Libft Submitted/Makefile	/^SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c\\$/;"	m
+SRC	01_Libft/Makefile	/^SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c\\$/;"	m
+SRC	02_ft_printf/Makefile	/^SRC = ft_printchar.c ft_printstr.c ft_print_ptr.c ft_print_nbr.c ft_print_unsigned_nbr.c\\$/;"	m
+SRC	02_ft_printf/ft_printf_submitted/Makefile	/^SRC = ft_printchar.c ft_printstr.c ft_print_ptr.c ft_print_nbr.c ft_print_unsigned_nbr.c\\$/;"	m
+SRC	05_Push_Swap/Libft/Makefile	/^SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c\\$/;"	m
+SRC	05_Push_Swap/Makefile	/^SRC = *.c$/;"	m
+add_node_to_list	00_Exam Rank 02 revision/linkedlist_isk/ft_lstmap.c	/^static void	add_node_to_list(t_list **new_lst, t_list **temp, t_list *new_node)$/;"	f	typeref:typename:void	file:
+all	01_Libft/Libft Submitted/Makefile	/^all: $(NAME)$/;"	t
+all	01_Libft/Makefile	/^all: $(NAME)$/;"	t
+all	02_ft_printf/Makefile	/^all: $(NAME)	  $/;"	t
+all	02_ft_printf/ft_printf_submitted/Makefile	/^all: $(NAME)	  $/;"	t
+all	02_ft_printf/ft_printf_submitted/Makefile	/^all: $(NAME)$/;"	t
+all	05_Push_Swap/Libft/Makefile	/^all: $(NAME)$/;"	t
+all	05_Push_Swap/Makefile	/^all: $(NAME)$/;"	t
+alloc_mem_word	01_Libft/Libft Submitted/ft_split.c	/^static char	*alloc_mem_word(char *s1, char c, unsigned int len)$/;"	f	typeref:typename:char *	file:
+alloc_mem_word	01_Libft/ft_split.c	/^static char	*alloc_mem_word(char *s1, char c, unsigned int len)$/;"	f	typeref:typename:char *	file:
+alloc_mem_word	05_Push_Swap/Libft/ft_split.c	/^static char	*alloc_mem_word(char *s1, char c, unsigned int len)$/;"	f	typeref:typename:char *	file:
+args	.vscode/tasks.json	/^            "args": [$/;"	a	object:tasks.0
+array	05_Push_Swap/include/push_swap.h	/^	int	*array;$/;"	m	struct:s_stack	typeref:typename:int *
+cStandard	.vscode/c_cpp_properties.json	/^            "cStandard": "c17",$/;"	s	object:configurations.0
+clean	01_Libft/Libft Submitted/Makefile	/^clean: $/;"	t
+clean	01_Libft/Makefile	/^clean: $/;"	t
+clean	02_ft_printf/Makefile	/^clean:$/;"	t
+clean	02_ft_printf/ft_printf_submitted/Makefile	/^clean:$/;"	t
+clean	05_Push_Swap/Libft/Makefile	/^clean: $/;"	t
+clean	05_Push_Swap/Makefile	/^clean:$/;"	t
+cn_node	00_Exam Rank 02 revision/linkedlist_isk/ft_lstmap.c	/^static t_list	*cn_node(void *(*f)(void *), void (*del)(void *), void *content)$/;"	f	typeref:typename:t_list *	file:
+command	.vscode/tasks.json	/^            "command": "\/usr\/bin\/gcc",$/;"	s	object:tasks.0
+compilerPath	.vscode/c_cpp_properties.json	/^            "compilerPath": "\/usr\/bin\/gcc",$/;"	s	object:configurations.0
+configurations	.vscode/c_cpp_properties.json	/^    "configurations": [$/;"	a
+content	00_Exam Rank 02 revision/linkedlist_isk/libft.h	/^	void			*content;$/;"	m	struct:s_list	typeref:typename:void *
+copystr	01_Libft/Libft Submitted/ft_split.c	/^static int	copystr(char **dptr, char *s1, char c, unsigned int *j)$/;"	f	typeref:typename:int	file:
+copystr	01_Libft/ft_split.c	/^static int	copystr(char **dptr, char *s1, char c, unsigned int *j)$/;"	f	typeref:typename:int	file:
+copystr	05_Push_Swap/Libft/ft_split.c	/^static int	copystr(char **dptr, char *s1, char c, unsigned int *j)$/;"	f	typeref:typename:int	file:
+cppStandard	.vscode/c_cpp_properties.json	/^            "cppStandard": "gnu++17",$/;"	s	object:configurations.0
+cwd	.vscode/tasks.json	/^                "cwd": "${fileDirname}"$/;"	s	object:tasks.0.options
+data	00_Exam Rank 02 revision/ft_list_size/ft_list.h	/^    void            *data;$/;"	m	struct:s_list	typeref:typename:void *
+defines	.vscode/c_cpp_properties.json	/^            "defines": [],$/;"	a	object:configurations.0
+detail	.vscode/tasks.json	/^            "detail": "Task generated by Debugger."$/;"	s	object:tasks.0
+fclean	01_Libft/Libft Submitted/Makefile	/^fclean: clean$/;"	t
+fclean	01_Libft/Makefile	/^fclean: clean$/;"	t
+fclean	02_ft_printf/Makefile	/^fclean: clean$/;"	t
+fclean	02_ft_printf/ft_printf_submitted/Makefile	/^fclean: clean$/;"	t
+fclean	05_Push_Swap/Libft/Makefile	/^fclean: clean$/;"	t
+fclean	05_Push_Swap/Makefile	/^fclean: clean$/;"	t
+fill_line_buffer	03_get_next_line/get_next_line.c	/^static char	*fill_line_buffer(int fd, char **left, char *buffer)$/;"	f	typeref:typename:char *	file:
+fill_line_buffer	etc/get_next_line (with helper function).c	/^static char	*fill_line_buffer(int fd, char **left, char *buffer)$/;"	f	typeref:typename:char *	file:
+fill_line_buffer	etc/get_next_line refactored but timeout.c	/^static char	*fill_line_buffer(int fd, char **left, char *buffer)$/;"	f	typeref:typename:char *	file:
+fill_line_buffer	etc/get_next_line_29lines.c	/^static char	*fill_line_buffer(int fd, char **left, char *buffer)$/;"	f	typeref:typename:char *	file:
+fill_line_buffer	etc/get_next_line_Chris.c	/^static char	*fill_line_buffer(int fd, char **left, char *buffer)$/;"	f	typeref:typename:char *	file:
+free_dptr	01_Libft/Libft Submitted/ft_split.c	/^static char	**free_dptr(char **dptr, unsigned int j)$/;"	f	typeref:typename:char **	file:
+free_dptr	01_Libft/ft_split.c	/^static char	**free_dptr(char **dptr, unsigned int j)$/;"	f	typeref:typename:char **	file:
+free_dptr	05_Push_Swap/Libft/ft_split.c	/^static char	**free_dptr(char **dptr, unsigned int j)$/;"	f	typeref:typename:char **	file:
+ft_add	00_Exam Rank 02 revision/linkedlist_isk/ft_add.c	/^void ft_add (int *ptr, int i)$/;"	f	typeref:typename:void
+ft_atoi	00_Exam Rank 02 revision/ft_atoi.c/ft_atoi.c	/^int	ft_atoi(char *str)$/;"	f	typeref:typename:int
+ft_atoi	00_Exam Rank 02 revision/ft_atoi/ft_atoi.c	/^int	ft_atoi(const char *str)$/;"	f	typeref:typename:int
+ft_atoi	01_Libft/Libft Submitted/ft_atoi.c	/^int	ft_atoi(const char *str)$/;"	f	typeref:typename:int
+ft_atoi	01_Libft/ft_atoi.c	/^int	ft_atoi(const char *str)$/;"	f	typeref:typename:int
+ft_atoi	05_Push_Swap/Libft/ft_atoi.c	/^int	ft_atoi(const char *str)$/;"	f	typeref:typename:int
+ft_bzero	01_Libft/Libft Submitted/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f	typeref:typename:void
+ft_bzero	01_Libft/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f	typeref:typename:void
+ft_bzero	05_Push_Swap/Libft/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f	typeref:typename:void
+ft_calloc	01_Libft/Libft Submitted/ft_calloc.c	/^void	*ft_calloc(size_t nmemb, size_t size)$/;"	f	typeref:typename:void *
+ft_calloc	01_Libft/ft_calloc.c	/^void	*ft_calloc(size_t nmemb, size_t size)$/;"	f	typeref:typename:void *
+ft_calloc	05_Push_Swap/Libft/ft_calloc.c	/^void	*ft_calloc(size_t nmemb, size_t size)$/;"	f	typeref:typename:void *
+ft_isalnum	01_Libft/Libft Submitted/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f	typeref:typename:int
+ft_isalnum	01_Libft/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f	typeref:typename:int
+ft_isalnum	05_Push_Swap/Libft/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f	typeref:typename:int
+ft_isalpha	01_Libft/Libft Submitted/ft_isalpha.c	/^int	ft_isalpha(int c)$/;"	f	typeref:typename:int
+ft_isalpha	01_Libft/ft_isalpha.c	/^int	ft_isalpha(int c)$/;"	f	typeref:typename:int
+ft_isalpha	05_Push_Swap/Libft/ft_isalpha.c	/^int	ft_isalpha(int c)$/;"	f	typeref:typename:int
+ft_isascii	01_Libft/Libft Submitted/ft_isascii.c	/^int	ft_isascii(int c)$/;"	f	typeref:typename:int
+ft_isascii	01_Libft/ft_isascii.c	/^int	ft_isascii(int c)$/;"	f	typeref:typename:int
+ft_isascii	05_Push_Swap/Libft/ft_isascii.c	/^int	ft_isascii(int c)$/;"	f	typeref:typename:int
+ft_isdigit	01_Libft/Libft Submitted/ft_isdigit.c	/^int	ft_isdigit(int c)$/;"	f	typeref:typename:int
+ft_isdigit	05_Push_Swap/Libft/ft_isdigit.c	/^int	ft_isdigit(int c)$/;"	f	typeref:typename:int
+ft_isprint	01_Libft/Libft Submitted/ft_isprint.c	/^int	ft_isprint(int c)$/;"	f	typeref:typename:int
+ft_isprint	01_Libft/ft_isprint.c	/^int	ft_isprint(int c)$/;"	f	typeref:typename:int
+ft_isprint	05_Push_Swap/Libft/ft_isprint.c	/^int	ft_isprint(int c)$/;"	f	typeref:typename:int
+ft_itoa	00_Exam Rank 02 revision/ft_itoa/ft_itoa.c	/^char *ft_itoa(int nbr)$/;"	f	typeref:typename:char *
+ft_itoa	01_Libft/Libft Submitted/ft_itoa.c	/^char	*ft_itoa(int n)$/;"	f	typeref:typename:char *
+ft_itoa	01_Libft/ft_itoa.c	/^char	*ft_itoa(int n)$/;"	f	typeref:typename:char *
+ft_itoa	05_Push_Swap/Libft/ft_itoa.c	/^char	*ft_itoa(int n)$/;"	f	typeref:typename:char *
+ft_list_size	00_Exam Rank 02 revision/ft_list_size/ft_list_size.c	/^int ft_list_size(t_list *begin_list)$/;"	f	typeref:typename:int
+ft_lstadd_back	00_Exam Rank 02 revision/linkedlist_isk/ft_lstadd_back.c	/^void	ft_lstadd_back(t_list **lst, t_list *new)$/;"	f	typeref:typename:void
+ft_lstadd_front	00_Exam Rank 02 revision/linkedlist_isk/ft_lstadd_front.c	/^void	ft_lstadd_front(t_list **lst, t_list *new)$/;"	f	typeref:typename:void
+ft_lstclear	00_Exam Rank 02 revision/linkedlist_isk/ft_lstclear.c	/^void	ft_lstclear(t_list **lst, void (*del)(void *))$/;"	f	typeref:typename:void
+ft_lstdelone	00_Exam Rank 02 revision/linkedlist_isk/ft_lstdelone.c	/^void	ft_lstdelone(t_list *lst, void (*del)(void *))$/;"	f	typeref:typename:void
+ft_lstiter	00_Exam Rank 02 revision/linkedlist_isk/ft_lstiter.c	/^void	ft_lstiter(t_list *lst, void (*f)(void *))$/;"	f	typeref:typename:void
+ft_lstlast	00_Exam Rank 02 revision/linkedlist_isk/ft_lstlast.c	/^t_list	*ft_lstlast(t_list *lst)$/;"	f	typeref:typename:t_list *
+ft_lstmap	00_Exam Rank 02 revision/linkedlist_isk/ft_lstmap.c	/^t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))$/;"	f	typeref:typename:t_list *
+ft_lstnew	00_Exam Rank 02 revision/linkedlist_isk/ft_lstnew.c	/^t_list	*ft_lstnew(void *content)$/;"	f	typeref:typename:t_list *
+ft_lstsize	00_Exam Rank 02 revision/linkedlist_isk/ft_lstsize.c	/^int	ft_lstsize(t_list *lst)$/;"	f	typeref:typename:int
+ft_memchr	01_Libft/Libft Submitted/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f	typeref:typename:void *
+ft_memchr	01_Libft/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f	typeref:typename:void *
+ft_memchr	05_Push_Swap/Libft/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f	typeref:typename:void *
+ft_memcmp	01_Libft/Libft Submitted/ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f	typeref:typename:int
+ft_memcmp	01_Libft/ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f	typeref:typename:int
+ft_memcmp	05_Push_Swap/Libft/ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f	typeref:typename:int
+ft_memcpy	01_Libft/Libft Submitted/ft_memcpy.c	/^void	*ft_memcpy(void *dest, const void *src, size_t n)$/;"	f	typeref:typename:void *
+ft_memcpy	01_Libft/ft_memcpy.c	/^void	*ft_memcpy(void *dest, const void *src, size_t n)$/;"	f	typeref:typename:void *
+ft_memcpy	05_Push_Swap/Libft/ft_memcpy.c	/^void	*ft_memcpy(void *dest, const void *src, size_t n)$/;"	f	typeref:typename:void *
+ft_memmove	01_Libft/Libft Submitted/ft_memmove.c	/^void	*ft_memmove(void *dest, const void *src, size_t n)$/;"	f	typeref:typename:void *
+ft_memmove	01_Libft/ft_memmove.c	/^void	*ft_memmove(void *dest, const void *src, size_t n)$/;"	f	typeref:typename:void *
+ft_memmove	05_Push_Swap/Libft/ft_memmove.c	/^void	*ft_memmove(void *dest, const void *src, size_t n)$/;"	f	typeref:typename:void *
+ft_memset	01_Libft/Libft Submitted/ft_memset.c	/^void	*ft_memset(void *s, int c, size_t n)$/;"	f	typeref:typename:void *
+ft_memset	01_Libft/ft_memset.c	/^void	*ft_memset(void *s, int c, size_t n)$/;"	f	typeref:typename:void *
+ft_memset	05_Push_Swap/Libft/ft_memset.c	/^void	*ft_memset(void *s, int c, size_t n)$/;"	f	typeref:typename:void *
+ft_print_hex	02_ft_printf/ft_print_hex.c	/^void	ft_print_hex(unsigned int n, int *count, char conversion)$/;"	f	typeref:typename:void
+ft_print_hex	02_ft_printf/ft_printf_submitted/ft_print_hex.c	/^void	ft_print_hex(unsigned int n, int *count, char conversion)$/;"	f	typeref:typename:void
+ft_print_hex	05_Push_Swap/Libft/ft_print_hex.c	/^void	ft_print_hex(unsigned int n, int *count, char conversion)$/;"	f	typeref:typename:void
+ft_print_nbr	02_ft_printf/ft_print_nbr.c	/^void	ft_print_nbr(int n, int *count)$/;"	f	typeref:typename:void
+ft_print_nbr	02_ft_printf/ft_printf_submitted/ft_print_nbr.c	/^void	ft_print_nbr(int n, int *count)$/;"	f	typeref:typename:void
+ft_print_nbr	05_Push_Swap/Libft/ft_print_nbr.c	/^void	ft_print_nbr(int n, int *count)$/;"	f	typeref:typename:void
+ft_print_ptr	02_ft_printf/ft_print_ptr.c	/^void	ft_print_ptr(size_t ptr, int *count)$/;"	f	typeref:typename:void
+ft_print_ptr	02_ft_printf/ft_printf_submitted/ft_print_ptr.c	/^void	ft_print_ptr(size_t ptr, int *count)$/;"	f	typeref:typename:void
+ft_print_ptr	05_Push_Swap/Libft/ft_print_ptr.c	/^void	ft_print_ptr(size_t ptr, int *count)$/;"	f	typeref:typename:void
+ft_print_unsigned_nbr	02_ft_printf/ft_print_unsigned_nbr.c	/^void	ft_print_unsigned_nbr(unsigned int n, int *count)$/;"	f	typeref:typename:void
+ft_print_unsigned_nbr	02_ft_printf/ft_printf_submitted/ft_print_unsigned_nbr.c	/^void	ft_print_unsigned_nbr(unsigned int n, int *count)$/;"	f	typeref:typename:void
+ft_print_unsigned_nbr	05_Push_Swap/Libft/ft_print_unsigned_nbr.c	/^void	ft_print_unsigned_nbr(unsigned int n, int *count)$/;"	f	typeref:typename:void
+ft_printchar	02_ft_printf/ft_printchar.c	/^void	ft_printchar(char c, int *count)$/;"	f	typeref:typename:void
+ft_printchar	02_ft_printf/ft_printf_submitted/ft_printchar.c	/^void	ft_printchar(char c, int *count)$/;"	f	typeref:typename:void
+ft_printchar	05_Push_Swap/Libft/ft_printchar.c	/^void	ft_printchar(char c, int *count)$/;"	f	typeref:typename:void
+ft_printf	02_ft_printf/ft_print.c	/^int	ft_printf(const char *s, ...)$/;"	f	typeref:typename:int
+ft_printf	02_ft_printf/ft_printf_submitted/ft_print.c	/^int	ft_printf(const char *s, ...)$/;"	f	typeref:typename:int
+ft_printf	05_Push_Swap/Libft/ft_print.c	/^int	ft_printf(const char *s, ...)$/;"	f	typeref:typename:int
+ft_printf_check	02_ft_printf/ft_print.c	/^static void	ft_printf_check(char s, va_list *args, int *count)$/;"	f	typeref:typename:void	file:
+ft_printf_check	02_ft_printf/ft_printf_submitted/ft_print.c	/^static void	ft_printf_check(char s, va_list *args, int *count)$/;"	f	typeref:typename:void	file:
+ft_printf_check	05_Push_Swap/Libft/ft_print.c	/^static void	ft_printf_check(char s, va_list *args, int *count)$/;"	f	typeref:typename:void	file:
+ft_printstr	02_ft_printf/ft_printf_submitted/ft_printstr.c	/^void	ft_printstr(char *s, int *count)$/;"	f	typeref:typename:void
+ft_printstr	02_ft_printf/ft_printstr.c	/^void	ft_printstr(char *s, int *count)$/;"	f	typeref:typename:void
+ft_printstr	05_Push_Swap/Libft/ft_printstr.c	/^void	ft_printstr(char *s, int *count)$/;"	f	typeref:typename:void
+ft_putchar_fd	01_Libft/Libft Submitted/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f	typeref:typename:void
+ft_putchar_fd	01_Libft/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f	typeref:typename:void
+ft_putchar_fd	05_Push_Swap/Libft/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f	typeref:typename:void
+ft_putendl_fd	01_Libft/Libft Submitted/ft_putendl_fd.c	/^void	ft_putendl_fd(char *s, int fd)$/;"	f	typeref:typename:void
+ft_putendl_fd	01_Libft/ft_putendl_fd.c	/^void	ft_putendl_fd(char *s, int fd)$/;"	f	typeref:typename:void
+ft_putendl_fd	05_Push_Swap/Libft/ft_putendl_fd.c	/^void	ft_putendl_fd(char *s, int fd)$/;"	f	typeref:typename:void
+ft_putnbr_fd	01_Libft/Libft Submitted/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/;"	f	typeref:typename:void
+ft_putnbr_fd	01_Libft/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/;"	f	typeref:typename:void
+ft_putnbr_fd	05_Push_Swap/Libft/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/;"	f	typeref:typename:void
+ft_putstr	00_Exam Rank 02 revision/ft_putstr/ft_putstr.c	/^void	ft_putstr(char *str)$/;"	f	typeref:typename:void
+ft_putstr_fd	01_Libft/Libft Submitted/ft_putstr_fd.c	/^void	ft_putstr_fd(char *s, int fd)$/;"	f	typeref:typename:void
+ft_putstr_fd	01_Libft/ft_putstr_fd.c	/^void	ft_putstr_fd(char *s, int fd)$/;"	f	typeref:typename:void
+ft_putstr_fd	05_Push_Swap/Libft/ft_putstr_fd.c	/^void	ft_putstr_fd(char *s, int fd)$/;"	f	typeref:typename:void
+ft_split	01_Libft/Libft Submitted/ft_split.c	/^char	**ft_split(char const *s, char c)$/;"	f	typeref:typename:char **
+ft_split	01_Libft/ft_split.c	/^char	**ft_split(char const *s, char c)$/;"	f	typeref:typename:char **
+ft_split	05_Push_Swap/Libft/ft_split.c	/^char	**ft_split(char const *s, char c)$/;"	f	typeref:typename:char **
+ft_strchr	01_Libft/Libft Submitted/ft_strchr.c	/^char	*ft_strchr(const char *s, int i)$/;"	f	typeref:typename:char *
+ft_strchr	01_Libft/ft_strchr.c	/^char	*ft_strchr(const char *s, int i)$/;"	f	typeref:typename:char *
+ft_strchr	03_get_next_line/get_next_line_utils.c	/^char	*ft_strchr(const char *s, int i)$/;"	f	typeref:typename:char *
+ft_strchr	05_Push_Swap/Libft/ft_strchr.c	/^char	*ft_strchr(const char *s, int i)$/;"	f	typeref:typename:char *
+ft_strchr	etc/get_next_line_Chris.c	/^char	*ft_strchr(const char *s, int i)$/;"	f	typeref:typename:char *
+ft_strdup	01_Libft/Libft Submitted/ft_strdup.c	/^char	*ft_strdup(const char *s)$/;"	f	typeref:typename:char *
+ft_strdup	01_Libft/ft_strdup.c	/^char	*ft_strdup(const char *s)$/;"	f	typeref:typename:char *
+ft_strdup	03_get_next_line/get_next_line_utils.c	/^char	*ft_strdup(const char *s)$/;"	f	typeref:typename:char *
+ft_strdup	05_Push_Swap/Libft/ft_strdup.c	/^char	*ft_strdup(const char *s)$/;"	f	typeref:typename:char *
+ft_strdup	etc/get_next_line_utils (copy).c	/^char	*ft_strdup(const char *s)$/;"	f	typeref:typename:char *
+ft_striteri	01_Libft/Libft Submitted/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char*))$/;"	f	typeref:typename:void
+ft_striteri	01_Libft/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char*))$/;"	f	typeref:typename:void
+ft_striteri	05_Push_Swap/Libft/ft_striteri.c	/^void	ft_striteri(char *s, void (*f)(unsigned int, char*))$/;"	f	typeref:typename:void
+ft_strjoin	01_Libft/Libft Submitted/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f	typeref:typename:char *
+ft_strjoin	01_Libft/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f	typeref:typename:char *
+ft_strjoin	03_get_next_line/get_next_line_utils.c	/^char	*ft_strjoin(char *s1, char *s2)$/;"	f	typeref:typename:char *
+ft_strjoin	05_Push_Swap/Libft/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f	typeref:typename:char *
+ft_strjoin	etc/get_next_line_utils (copy).c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f	typeref:typename:char *
+ft_strlcat	01_Libft/Libft Submitted/ft_strlcat.c	/^size_t	ft_strlcat(char *dest, const char *src, size_t n)$/;"	f	typeref:typename:size_t
+ft_strlcat	01_Libft/ft_strlcat.c	/^size_t	ft_strlcat(char *dest, const char *src, size_t n)$/;"	f	typeref:typename:size_t
+ft_strlcat	05_Push_Swap/Libft/ft_strlcat.c	/^size_t	ft_strlcat(char *dest, const char *src, size_t n)$/;"	f	typeref:typename:size_t
+ft_strlcpy	01_Libft/Libft Submitted/ft_strlcpy.c	/^size_t	ft_strlcpy(char *dest, const char *src, size_t size)$/;"	f	typeref:typename:size_t
+ft_strlcpy	01_Libft/ft_strlcpy.c	/^size_t	ft_strlcpy(char *dest, const char *src, size_t size)$/;"	f	typeref:typename:size_t
+ft_strlcpy	05_Push_Swap/Libft/ft_strlcpy.c	/^size_t	ft_strlcpy(char *dest, const char *src, size_t size)$/;"	f	typeref:typename:size_t
+ft_strlcpy	etc/get_next_line_utils (copy).c	/^size_t	ft_strlcpy(char *dest, const char *src, size_t size)$/;"	f	typeref:typename:size_t
+ft_strlen	01_Libft/Libft Submitted/ft_strlen.c	/^size_t	ft_strlen(const char *s)$/;"	f	typeref:typename:size_t
+ft_strlen	01_Libft/ft_strlen.c	/^size_t	ft_strlen(const char *s)$/;"	f	typeref:typename:size_t
+ft_strlen	03_get_next_line/get_next_line_utils.c	/^size_t	ft_strlen(const char *s)$/;"	f	typeref:typename:size_t
+ft_strlen	05_Push_Swap/Libft/ft_strlen.c	/^size_t	ft_strlen(const char *s)$/;"	f	typeref:typename:size_t
+ft_strlen	etc/get_next_line_utils (copy).c	/^size_t	ft_strlen(const char *s)$/;"	f	typeref:typename:size_t
+ft_strmapi	01_Libft/Libft Submitted/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f	typeref:typename:char *
+ft_strmapi	01_Libft/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f	typeref:typename:char *
+ft_strmapi	05_Push_Swap/Libft/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f	typeref:typename:char *
+ft_strncmp	01_Libft/Libft Submitted/ft_strncmp.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f	typeref:typename:int
+ft_strncmp	01_Libft/ft_strncmp.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f	typeref:typename:int
+ft_strncmp	05_Push_Swap/Libft/ft_strncmp.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f	typeref:typename:int
+ft_strnstr	01_Libft/Libft Submitted/ft_strnstr.c	/^char	*ft_strnstr(const char *big, const char *little, size_t len)$/;"	f	typeref:typename:char *
+ft_strnstr	01_Libft/ft_strnstr.c	/^char	*ft_strnstr(const char *big, const char *little, size_t len)$/;"	f	typeref:typename:char *
+ft_strnstr	05_Push_Swap/Libft/ft_strnstr.c	/^char	*ft_strnstr(const char *big, const char *little, size_t len)$/;"	f	typeref:typename:char *
+ft_strrchr	01_Libft/Libft Submitted/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f	typeref:typename:char *
+ft_strrchr	01_Libft/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f	typeref:typename:char *
+ft_strrchr	05_Push_Swap/Libft/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f	typeref:typename:char *
+ft_strtrim	01_Libft/Libft Submitted/ft_strtrim.c	/^char	*ft_strtrim(char const *s1, char const *set)$/;"	f	typeref:typename:char *
+ft_strtrim	01_Libft/ft_strtrim.c	/^char	*ft_strtrim(char const *s1, char const *set)$/;"	f	typeref:typename:char *
+ft_strtrim	05_Push_Swap/Libft/ft_strtrim.c	/^char	*ft_strtrim(char const *s1, char const *set)$/;"	f	typeref:typename:char *
+ft_substr	01_Libft/Libft Submitted/ft_substr.c	/^char	*ft_substr(char const *s, unsigned int start, size_t len)$/;"	f	typeref:typename:char *
+ft_substr	01_Libft/ft_substr.c	/^char	*ft_substr(char const *s, unsigned int start, size_t len)$/;"	f	typeref:typename:char *
+ft_substr	03_get_next_line/get_next_line_utils.c	/^char	*ft_substr(char const *s, unsigned int start, size_t len)$/;"	f	typeref:typename:char *
+ft_substr	05_Push_Swap/Libft/ft_substr.c	/^char	*ft_substr(char const *s, unsigned int start, size_t len)$/;"	f	typeref:typename:char *
+ft_substr	etc/get_next_line_utils (copy).c	/^char	*ft_substr(char const *s, unsigned int start, size_t len)$/;"	f	typeref:typename:char *
+ft_tolower	01_Libft/Libft Submitted/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f	typeref:typename:int
+ft_tolower	01_Libft/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f	typeref:typename:int
+ft_tolower	05_Push_Swap/Libft/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f	typeref:typename:int
+ft_toupper	01_Libft/Libft Submitted/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f	typeref:typename:int
+ft_toupper	01_Libft/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f	typeref:typename:int
+ft_toupper	05_Push_Swap/Libft/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f	typeref:typename:int
+get_exact_line	03_get_next_line/get_next_line.c	/^char	*get_exact_line(char *line)$/;"	f	typeref:typename:char *
+get_exact_line	etc/get_next_line (with helper function).c	/^char	*get_exact_line(char *line)$/;"	f	typeref:typename:char *
+get_exact_line	etc/get_next_line refactored but timeout.c	/^char	*get_exact_line(char *line)$/;"	f	typeref:typename:char *
+get_exact_line	etc/get_next_line_29lines.c	/^char	*get_exact_line(char *line)$/;"	f	typeref:typename:char *
+get_exact_line	etc/get_next_line_Chris.c	/^char	*get_exact_line(char *line)$/;"	f	typeref:typename:char *
+get_next_line	03_get_next_line/get_next_line.c	/^char	*get_next_line(int fd)$/;"	f	typeref:typename:char *
+get_next_line	etc/get_next_line (with helper function).c	/^char	*get_next_line(int fd)$/;"	f	typeref:typename:char *
+get_next_line	etc/get_next_line refactored but timeout.c	/^char	*get_next_line(int fd)$/;"	f	typeref:typename:char *
+get_next_line	etc/get_next_line_29lines.c	/^char	*get_next_line(int fd)$/;"	f	typeref:typename:char *
+get_next_line	etc/get_next_line_Chris.c	/^char	*get_next_line(int fd)$/;"	f	typeref:typename:char *
+group	.vscode/tasks.json	/^            "group": {$/;"	o	object:tasks.0
+includePath	.vscode/c_cpp_properties.json	/^            "includePath": [$/;"	a	object:configurations.0
+intelliSenseMode	.vscode/c_cpp_properties.json	/^            "intelliSenseMode": "linux-gcc-x64"$/;"	s	object:configurations.0
+isDefault	.vscode/tasks.json	/^                "isDefault": true$/;"	b	object:tasks.0.group
+is_power_of_2	00_Exam Rank 02 revision/is_power_of_2/is_power_of_2.c	/^int	is_power_of_2(unsigned int n)$/;"	f	typeref:typename:int
+kind	.vscode/tasks.json	/^                "kind": "build",$/;"	s	object:tasks.0.group
+label	.vscode/tasks.json	/^            "label": "C\/C++: gcc build active file",$/;"	s	object:tasks.0
+main	00_Exam Rank 02 revision/alpha_mirror/alpha_mirror.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/camel_to_snake/camel_to_snake.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/do_op/do_op.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/epur_str/epur_str.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/first_word/first_word.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/fprime/fprime.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/ft_atoi.c/ft_atoi.c	/^int	main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/ft_itoa/ft_itoa.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/ft_list_size/ft_list_size.c	/^int main(void)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/ft_putstr/ft_putstr.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/hidenp/hidenp.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/inter/inter.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/is_power_of_2/is_power_of_2.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/linkedlist_isk/ft_add.c	/^int main(void)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/max (exam mistakes troubleshoot)/max.c	/^int	main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/max/max.c	/^int	main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/print_bits/print_bits.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/reverse_bits/reverse_bits.c	/^int main (int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/rot_13/rot_13.c	/^int	main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/str_capitalise/str_capitalise.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/swap_bits/swap_bits.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	00_Exam Rank 02 revision/union/union.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	01_Libft/main.c	/^int main(void)$/;"	f	typeref:typename:int
+main	02_ft_printf/test.c	/^int main(void)$/;"	f	typeref:typename:int
+main	03_get_next_line/main.c	/^int main(void)$/;"	f	typeref:typename:int
+main	05_Push_Swap/src/stack_operations_rotate.c	/^int main()$/;"	f	typeref:typename:int
+main	etc/main(argcargv).c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+main	etc/testread.c	/^int main() {$/;"	f	typeref:typename:int
+max	00_Exam Rank 02 revision/max (exam mistakes troubleshoot)/max.c	/^int	max(int* tab, unsigned int len)$/;"	f	typeref:typename:int
+max	00_Exam Rank 02 revision/max/max.c	/^int	max(int* tab, unsigned int len)$/;"	f	typeref:typename:int
+name	.vscode/c_cpp_properties.json	/^            "name": "Linux",$/;"	s	object:configurations.0
+next	00_Exam Rank 02 revision/ft_list_size/ft_list.h	/^    struct s_list   *next;$/;"	m	struct:s_list	typeref:struct:s_list *
+next	00_Exam Rank 02 revision/linkedlist_isk/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list *
+num_length	01_Libft/Libft Submitted/ft_itoa.c	/^static unsigned int	num_length(int n)$/;"	f	typeref:typename:unsigned int	file:
+num_length	01_Libft/ft_itoa.c	/^static unsigned int	num_length(int n)$/;"	f	typeref:typename:unsigned int	file:
+num_length	05_Push_Swap/Libft/ft_itoa.c	/^static unsigned int	num_length(int n)$/;"	f	typeref:typename:unsigned int	file:
+options	.vscode/tasks.json	/^            "options": {$/;"	o	object:tasks.0
+print_binary	00_Exam Rank 02 revision/reverse_bits/reverse_bits.c	/^void	print_binary(unsigned char byte)$/;"	f	typeref:typename:void
+print_bits	00_Exam Rank 02 revision/print_bits/print_bits.c	/^void print_bits(unsigned char octet)$/;"	f	typeref:typename:void
+print_bits	00_Exam Rank 02 revision/swap_bits/swap_bits.c	/^void print_bits(unsigned char octet)$/;"	f	typeref:typename:void
+problemMatcher	.vscode/tasks.json	/^            "problemMatcher": [$/;"	a	object:tasks.0
+push	05_Push_Swap/src/stack_operations_push.c	/^void	push(t_stack *stack_a, t_stack *stack_b)$/;"	f	typeref:typename:void
+push_a	05_Push_Swap/src/stack_operations_push.c	/^void	push_a(t_stack *stack_a, t_stack *stack_b)$/;"	f	typeref:typename:void
+push_b	05_Push_Swap/src/stack_operations_push.c	/^void	push_b(t_stack *stack_a, t_stack *stack_b)$/;"	f	typeref:typename:void
+re	01_Libft/Libft Submitted/Makefile	/^re: fclean all$/;"	t
+re	01_Libft/Makefile	/^re: fclean all$/;"	t
+re	02_ft_printf/Makefile	/^re: fclean all$/;"	t
+re	02_ft_printf/ft_printf_submitted/Makefile	/^re: fclean all$/;"	t
+re	05_Push_Swap/Libft/Makefile	/^re: fclean all$/;"	t
+re	05_Push_Swap/Makefile	/^re: fclean all$/;"	t
+read_and_store_buffer	03_get_next_line/get_next_line.c	/^static char	*read_and_store_buffer(char **left, char *buffer)$/;"	f	typeref:typename:char *	file:
+read_and_store_buffer	etc/get_next_line (with helper function).c	/^static char *read_and_store_buffer (char **left, char *buffer)$/;"	f	typeref:typename:char *	file:
+read_to_buffer	etc/get_next_line refactored but timeout.c	/^static ssize_t	read_to_buffer(int fd, char *buffer)$/;"	f	typeref:typename:ssize_t	file:
+reverse_bits	00_Exam Rank 02 revision/reverse_bits/reverse_bits.c	/^unsigned char	reverse_bits(unsigned char octet)$/;"	f	typeref:typename:unsigned char
+reverse_rotate	05_Push_Swap/src/stack_operations_reverse.c	/^void	reverse_rotate(t_stack *stack)$/;"	f	typeref:typename:void
+reverse_rotate_a	05_Push_Swap/src/stack_operations_reverse.c	/^void	reverse_rotate_a(t_stack *stack_a)$/;"	f	typeref:typename:void
+reverse_rotate_a_and_b	05_Push_Swap/src/stack_operations_reverse.c	/^void	reverse_rotate_a_and_b(t_stack *stack_a, t_stack *stack_b)$/;"	f	typeref:typename:void
+reverse_rotate_b	05_Push_Swap/src/stack_operations_reverse.c	/^void	reverse_rotate_b(t_stack *stack_b)$/;"	f	typeref:typename:void
+rotate	05_Push_Swap/src/stack_operations_rotate.c	/^void	rotate(t_stack *stack)$/;"	f	typeref:typename:void
+rotate_a	05_Push_Swap/src/stack_operations_rotate.c	/^void	rotate_a(t_stack *stack_a)$/;"	f	typeref:typename:void
+rotate_a_and_b	05_Push_Swap/src/stack_operations_rotate.c	/^void	rotate_a_and_b(t_stack *stack_a, t_stack *stack_b)$/;"	f	typeref:typename:void
+rotate_b	05_Push_Swap/src/stack_operations_rotate.c	/^void	rotate_b(t_stack *stack_b)$/;"	f	typeref:typename:void
+s_list	00_Exam Rank 02 revision/ft_list_size/ft_list.h	/^typedef struct s_list$/;"	s
+s_list	00_Exam Rank 02 revision/linkedlist_isk/libft.h	/^typedef struct s_list$/;"	s
+s_stack	05_Push_Swap/include/push_swap.h	/^typedef struct s_stack$/;"	s
+set_line	03_get_next_line/get_next_line.c	/^static char	*set_line(char *line_buffer)$/;"	f	typeref:typename:char *	file:
+set_line	etc/get_next_line (with helper function).c	/^static char	*set_line(char *line_buffer)$/;"	f	typeref:typename:char *	file:
+set_line	etc/get_next_line refactored but timeout.c	/^static char	*set_line(char *line_buffer)$/;"	f	typeref:typename:char *	file:
+set_line	etc/get_next_line_29lines.c	/^static char	*set_line(char *line_buffer)$/;"	f	typeref:typename:char *	file:
+set_line	etc/get_next_line_Chris.c	/^static char	*set_line(char *line_buffer)$/;"	f	typeref:typename:char *	file:
+size	05_Push_Swap/include/push_swap.h	/^	int	size;$/;"	m	struct:s_stack	typeref:typename:int
+sort_3	05_Push_Swap/src/sort_3.c	/^void	sort_3(t_stack *stack)$/;"	f	typeref:typename:void
+swap	05_Push_Swap/src/stack_operations_swap.c	/^void	swap(t_stack *stack)$/;"	f	typeref:typename:void
+swap_a	05_Push_Swap/src/stack_operations_swap.c	/^void	swap_a(t_stack *stack_a)$/;"	f	typeref:typename:void
+swap_a_b	05_Push_Swap/src/stack_operations_swap.c	/^void	swap_a_b(t_stack *stack_a,t_stack *stack_b)$/;"	f	typeref:typename:void
+swap_b	05_Push_Swap/src/stack_operations_swap.c	/^void	swap_b(t_stack *stack_b)$/;"	f	typeref:typename:void
+swap_bits	00_Exam Rank 02 revision/swap_bits/swap_bits.c	/^unsigned char swap_bits(unsigned char octet)$/;"	f	typeref:typename:unsigned char
+t_list	00_Exam Rank 02 revision/ft_list_size/ft_list.h	/^}               t_list;$/;"	t	typeref:struct:s_list
+t_list	00_Exam Rank 02 revision/linkedlist_isk/libft.h	/^}	t_list;$/;"	t	typeref:struct:s_list
+t_stack	05_Push_Swap/include/push_swap.h	/^}	t_stack;$/;"	t	typeref:struct:s_stack
+tasks	.vscode/tasks.json	/^    "tasks": [$/;"	a
+type	.vscode/tasks.json	/^            "type": "cppbuild",$/;"	s	object:tasks.0
+version	.vscode/c_cpp_properties.json	/^    "version": 4$/;"	n
+version	.vscode/tasks.json	/^    "version": "2.0.0"$/;"	s
+wordcount	01_Libft/Libft Submitted/ft_split.c	/^static unsigned int	wordcount(char *s, char c)$/;"	f	typeref:typename:unsigned int	file:
+wordcount	01_Libft/ft_split.c	/^static unsigned int	wordcount(char *s, char c)$/;"	f	typeref:typename:unsigned int	file:
+wordcount	05_Push_Swap/Libft/ft_split.c	/^static unsigned int	wordcount(char *s, char c)$/;"	f	typeref:typename:unsigned int	file:
