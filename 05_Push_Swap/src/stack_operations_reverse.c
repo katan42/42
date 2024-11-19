@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_operations_reverse.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:59:49 by katan             #+#    #+#             */
-/*   Updated: 2024/11/19 15:28:25 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/19 23:36:14 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	reverse_rotate_b(t_stack *stack_b)
 
 void	reverse_rotate_a_and_b(t_stack *stack_a, t_stack *stack_b)
 {
-	if (stack_a-> size > 1 && stack_b-> size > 1)
+	if (stack_a->size > 1 && stack_b->size > 1)
 	{	
 		reverse_rotate(stack_a);
 		reverse_rotate(stack_b);
