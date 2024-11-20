@@ -6,13 +6,19 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:13 by katan             #+#    #+#             */
-/*   Updated: 2024/11/19 18:19:49 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/20 16:21:47 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+is_numbers
 
-void	error_exit(void)
-{
-    write(2, "Error\n", 6);
-    exit(1);
-}
+check duplicates
+
+overflow?
+
+
+
+
+
+
+int check_num(??)
