@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:16:35 by katan             #+#    #+#             */
-/*   Updated: 2024/11/19 23:31:10 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/20 09:23:55 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@ typedef struct s_stack
 	int	*array;
 	int	size;
 }	t_stack;
+
+typedef struct s_norm
+{
+	int	value;
+	int	norm;
+	int	orig_pos;
+}	t_norm;
+
 
 //operations
 void	push(t_stack *stack_1, t_stack *stack_2);

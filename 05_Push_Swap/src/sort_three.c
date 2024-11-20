@@ -14,9 +14,13 @@
 
 void	sort_three(t_stack *stack)
 {
-	int a = stack->array[0]; 
-	int b = stack->array[1]; 
-	int c = stack->array[2]; 
+	int a; 
+	int b;
+	int c;
+
+	a = stack->array[0]; 
+	b = stack->array[1]; 
+	c = stack->array[2]; 
 
 	if (a < b && b > c && a < c) // 1 3 2
 	{
@@ -34,12 +38,6 @@ void	sort_three(t_stack *stack)
 		swap_a(stack);
 		reverse_rotate_a(stack);
 	}
-		
-	
-
-
-
-
 }
 
 
