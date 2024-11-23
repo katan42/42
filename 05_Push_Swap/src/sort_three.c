@@ -12,15 +12,15 @@
 
 #include "push_swap.h"
 
-void	sort_three(t_stack *stack)
+void	sort_three(t_stack *stack_a)
 {
 	int a; 
 	int b;
 	int c;
 
-	a = stack->array[0]; 
-	b = stack->array[1]; 
-	c = stack->array[2]; 
+	a = stack_a->array[0]->norm_pos; 
+	b = stack_a->array[1]->norm_pos; 
+	c = stack_a->array[2]->norm_pos; 
 
 	if (a < b && b > c && a < c) // 1 3 2
 	{

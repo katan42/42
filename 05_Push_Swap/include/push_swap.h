@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:16:35 by katan             #+#    #+#             */
-/*   Updated: 2024/11/20 14:43:19 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/23 19:13:05 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,22 @@
 
 typedef struct s_stack
 {
-	int	*array;
+	t_norm	**array;
 	int	size;
 }	t_stack;
 
 typedef struct s_norm
 {
 	int	value;
-	int	norm;
-	int	orig_pos;
+	int	norm_pos;
+	//int	orig_pos;
 }	t_norm;
 
+
+t_stack *init_stack(int capacity)
+t_stack	*init_stacks(int capacity, t_stack *stack_a, t_stack *stack_b, char **argv)
+int check_num(char const *str)
+void	normalise_values(t_stack *stack_a)
 
 //operations
 void	push(t_stack *stack_1, t_stack *stack_2);
@@ -54,15 +59,13 @@ void	swap_b(t_stack *stack_b);
 void	swap_a_b(t_stack *stack_a,t_stack *stack_b);
 
 //sort
-void	sort_three(t_stack *stack);
+void	sort_three(t_stack *stack_a);
 void	sort_five(t_stack *stack_a, t_stack *stack_b);
 int 	sort_menu (t_stack *stack_a, t_stack *stack_b, int count);
 int		sort_check (t_stack *stack_a);
 
 //error msg
 void	error_exit(void);
-
-
 
 
 #endif

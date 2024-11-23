@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 17:06:35 by katan             #+#    #+#             */
-/*   Updated: 2024/06/24 22:54:18 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/23 19:08:19 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
 	long	i;
 	long	result;
@@ -21,6 +21,8 @@ int	ft_atoi(const char *str)
 	i = 0;
 	result = 0;
 	sign = 1;
+	if (str[i] > 2147483647 || str[i] <-2147483647)
+		return (2147483648);
 	while ((str[i] == 32) || (str[i] >= 9 && str[i] <= 13))
 	{
 		i++;
@@ -38,20 +40,20 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * result);
 }
-/*
-int	main(void)
-{
-	char	str1[] = "     123";
-	char	str2[] = "-456";
-	char	str3[] = "abc123";
-	char	str4[] = "+789";
+
+// int	main(void)
+// {
+// 	char	str1[] = "     123";
+// 	char	str2[] = "-456";
+// 	char	str3[] = "abc123";
+// 	char	str4[] = "+++789";
 	
-	printf("      123: %d\n", ft_atoi(str1));
-	printf("-456: %d\n", ft_atoi(str2));
-	printf("abc123: %d\n", ft_atoi(str3));
-	printf("+789: %d\n", ft_atoi(str4));
-	printf("      123: %d\n", atoi(str1));
-	printf("-456: %d\n", atoi(str2));
-	printf("abc123: %d\n", atoi(str3));
-	printf("+789: %d\n", atoi(str4));
-}*/
+// 	printf("      123: %d\n", ft_atoi(str1));
+// 	printf("-456: %d\n", ft_atoi(str2));
+// 	printf("abc123: %d\n", ft_atoi(str3));
+// 	printf("+789: %d\n", ft_atoi(str4));
+// 	printf("      123: %d\n", atoi(str1));
+// 	printf("-456: %d\n", atoi(str2));
+// 	printf("abc123: %d\n", atoi(str3));
+// 	printf("+789: %d\n", atoi(str4));
+// }
