@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   normalise_values.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 09:24:30 by katan             #+#    #+#             */
-/*   Updated: 2024/11/23 17:58:26 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/24 02:10:21 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	normalise_values(t_stack *stack_a)
 		j = 0;	
 		while (j < stack_a->size)
 		{	
-			if (stack_a->array[i]->value > stack_a->array[j]->value )
+			if (stack_a->array[i]->value > stack_a->array[j]->value)
 				stack_a->array[i]->norm_pos++;
 			j++;
 		}

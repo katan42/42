@@ -24,19 +24,19 @@ void	sort_three(t_stack *stack_a)
 
 	if (a < b && b > c && a < c) // 1 3 2
 	{
-		reverse_rotate_a(stack);
-		swap_a(stack);
+		reverse_rotate_a(stack_a);
+		swap_a(stack_a);
 	}
 	else if (a > b && b < c && a < c) // 2 1 3
-		swap_a(stack);
+		swap_a(stack_a);
 	else if (a < b && b > c && c < a) // 2 3 1
-		reverse_rotate_a(stack);
+		reverse_rotate_a(stack_a);
 	else if (a > b && a > c && b < c) // 3 1 2
-		rotate_a(stack);
+		rotate_a(stack_a);
 	else if (a > b && a > c && b > c) // 3 2 1
 	{
-		swap_a(stack);
-		reverse_rotate_a(stack);
+		swap_a(stack_a);
+		reverse_rotate_a(stack_a);
 	}
 }
 

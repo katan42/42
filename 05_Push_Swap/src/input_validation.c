@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_validation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:13 by katan             #+#    #+#             */
-/*   Updated: 2024/11/23 19:05:04 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/24 02:10:36 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@
 
 // is_numbers
 
-// check duplicates
+
 
 // overflow?
+// check duplicates
 
 if (num > INT_MAX || num < INT_MIN)
     return (write(2,"Error\n,6)",1));
