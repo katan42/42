@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 17:06:35 by katan             #+#    #+#             */
-/*   Updated: 2024/06/24 01:00:48 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/24 19:17:52 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
-int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -52,11 +52,4 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-void	ft_printchar(char c, int *count);
-void	ft_printstr(char *s, int *count);
-void	ft_print_ptr(size_t ptr, int *count);
-void	ft_print_nbr(int n, int *count);
-void	ft_print_unsigned_nbr(unsigned int n, int *count);
-void	ft_print_hex(unsigned int n, int *count, char conversion);
-int		ft_printf(const char *s, ...);
 #endif

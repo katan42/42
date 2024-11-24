@@ -23,7 +23,7 @@ int sort_menu (t_stack *stack_a, t_stack *stack_b, int count)
 	else if (count == 5)
 		sort_five(stack_a, stack_b);
 	else
-		sort_large(stack_a,stack_b);
+		radix_sort(stack_a, stack_b);
 	return (0);
 }
 
@@ -34,10 +34,9 @@ int	sort_check (t_stack *stack_a)
 	i = 0;
 	while (i < stack_a->size - 1)
 	{
-		if (stack_a->array[i] > stack_a->array[i+1])
+		if (stack_a->array[i].norm_pos > stack_a->array[i+1].norm_pos)
 			return (0);
 		i++;
 	}
 	return(1);
- 
 }

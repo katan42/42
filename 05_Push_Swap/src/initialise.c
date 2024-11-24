@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 13:48:35 by katan             #+#    #+#             */
-/*   Updated: 2024/11/23 18:32:27 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/24 21:54:40 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,19 @@ t_stack	*init_stacks(int capacity, t_stack *stack_a, t_stack *stack_b, char **ar
         free(stack_a);
         return (NULL);
     }
-	i = 0;
-	while (i < capacity)
-	{
-		stack_a->array[i] = malloc(sizeof(t_norm *));
-		if (!stack_a->array[i])
+    stack_a->array = malloc(sizeof(t_norm) * capacity);
+		if (!(stack_a->array))
 		{
 			free(stack_a); 
 			return (NULL);
 		}
-		stack_a->array[i]->value = argv[i + 1];
-		stack_a->array[i]->norm_pos = 1;
+	i = 0;
+	while (i < capacity)
+	{
+        if (!validate_input(argv[i+1], capacity))
+            error_exit(stack_a, stack_b);
+		stack_a->array[i].value = ft_atol(argv[i + 1]);
+		stack_a->array[i].norm_pos = 1;
 		i++;
 	}
     return (stack_a);

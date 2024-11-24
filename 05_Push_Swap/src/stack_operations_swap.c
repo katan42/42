@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:00:09 by katan             #+#    #+#             */
-/*   Updated: 2024/11/18 16:00:10 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/24 21:28:23 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 // ss : sa and sb at the same time.
 void	swap(t_stack *stack)
 {
-	int	temp;
+	t_norm	temp;
 
 	if (stack-> size > 1)
 	{	
