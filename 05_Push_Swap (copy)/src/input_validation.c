@@ -6,10 +6,12 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:13 by katan             #+#    #+#             */
-/*   Updated: 2024/11/25 14:09:50 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/24 19:51:00 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include "../Libft/libft.h"
 #include "push_swap.h"
 
 int	check_duplicates(char **argv, int capacity)
@@ -32,6 +34,15 @@ int	check_duplicates(char **argv, int capacity)
 			j++;			
 		}
 		i++;
+	}
+	return (0);
+}
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:00:09 by katan             #+#    #+#             */
-/*   Updated: 2024/11/25 14:10:13 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/24 21:28:23 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	swap(t_stack *stack)
 {
 	t_norm	temp;
 
-	if (stack->size > 1)
+	if (stack-> size > 1)
 	{	
 		temp = stack->array[0];
 		stack->array[0] = stack->array[1];
@@ -30,7 +30,7 @@ void	swap(t_stack *stack)
 
 void	swap_a(t_stack *stack_a)
 {
-	if (stack_a->size > 1)
+	if (stack_a-> size > 1)
 	{	
 		swap(stack_a);
 		write(1, "sa\n", 3);
