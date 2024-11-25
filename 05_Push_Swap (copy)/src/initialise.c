@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 13:48:35 by katan             #+#    #+#             */
-/*   Updated: 2024/11/25 10:42:28 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/25 18:33:55 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_stack	*init_stacks(int capacity, t_stack *stack_a, t_stack *stack_b, char **ar
         if (!validate_input(argv[i+1], capacity))
             error_exit(stack_a, stack_b);
         stack_a->array[i].value = ft_atol(argv[i + 1]);
-        stack_a->array[i].norm_pos = 1;
+        stack_a->array[i].norm = 1;
 	    i++;
     }
     return (stack_a);

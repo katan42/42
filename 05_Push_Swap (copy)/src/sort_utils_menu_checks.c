@@ -34,7 +34,7 @@ int	sort_check (t_stack *stack_a)
 	i = 0;
 	while (i < stack_a->size - 1)
 	{
-		if (stack_a->array[i].norm_pos > stack_a->array[i+1].norm_pos)
+		if (stack_a->array[i].norm > stack_a->array[i+1].norm)
 			return (0);
 		i++;
 	}

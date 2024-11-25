@@ -6,13 +6,12 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:16:35 by katan             #+#    #+#             */
-/*   Updated: 2024/11/24 21:49:27 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/25 19:46:33 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
 
 # include <stdlib.h>
 # include <stdio.h>
@@ -25,7 +24,7 @@
 typedef struct s_norm
 {
 	int	value;
-	int	norm_pos;
+	int	norm;
 }	t_norm;
 
 typedef struct s_stack
@@ -34,11 +33,12 @@ typedef struct s_stack
 	int		size;
 }	t_stack;
 
-t_stack *init_stack(int capacity);
-t_stack	*init_stacks(int capacity, t_stack *stack_a, t_stack *stack_b, char **argv);
+t_stack	*init_stack(int capacity);
+t_stack	*init_stacks(int capacity, t_stack **stack_a,
+			t_stack **stack_b, char **argv);
 int		check_duplicates(char **argv, int size);
-int 	check_num(char const *str);
-int 	validate_input(char *str, int capacity);
+int		check_num(char const *str);
+int		validate_input(char *str);
 void	normalise_values(t_stack *stack_a);
 
 //operations
@@ -56,7 +56,7 @@ void	rotate_a_and_b(t_stack *stack_a, t_stack *stack_b);
 void	swap(t_stack *stack);
 void	swap_a(t_stack *stack_a);
 void	swap_b(t_stack *stack_b);
-void	swap_a_b(t_stack *stack_a,t_stack *stack_b);
+void	swap_a_b(t_stack *stack_a, t_stack *stack_b);
 
 //sort
 void	sort_three(t_stack *stack_a);
@@ -68,5 +68,5 @@ int		sort_check(t_stack *stack_a);
 //error msg
 void	free_stack(t_stack *stack);
 int		free_everything(t_stack *stack_a, t_stack *stack_b);
-int		error_exit(t_stack *stack_a, t_stack *stack_b);
+int		error_exit(t_stack **stack_a, t_stack **stack_b);
 #endif

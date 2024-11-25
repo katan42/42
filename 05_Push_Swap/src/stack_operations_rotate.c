@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:00:01 by katan             #+#    #+#             */
-/*   Updated: 2024/11/24 21:28:12 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/25 20:00:32 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,12 @@ void	rotate(t_stack *stack)
 	t_norm	temp;
 	int		i;
 
-	if (stack->size > 1)
-	{	
-		i = 0;
-		temp = stack->array[i];
-		while (i < stack->size - 1)
-		{
-			stack->array[i] = stack->array[i+1];
-			i++;
-		}
+	i = 0;
+	temp = stack->array[i];
+	while (i < stack->size - 1)
+	{
+		stack->array[i] = stack->array[i + 1];
+		i++;
 	}
 	stack->array[i] = temp;
 }

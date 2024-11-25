@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:16:35 by katan             #+#    #+#             */
-/*   Updated: 2024/11/24 21:49:27 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/25 18:33:55 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 typedef struct s_norm
 {
 	int	value;
-	int	norm_pos;
+	int	norm;
 }	t_norm;
 
 typedef struct s_stack

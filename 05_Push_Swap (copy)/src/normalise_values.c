@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 09:24:30 by katan             #+#    #+#             */
-/*   Updated: 2024/11/24 21:25:58 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/25 18:33:55 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	normalise_values(t_stack *stack_a)
 		while (j < stack_a->size)
 		{	
 			if (stack_a->array[i].value > stack_a->array[j].value)
-				stack_a->array[i].norm_pos++;
+				stack_a->array[i].norm++;
 			j++;
 		}
 		i++;

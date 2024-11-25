@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*   sort_utils_menu_checks.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>                +#+  +:+       +#+        */
+/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 22:29:13 by katan             #+#    #+#             */
-/*   Updated: 2024/11/19 23:27:48 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/25 20:30:31 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int sort_menu (t_stack *stack_a, t_stack *stack_b, int count)
+int	sort_menu(t_stack *stack_a, t_stack *stack_b, int count)
 {
 	if (count == 1)
 		return (1);
@@ -27,16 +27,16 @@ int sort_menu (t_stack *stack_a, t_stack *stack_b, int count)
 	return (0);
 }
 
-int	sort_check (t_stack *stack_a)
+int	sort_check(t_stack *stack_a)
 {
 	int	i;
 
 	i = 0;
 	while (i < stack_a->size - 1)
 	{
-		if (stack_a->array[i].norm_pos > stack_a->array[i+1].norm_pos)
+		if (stack_a->array[i].norm > stack_a->array[i + 1].norm)
 			return (0);
 		i++;
 	}
-	return(1);
+	return (1);
 }

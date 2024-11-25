@@ -14,18 +14,18 @@
 
 void	sort_five(t_stack *stack_a, t_stack *stack_b)
 {
-	while (stack_a->array[0].norm_pos > 1)
+	while (stack_a->array[0].norm > 1)
 	{
 		rotate_a(stack_a);
 	}
 	push_b(stack_a, stack_b);
-	while (stack_a->array[0].norm_pos > 1)
+	while (stack_a->array[0].norm > 1)
 	{
 		rotate_a(stack_a);
 	}
 	push_b(stack_a, stack_b);
 	sort_three(stack_a);
-	if (stack_b->array[0].norm_pos < stack_b->array[1].norm_pos)
+	if (stack_b->array[0].norm < stack_b->array[1].norm)
 		swap_b(stack_b);
 	push_a(stack_a, stack_b);
 }

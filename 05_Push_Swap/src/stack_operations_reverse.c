@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:59:49 by katan             #+#    #+#             */
-/*   Updated: 2024/11/25 10:44:16 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/25 20:19:35 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,16 @@ void	reverse_rotate(t_stack *stack)
 {
 	t_norm	temp;
 	int		i;
-	
+
 	i = stack->size - 1;
 	temp = stack->array[i];
 	while (i > 0)
 	{
-		stack->array[i] = stack->array[i-1];
+		stack->array[i] = stack->array[i - 1];
 		i--;
 	}
 	stack->array[0] = temp;
 }
-
 
 void	reverse_rotate_a(t_stack *stack_a)
 {
