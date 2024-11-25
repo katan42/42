@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/11/25 20:18:19 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/25 23:24:52 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	if (argc == 2 && argv[1][0] == '\0')
-		return (write(2, "Error\n,6)", 1));
+		return (write(2, "Error\n", 6), 1);
 	count = argc - 1;
 	if (!init_stacks(count, &stack_a, &stack_b, argv))
 		error_exit(&stack_a, &stack_b);
