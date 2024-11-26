@@ -8,7 +8,7 @@ SRC = ./src/initialise.c ./src/input_validation.c ./src/main.c ./src/normalise_v
 
 OBJ =$(SRC:.c=.o)
 
-CC = cc -g
+CC = cc
 INCLUDE = -I./include/ -I$(LIBFT_DIR)
 CFLAGS = -Wall -Wextra -Werror $(INCLUDE)
 
