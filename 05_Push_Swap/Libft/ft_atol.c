@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 17:06:35 by katan             #+#    #+#             */
-/*   Updated: 2024/11/25 19:33:55 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/26 19:14:57 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ long	ft_atol(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
-		if (result > 2147483647 || result * sign < -2147483648)
+		if (result * sign > 2147483647 || result * sign < -2147483648)
 			return (2147483648);
 		i++;
 	}
