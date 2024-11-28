@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/11/28 17:48:11 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/28 23:46:34 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int		count;
+	int pid;
 
-	if (argc < 2)
-		return (0);
-	if (argc == 2 && argv[1][0] == '\0')
-		return (write(2, "Error\n", 6), 1);
-	count = argc - 1;
-	if (!init_stacks(count, &stack_a, &stack_b, argv))
-		error_exit(&stack_a, &stack_b);
-	normalise_values(stack_a);
-	if (!sort_check(stack_a))
-		sort_menu(stack_a, stack_b, count);
-	free_everything(stack_a, stack_b);
+	if argc == 3
+
+		pid = ft_atol(argv[1]);
+		
+	prog, PID, argv[2]
+	Sending Signals: The client sends signals (SIGUSR1 and SIGUSR2) to the server. This is done by invoking system calls like kill() in the client’s code, specifying the server’s PID and the signal to send.
+
+Encoding Data: The client encodes the string it needs to send into a series of signals. For example, it might encode the string into bits, with SIGUSR1 representing ‘0’ and SIGUSR2 representing ‘1’.
+
+Transmission: The client sends these signals one by one to the server. The operating system delivers these signals to the server process.
+
 	return (0);
 }
