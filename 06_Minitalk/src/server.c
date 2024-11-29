@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/11/29 20:14:36 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/30 01:41:31 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,21 @@ void handle_signal(int signum)// Must take int parameter and return void
 	number = (asciiCode >> i);
 }
 
+if ((sigaction(SIGUSR1, &sa, NULL == -1)) || (sigaction(SIGUSR2, &sa, NULL == -1)))
+	exit(ft_printf("Signal handler setup failed\n"), EXIT_FAILURE);
 
 
 int main(void)
 {
-	ft_printf("PID is %d\n", getpid());
+	struct	sigaction sa;
 
+	sa.sa_handler = handle_signal;
+??mask?
 
+	ft_printf("server PID is %d\n", getpid());
 
+	sigaction(SIGUSR1, &sa, NULL);
+	sigaction(SIGUSR2, &sa, NULL);
 
 	while (1) //infinite loop
 		pause();
