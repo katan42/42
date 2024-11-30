@@ -3,70 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/11/30 01:41:31 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/30 18:44:44 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int number;
+t_msg	g_msg;
 
-void handle_signal(int signum)// Must take int parameter and return void
+void handle_signal(int signum)
 {
+	int	bit_val;
+
+	bit_val = 0;
 	if (signum == SIGUSR1)
-		bit = 0;
+		bit_val = 0;
 	else if (signum == SIGUSR2)
-		bit = 1;
+		bit_val = 1;
+	g_msg.c = g_msg.c | (bit_val << g_msg.bit_count);
+	g_msg.bit_count++;
+	if (g_msg.bit_count == 8)
+	{
+		ft_printf("%c", g_msg.c);
+		if (!g_msg.c)
+			ft_printf("\n");
+		g_msg.c = 0;
+		g_msg.bit_count = 0;
+	}
+
 }
 
+//sigemptyset(&sa.sa_mask) initializes the signal mask to an empty set,
+//Think of sa_flags like switches that modify how your signal handler behaves:All switches off (default behavior)
 
- (i = 7; i >= 0; i--)
-{
-	number = (asciiCode >> i);
-}
-
-if ((sigaction(SIGUSR1, &sa, NULL == -1)) || (sigaction(SIGUSR2, &sa, NULL == -1)))
-	exit(ft_printf("Signal handler setup failed\n"), EXIT_FAILURE);
-
-
-int main(void)
+int main(int argc, char **argv)
 {
 	struct	sigaction sa;
 
 	sa.sa_handler = handle_signal;
-??mask?
+	sigemptyset(&sa.sa_mask);
+	sa.sa_flags = 0;
+	(void)argv;
 
+	if (argc != 1)
+		exit(write(2, "Error\n", 6));
 	ft_printf("server PID is %d\n", getpid());
-
-	sigaction(SIGUSR1, &sa, NULL);
-	sigaction(SIGUSR2, &sa, NULL);
-
-	while (1) //infinite loop
-		pause();
-	return (0);
-
-
-
-getpid()
-pid it INT_MAX
-if ESRCH
-prints PID
-EPERM
-
-Signal handler
-Receiving Signals: The server has signal handlers set up to catch these signals. When a signal is received, the corresponding handler function is executed.
-
-
-
-
-Reception: The server, upon receiving each signal, uses its signal handlers to process them.
-
-decoding
-Decoding: The server decodes the series of signals back into the original string or data format.
-
+	if ((sigaction(SIGUSR1, &sa, NULL) == -1) || (sigaction(SIGUSR2, &sa, NULL) == -1))
+		exit(ft_printf("Signal handler setup failed\n"));
 	while (1) //infinite loop
 		pause();
 	return (0);

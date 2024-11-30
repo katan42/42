@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/11/30 01:42:06 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/30 18:37:08 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-
 
 //sending least significant bit first.. ie rightmost
 void	str_to_bit_send(char *str, pid_t pid)
@@ -23,9 +22,9 @@ void	str_to_bit_send(char *str, pid_t pid)
 	bit = 0;
 	while(str[i] != '\0')
 	{
-		while (bit < CHAR_BIT)
+		while (bit < 8)
 		{
-			if(str[i] >> bit & 1 == 0)
+			if(((str[i] >> bit) & 1) == 0)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
@@ -35,33 +34,6 @@ void	str_to_bit_send(char *str, pid_t pid)
 	bit = 0;
 	i++;
 	}
-}
-
-
-
-
-int	main(int argc, char **argv)
-{
-	pid_t	pid;
-	char	*str;
-
-	str = argv[2];
-	if (argc != 3)
-		exit(ft_printf("usage: ./client <PID> <message> \n", EXIT_FAILURE));
-	pid_error_check(argv[1]);
-	str_to_bit_send(*str, pid);
-	str_to_bit_send("\0", pid);
-	
-}
-
-		//  process.
-	if (errno == EINVAL)
-	{
-		write(1, "Error\n", 6);
-		return (1);
-	}
-
-	return (0);
 }
 
 int	pid_error_check(char *str)
@@ -80,8 +52,9 @@ int	pid_error_check(char *str)
 		i++;
 	}
 	num = ft_atol(str);
+	//ft_printf("%d", num);
 	if (num <= 0 || num > INT_MAX)
-		exit(write(2, "Error, invalid PID\n", 19), EXIT_FAILURE);
+		exit(write(2, "Error, invalid PID\n", 19));
 	if(kill(num, 0) == -1)
 	{
 		if(errno == ESRCH)
@@ -93,3 +66,16 @@ int	pid_error_check(char *str)
 	return(0);
 }
 
+int	main(int argc, char **argv)
+{
+	pid_t	pid;
+	char	*str;
+
+	if (argc != 3)
+		exit(ft_printf("Error, usage should be: ./client <PID> <message> \n"));
+	pid = ft_atol(argv[1]);
+	str = argv[2];
+	pid_error_check(argv[1]);
+	str_to_bit_send(str, pid);
+	str_to_bit_send("\0", pid);
+}
