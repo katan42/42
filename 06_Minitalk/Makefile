@@ -20,16 +20,16 @@ SRC_SERVER = ./src/server.c
 OBJ_CLIENT =$(SRC_CLIENT:.c=.o)
 OBJ_SERVER =$(SRC_SERVER:.c=.o)
 
-CC = cc -g
+CC = cc
 INCLUDE = -I./include/ -I$(LIBFT_DIR) -I$(FT_PRINTF_DIR)
 CFLAGS = -Wall -Wextra -Werror $(INCLUDE)
 
 all: $(NAMES)
 
-client: $(OBJ_CLIENT) $(OBJ_SHARED) $(LIBFT_DIR)/libft.a $(FT_PRINTF_DIR)/libftprintf.a
+client: $(OBJ_CLIENT) $(LIBFT_DIR)/libft.a $(FT_PRINTF_DIR)/libftprintf.a
 	    $(CC) $(OBJ_CLIENT) $(LIBFT_DIR)/libft.a $(FT_PRINTF_DIR)/libftprintf.a -o client
 
-server: $(OBJ_SERVER) $(OBJ_SHARED) $(LIBFT_DIR)/libft.a $(FT_PRINTF_DIR)/libftprintf.a
+server: $(OBJ_SERVER) $(LIBFT_DIR)/libft.a $(FT_PRINTF_DIR)/libftprintf.a
 	    $(CC) $(OBJ_SERVER) $(LIBFT_DIR)/libft.a $(FT_PRINTF_DIR)/libftprintf.a -o server
 
 $(LIBFT_DIR)/libft.a:

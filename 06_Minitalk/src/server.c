@@ -6,17 +6,16 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/11/30 18:44:44 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/30 23:24:26 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-t_msg	g_msg;
-
-void handle_signal(int signum)
+void	handle_signal(int signum)
 {
-	int	bit_val;
+	static t_msg	g_msg;
+	int				bit_val;
 
 	bit_val = 0;
 	if (signum == SIGUSR1)
@@ -33,27 +32,20 @@ void handle_signal(int signum)
 		g_msg.c = 0;
 		g_msg.bit_count = 0;
 	}
-
 }
 
-//sigemptyset(&sa.sa_mask) initializes the signal mask to an empty set,
-//Think of sa_flags like switches that modify how your signal handler behaves:All switches off (default behavior)
-
-int main(int argc, char **argv)
+int	main(void)
 {
-	struct	sigaction sa;
+	struct sigaction	sa;
 
 	sa.sa_handler = handle_signal;
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = 0;
-	(void)argv;
-
-	if (argc != 1)
-		exit(write(2, "Error\n", 6));
 	ft_printf("server PID is %d\n", getpid());
-	if ((sigaction(SIGUSR1, &sa, NULL) == -1) || (sigaction(SIGUSR2, &sa, NULL) == -1))
+	if ((sigaction(SIGUSR1, &sa, NULL) == -1)
+		|| (sigaction(SIGUSR2, &sa, NULL) == -1))
 		exit(ft_printf("Signal handler setup failed\n"));
-	while (1) //infinite loop
+	while (1)
 		pause();
 	return (0);
 }

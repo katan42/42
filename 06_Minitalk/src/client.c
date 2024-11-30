@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/11/30 18:37:08 by katan            ###   ########.fr       */
+/*   Updated: 2024/11/30 19:27:22 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,26 @@ void	str_to_bit_send(char *str, pid_t pid)
 
 	i = 0;
 	bit = 0;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
 		while (bit < 8)
 		{
-			if(((str[i] >> bit) & 1) == 0)
+			if (((str[i] >> bit) & 1) == 0)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
 			bit++;
 			usleep(1000);
 		}
-	bit = 0;
-	i++;
+		bit = 0;
+		i++;
 	}
 }
 
 int	pid_error_check(char *str)
 {
 	int	i;
-	int num;
+	int	num;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -52,18 +52,17 @@ int	pid_error_check(char *str)
 		i++;
 	}
 	num = ft_atol(str);
-	//ft_printf("%d", num);
 	if (num <= 0 || num > INT_MAX)
 		exit(write(2, "Error, invalid PID\n", 19));
-	if(kill(num, 0) == -1)
+	if (kill(num, 0) == -1)
 	{
-		if(errno == ESRCH)
+		if (errno == ESRCH)
 			write(2, "Error: PID does not exist\n", 25);
 		else if (errno == EPERM)
 			write(2, "Error: Permission denied\n", 23);
 		exit(EXIT_FAILURE);
 	}
-	return(0);
+	return (0);
 }
 
 int	main(int argc, char **argv)
