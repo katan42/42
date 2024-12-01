@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/01 21:16:42 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/01 21:16:43 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int main(void)
+int init_window(t_data *data)
 {
-    t_data  data;
-
-    data.mlx = mlx_init();
-    if (!data.mlx)
-        return (1);
-
-    if (!init_window(&data))
-        return (1);
-
-    mlx_key_hook(data.win, handle_key, &data);
-    mlx_mouse_hook(data.win, handle_mouse, &data);
-    mlx_hook(data.win, 17, 0, close_window, &data);
-
-    mlx_loop(data.mlx);
-    return (0);
+	data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, "Fractol");
+	if (!data->win)
+		return (0);
+	data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
+	if (!data->img)
+		return (0);
+	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel,
+									&data->line_length, &data->endian);
+	return (1);
 }
+

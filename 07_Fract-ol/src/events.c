@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/01 21:16:42 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/01 21:16:40 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int main(void)
+int handle_key(int keycode, t_data *data)
 {
-    t_data  data;
+    if (keycode == 53) // ESC key on macOS
+    {
+        mlx_destroy_window(data->mlx, data->win);
+        exit(0);
+    }
+    return (0);
+}
 
-    data.mlx = mlx_init();
-    if (!data.mlx)
-        return (1);
+int handle_mouse(int button, int x, int y, t_data *data)
+{
+    (void)x;
+    (void)y;
+    (void)data;
+    if (button == 4 || button == 5) // Mouse wheel up/down
+    {
+        // Will implement zoom later
+        printf("Mouse wheel event: %d\n", button);
+    }
+    return (0);
+}
 
-    if (!init_window(&data))
-        return (1);
-
-    mlx_key_hook(data.win, handle_key, &data);
-    mlx_mouse_hook(data.win, handle_mouse, &data);
-    mlx_hook(data.win, 17, 0, close_window, &data);
-
-    mlx_loop(data.mlx);
+int close_window(t_data *data)
+{
+    mlx_destroy_window(data->mlx, data->win);
+    exit(0);
     return (0);
 }

@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/01 21:16:42 by katan            ###   ########.fr       */
+/*   Created: 2024/06/29 16:47:23 by katan             #+#    #+#             */
+/*   Updated: 2024/07/29 17:49:41 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "ft_printf.h"
 
-int main(void)
+void	ft_print_ptr(size_t ptr, int *count)
 {
-    t_data  data;
+	char	str[25];
+	char	*base_char;
+	int		i;
 
-    data.mlx = mlx_init();
-    if (!data.mlx)
-        return (1);
-
-    if (!init_window(&data))
-        return (1);
-
-    mlx_key_hook(data.win, handle_key, &data);
-    mlx_mouse_hook(data.win, handle_mouse, &data);
-    mlx_hook(data.win, 17, 0, close_window, &data);
-
-    mlx_loop(data.mlx);
-    return (0);
-}
+	if (ptr == 0)
+	{
+		ft_printstr("(nil)", count);
+		return ;
+	}
+	i = 0;
+	base_char = "0123456789abcdef";
+	write(1, "0x", 2);
+	(*count) += 2;
+	while (ptr != 0)
+	{
+		str[i] = base_char[ptr % 16];
+		ptr /= 16;
+		i++;
+	}
+	while (i--)
+		ft_printchar(str[i], count);
+}	

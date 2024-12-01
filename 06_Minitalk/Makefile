@@ -6,7 +6,7 @@
 #    By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/28 16:53:02 by katan             #+#    #+#              #
-#    Updated: 2024/11/30 16:30:00 by katan            ###   ########.fr        #
+#    Updated: 2024/12/01 18:55:09 by katan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,12 +45,12 @@ $(FT_PRINTF_DIR)/libftprintf.a:
 clean:
 		rm -f $(OBJ_CLIENT) $(OBJ_SERVER)
 		$(MAKE) -C $(LIBFT_DIR) clean
-		$(MAKE) -C $(LIBFT_DIR) clean
+		$(MAKE) -C $(FT_PRINTF_DIR) clean
 
 fclean: clean
 		rm -f $(NAMES)
+		$(MAKE) -C $(LIBFT_DIR) fclean
 		$(MAKE) -C $(FT_PRINTF_DIR) fclean
-		$(MAKE) -C $(FT_PRINTF_DIR) clean
 
 re: fclean all
 

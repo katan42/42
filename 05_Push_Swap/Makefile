@@ -17,9 +17,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIBFT_DIR)/libft.a
 	    $(CC) $(OBJ) $(LIBFT_DIR)/libft.a -o $(NAME)
 
-$(LIBFT_DIR)/libft.a:
-		$(MAKE) -C $(LIBFT_DIR)
-
+`
 %.o: %.c
 		$(CC) $(CFLAGS) -c $< -o $@
 

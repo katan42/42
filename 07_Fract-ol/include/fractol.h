@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fract-ol.h                                         :+:      :+:    :+:   */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:16:35 by katan             #+#    #+#             */
-/*   Updated: 2024/12/01 01:55:40 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/01 21:31:54 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,25 @@
 # include "../minilibx-linux/mlx.h"
 # include "../minilibx-linux/mlx_int.h"
 
+# define WIDTH 1920
+# define HEIGHT 1080
+
 //struct
-typedef struct s_msg
+typedef struct s_data
 {
-	unsigned char	c;
-	int				bit_count;
-}	t_msg;
+	void	*mlx;
+	void	*win;
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}	t_data;
+
+int	init_window(t_data *data);
+int	handle_key(int keycode, t_data *data);
+int	handle_mouse(int button, int x, int y, t_data *data);
+int close_window(t_data *data);
 
 //exit
 

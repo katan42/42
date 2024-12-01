@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/01 21:16:42 by katan            ###   ########.fr       */
+/*   Created: 2024/06/29 16:47:08 by katan             #+#    #+#             */
+/*   Updated: 2024/07/29 19:05:31 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "ft_printf.h"
 
-int main(void)
+void	ft_printstr(char *s, int *count)
 {
-    t_data  data;
-
-    data.mlx = mlx_init();
-    if (!data.mlx)
-        return (1);
-
-    if (!init_window(&data))
-        return (1);
-
-    mlx_key_hook(data.win, handle_key, &data);
-    mlx_mouse_hook(data.win, handle_mouse, &data);
-    mlx_hook(data.win, 17, 0, close_window, &data);
-
-    mlx_loop(data.mlx);
-    return (0);
+	if (s == NULL)
+	{
+		write(1, "(null)", 6);
+		(*count) += 6;
+		return ;
+	}
+	while (*s)
+	{
+		ft_printchar(*s, count);
+		s++;
+	}
 }
