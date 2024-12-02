@@ -6,7 +6,7 @@
 #    By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/28 16:53:02 by katan             #+#    #+#              #
-#    Updated: 2024/12/01 21:49:38 by katan            ###   ########.fr        #
+#    Updated: 2024/12/02 16:59:11 by katan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,8 +39,10 @@ $(FT_PRINTF_DIR)/libftprintf.a:
 $(MLX_DIR)/libmlx.a:
 		$(MAKE) -C $(MLX_DIR)
 
+# %.o: %.c
+# 		$(CC) $(CFLAGS) -c $< -o $@
 %.o: %.c
-		$(CC) $(CFLAGS) -c $< -o $@
+		$(CC) -c $< -o $@
 
 clean:
 		rm -f $(OBJ)

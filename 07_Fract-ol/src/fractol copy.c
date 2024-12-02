@@ -1,35 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   fractol copy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/02 20:48:38 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/02 21:46:36 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
-
-// int main(void)
-// {
-//     t_data  data;
-
-//     data.mlx = mlx_init();
-//     if (!data.mlx)
-//         return (1);
-
-//     if (!init_window(&data))
-//         return (1);
-
-//     mlx_key_hook(data.win, handle_key, &data);
-//     mlx_mouse_hook(data.win, handle_mouse, &data);
-//     mlx_hook(data.win, 17, 0, close_window, &data);
-
-//     mlx_loop(data.mlx);
-//     return (0);
-// }
 
 // complex number operations
 complex complex_new(double real, double imag) {
@@ -109,6 +90,31 @@ void draw_fractal(char *addr, int max_iter, int line_length, int bpp) {
 		}
 	}
 }
+void draw_fractal(char *addr, int max_iter, int line_length, int bpp)
+{
+	complex	c;
+	int		y;
+	int 	x;
+	int 	iterations;
+	int 	colour;
+
+	y = 0;
+
+	while ( y < HEIGHT)
+	{
+		x = 0;
+		while (x < WIDTH)
+		{
+			c = screen_to_complex(x, y);
+			iterations = get_iterations(c,max_iter);
+			colour = get_colour(iterations, max_iter);
+			my_mlx_pixel_put(addr, x, y, colour, line_length, bpp);
+			x++;
+		}
+	y++;
+	}
+}
+
 
 int main(int argc, char **argv)
 {
