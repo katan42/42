@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/02 21:12:18 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/03 01:50:13 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,25 @@ int handle_key(int keycode, t_data *data)
 }
 
 int handle_mouse(int button, int x, int y, t_data *data)
+
 {
-	(void)x;
-	(void)y;
-	(void)data;
-	if (button == MOUSE_WHEEL_UP || button == 5)
+	t_complex	before;
+	t_complex	after;
+
+	if (button == MOUSE_SCROLL_UP || button == MOUSE_SCROLL_DOWN)
 	{
-		handle_zoom(button, x, y, data);
-		printf("Mouse wheel event: %d\n", button);
+		before = screen_to_complex(x, y, data);
+		if (button == MOUSE_SCROLL_UP)
+			data->zoom = data->zoom * ZOOM_FACTOR;
+		else if (button == MOUSE_SCROLL_DOWN)
+			data->zoom = data->zoom / ZOOM_FACTOR;
+		after = screen_to_complex(x, y, data);
+
+		data->x_offset += before.real - after.real;
+        data->y_offset += before.imag - after.imag;
+        
+        render_fractal(data);
+
 	}
 	return (0);
 }
@@ -39,17 +50,4 @@ int close_window(t_data *data)
 	return (0);
 }
 
-int clean_exit(t_data *data)
-{
-	if (data->img)
-		mlx_destroy_image(data->mlx, data->img);
-	if (data->win)
-		mlx_destroy_window(data->mlx, data->win);
-	if (data->mlx)
-	{
-		mlx_destroy_display(data->mlx);
-		free(data->mlx);
-	}
-	free(data);
-	exit(0);
-}
+

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:16:35 by katan             #+#    #+#             */
-/*   Updated: 2024/12/02 21:12:57 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/03 01:45:19 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@
 # define WIDTH 800
 # define HEIGHT 800
 # define MAX_ITER 100
+# define ZOOM_FACTOR 1.0
+
+# define MANDELBROT 1
+# define JULIA 2
 
 /* Key codes for Linux/X11 */
 # define ESC_KEY        65307
@@ -36,8 +40,8 @@
 # define ARROW_DOWN     65364
 
 /* Mouse button codes */
-# define MOUSE_WHEEL_UP     4
-# define MOUSE_WHEEL_DOWN   5
+# define MOUSE_SCROLL_UP     4
+# define MOUSE_SCROLL_DOWN   5
 # define MOUSE_LEFT_CLICK   1
 # define MOUSE_RIGHT_CLICK  3
 
@@ -65,19 +69,23 @@ typedef struct s_complex
 {
 	double real;
 	double imag;
-}	complex;
+}	t_complex;
 
-
-//struct
 typedef struct s_data
 {
-	void	*mlx;
-	void	*win;
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
+	void		*mlx;
+	void		*win;
+	void		*img;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
+	double		zoom;
+	double		x_offset;
+	double		y_offset;
+	t_complex	c;
+	t_complex	z;
+	int			fractol_type;
 }	t_data;
 
 int	init_window(t_data *data);
