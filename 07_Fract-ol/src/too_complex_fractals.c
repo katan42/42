@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/03 20:18:43 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/03 21:20:14 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 // Calculate how quickly a "point" escapes
 //its quite cool we use > 4.0 because its just less painful to due with (sq rt (real2 + imag2) > 2)
-int get_iterations(t_complex c, int max_iter)
+int get_iterations(t_complex z, t_complex c)
 {
-	t_complex z;
 	int iter;
 
-	z = complex_new(0.0, 0.0);
 	iter = 0;
-	while (iter < max_iter)
+	while (iter < MAX_ITER)
 	{
 		if (complex_mag_squared(z) > 4.0)
-			return iter;
+			return (iter);
 		z = complex_add(complex_multiply(z, z), c);
 		iter++;
 	}
-	return (max_iter);
+	return (MAX_ITER);
 }
 
 int calculate_mandelbrot(t_data *data, int x, int y)
@@ -36,10 +34,9 @@ int calculate_mandelbrot(t_data *data, int x, int y)
 	t_complex z;
 	t_complex c;
 
-	z.real = 0;
-	z.imag = 0;
+	z = complex_new(0.0, 0.0);
 	c = screen_to_complex(x, y, data);
-	return (get_iterations(c, MAX_ITER));
+	return (get_iterations(z, c));
 }
 
 int calculate_julia(t_data *data, int x, int y)
@@ -47,8 +44,6 @@ int calculate_julia(t_data *data, int x, int y)
 	t_complex z;
 
 	z = screen_to_complex(x, y, data);
-	printf("Julia calculation - z: (%f, %f), c: (%f, %f)\n",
-           z.real, z.imag, data->c.real, data->c.imag);
 	return (get_iterations(z, data->c));
 }
 
@@ -73,7 +68,7 @@ void render_fractal(t_data *data)
 			else if (data->fractol_type == JULIA)
 				iterations = calculate_julia(data, x, y);
 			colour = get_colour(iterations, MAX_ITER);
-			my_mlx_pixel_put(data->addr, x, y, colour, data->line_length, data->bits_per_pixel);
+			my_mlx_pixel_put(data, x, y, colour);
 			x++;
 		}
 	y++;

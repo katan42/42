@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:16:35 by katan             #+#    #+#             */
-/*   Updated: 2024/12/03 20:08:06 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/03 21:15:37 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@
 
 typedef struct s_complex
 {
-	double real;
-	double imag;
+	double	real;
+	double	imag;
 }	t_complex;
 
 typedef struct s_data
@@ -74,41 +74,41 @@ typedef struct s_data
 }	t_data;
 
 //fractals
-int 	get_iterations(t_complex c, int max_iter);
-int 	calculate_mandelbrot(t_data *data, int x, int y);
-int 	calculate_julia(t_data *data, int x, int y);
-void 	render_fractal(t_data *data);
+int			get_iterations(t_complex z, t_complex c);
+int			calculate_mandelbrot(t_data *data, int x, int y);
+int			calculate_julia(t_data *data, int x, int y);
+void		render_fractal(t_data *data);
 
 // complex number operations
 t_complex	complex_new(double real, double imag);
-t_complex 	complex_multiply(t_complex a, t_complex b);
-t_complex 	complex_add(t_complex a, t_complex b);
-double 		complex_mag_squared(t_complex c);
-t_complex 	screen_to_complex(int x, int y, t_data *data);
+t_complex	complex_multiply(t_complex a, t_complex b);
+t_complex	complex_add(t_complex a, t_complex b);
+t_complex	screen_to_complex(int x, int y, t_data *data);
+double		complex_mag_squared(t_complex c);
 
 //events and colouring
-int 	handle_key(int keycode, t_data *data);
-int 	handle_mouse(int button, int x, int y, t_data *data);
-int		handle_close(t_data *data);
-void 	my_mlx_pixel_put(char *addr, int x, int y, int color, int line_length, int bpp);
-int 	get_colour(int iterations, int max_iter);
+int			handle_key(int keycode, t_data *data);
+int			handle_mouse(int button, int x, int y, t_data *data);
+int			handle_close(t_data *data);
+void		my_mlx_pixel_put(t_data *data, int x, int y, int colour);
+int			get_colour(int iterations, int max_iter);
 
 //initialise
-void	init_default_values(t_data *data);
-int		init_mlx(t_data *data);
+void		init_default_values(t_data *data);
+int			init_mlx(t_data *data);
 
 //exit
-void clean_exit(t_data *data);
+void		clean_exit(t_data *data);
 
-void	print_instructions(void);
-int		is_valid_double(char *str);
-int		parse_args(t_data *data, int argc, char **argv);
-void	setup_hooks(t_data *data);
+void		print_instructions(void);
+int			is_valid_double(char *str);
+int			parse_args(t_data *data, int argc, char **argv);
+void		setup_hooks(t_data *data);
 
 //utils_ft_atof
 const char	*handle_prefix(const char *str, int *sign);
 double		process_whole_number(const char **str);
 double		process_fraction(const char *str);
-double				ft_atof(const char *str);
+double		ft_atof(const char *str);
 
 #endif
