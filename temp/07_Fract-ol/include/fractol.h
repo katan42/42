@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:16:35 by katan             #+#    #+#             */
-/*   Updated: 2024/12/03 20:08:06 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/03 20:06:58 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,26 @@
 # define MOUSE_SCROLL_DOWN	5
 # define MOUSE_LEFT_CLICK	1
 # define MOUSE_RIGHT_CLICK	3
+
+/* X11 event masks */
+# define KEY_PRESS		2
+# define KEY_RELEASE	3
+# define MOUSE_PRESS	4
+# define MOUSE_RELEASE	5
+# define MOUSE_MOVE		6
+# define EXPOSE			12
+# define DESTROY		17
+
+/* X11 event masks in bit form (used in mlx_hook) */
+# define KEY_PRESS_MASK		(1L<<0)
+# define KEY_RELEASE_MASK	(1L<<1)
+# define MOUSE_PRESS_MASK	(1L<<2)
+
+#define RED_PIXEL 0xFF0000
+#define GREEN_PIXEL 0xFF00
+#define WHITE_PIXEL 0xFFFFFF
+
+//https://imagemagick.org/script/color.php
 
 typedef struct s_complex
 {

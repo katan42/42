@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/03 20:09:08 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/03 20:00:23 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void my_mlx_pixel_put(char *addr, int x, int y, int colour, int line_length, int
 {
 	char *dst;
 	if (!addr || x < 0 || y < 0 || x >= WIDTH || y >= HEIGHT)
-		ft_printf("Error\n", 0);
+		return (ft_printf("Error\n", 0));
 	dst = addr + (y * line_length + x * (bpp / 8));
 	*(unsigned int*)dst = colour;
 }

@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.c                                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/02 21:13:21 by katan            ###   ########.fr       */
+/*   Created: 2024/05/23 11:12:25 by katan             #+#    #+#             */
+/*   Updated: 2024/05/23 12:33:37 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-int init_window(t_data *data)
+size_t	ft_strlen(const char *s)
 {
-	data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, "Fractol");
-	if (!data->win)
-		return (0);
-	data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
-	if (!data->img)
-		return (0);
-	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel,
-									&data->line_length, &data->endian);
-	return (1);
-}
+	int	i;
 
+	i = 0;
+	while (s[i] != 0)
+	{
+		i++;
+	}
+	return (i);
+}
+/*
+int	main(void)
+{
+	char	str[] = "Hello, world!";
+
+	printf("length: %zu\n", ft_strlen(str));
+}
+*/
