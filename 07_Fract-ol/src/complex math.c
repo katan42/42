@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   too complex.c                                      :+:      :+:    :+:   */
+/*   complex math.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/03 11:57:07 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/03 13:01:39 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,3 +121,46 @@ void render_fractal(char *addr, int max_iter, int line_length, int bpp)
 	}
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 }
+
+/* Calculate the next iteration and check if point escapes */
+int iterate_point(complex *z, complex c)
+{
+    double  temp;
+    int     i;
+
+    i = 0;
+    while (i < MAX_ITERATION)
+    {
+        /* Calculate z = z² + c */
+        temp = z->real * z->real - z->imag * z->imag + c.real;
+        z->imag = 2 * z->real * z->imag + c.imag;
+        z->real = temp;
+
+        /* Check if point escapes */
+        if ((z->real * z->real + z->imag * z->imag) > 4)
+            break;
+        i++;
+    }
+    return (i);
+}
+
+/* Now our calculation functions become much simpler */
+int calculate_mandelbrot(t_data *data, int x, int y)
+{
+    complex z;
+    complex c;
+
+    z.real = 0;
+    z.imag = 0;
+    c = screen_to_complex(x, y, data);
+    return (iterate_point(&z, c));
+}
+
+int calculate_julia(t_data *data, int x, int y)
+{
+    complex z;
+
+    z = screen_to_complex(x, y, data);
+    return (iterate_point(&z, data->c));
+}
+

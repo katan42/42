@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/03 01:50:13 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/03 13:01:39 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,20 @@
 
 int handle_key(int keycode, t_data *data)
 {
-	if (keycode == ESC_KEY)
+	double pan_amount;
+
+	pan_amount = 0.1 / data->zoom;
+	if (keycode == KEY_ESC)
 		clean_exit(data);
+	else if(keycode == KEY_LEFT || keycode == KEY_A)
+		data->x_offset -= pan_amount;
+	else if(keycode == KEY_RIGHT || keycode == KEY_D)
+		data->x_offset += pan_amount;
+	else if(keycode == KEY_UP || keycode == KEY_W)
+		data->y_offset -= pan_amount;
+	else if(keycode == KEY_DOWN || keycode == KEY_S)
+		data->y_offset += pan_amount;
+	render_fractal(data);
 	return (0);
 }
 
@@ -38,7 +50,6 @@ int handle_mouse(int button, int x, int y, t_data *data)
         data->y_offset += before.imag - after.imag;
         
         render_fractal(data);
-
 	}
 	return (0);
 }
