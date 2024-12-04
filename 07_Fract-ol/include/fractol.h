@@ -6,7 +6,7 @@
 /*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:16:35 by katan             #+#    #+#             */
-/*   Updated: 2024/12/03 21:15:37 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/03 23:14:20 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@
 /* Mouse button codes */
 # define MOUSE_SCROLL_UP	4
 # define MOUSE_SCROLL_DOWN	5
-# define MOUSE_LEFT_CLICK	1
-# define MOUSE_RIGHT_CLICK	3
 
 typedef struct s_complex
 {

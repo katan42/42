@@ -22,7 +22,7 @@ SRC = ./src/utils_ft_atof.c ./src/events.c ./src/main.c ./src/complex_math.c \
 
 OBJ =$(SRC:.c=.o)
 
-CC = cc -g
+CC = cc
 INCLUDE = -I./include/ -I$(LIBFT_DIR) -I$(FT_PRINTF_DIR) -I$(MLX_DIR)
 CFLAGS = -Wall -Wextra -Werror $(INCLUDE)
 
@@ -53,7 +53,6 @@ fclean: clean
 		rm -f $(NAME)
 		$(MAKE) -C $(LIBFT_DIR) fclean
 		$(MAKE) -C $(FT_PRINTF_DIR) fclean
-		$(MAKE) -C $(MLX_DIR) clean
 
 re: fclean all
 

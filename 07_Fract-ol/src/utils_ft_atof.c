@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_ft_atof.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/03 20:06:05 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/03 21:56:41 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 const char	*handle_prefix(const char *str, int *sign)
 {
 	*sign = 1;
-
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-' || *str == '+')
@@ -29,7 +28,7 @@ const char	*handle_prefix(const char *str, int *sign)
 
 double	process_whole_number(const char **str)
 {
-	double  result;
+	double	result;
 
 	result = 0.0;
 	while (**str >= '0' && **str <= '9')
@@ -42,8 +41,8 @@ double	process_whole_number(const char **str)
 
 double	process_fraction(const char *str)
 {
-	double  result;
-	double  fraction;
+	double	result;
+	double	fraction;
 
 	result = 0.0;
 	fraction = 0.1;
@@ -58,9 +57,9 @@ double	process_fraction(const char *str)
 
 double	ft_atof(const char *str)
 {
-	double      result;
-	int         sign;
-	const char  *ptr;
+	double		result;
+	int			sign;
+	const char	*ptr;
 
 	ptr = handle_prefix(str, &sign);
 	result = process_whole_number(&ptr);

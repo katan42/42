@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialise_and_exit.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/03 19:59:58 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/03 22:01:30 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	init_default_values(t_data *data)
 {
 	ft_memset(data, 0, sizeof(t_data));
-
 	data->zoom = 1.0;
 	data->x_offset = 0;
 	data->y_offset = 0;
@@ -28,7 +27,6 @@ int	init_mlx(t_data *data)
 	data->mlx = mlx_init();
 	if (!data->mlx)
 		return (ft_printf("MLX initialisation failed\n"), 0);
-
 	data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, "Fract'ol");
 	if (!data->win)
 	{
@@ -36,7 +34,6 @@ int	init_mlx(t_data *data)
 		free(data->mlx);
 		return (ft_printf("Window creation failed\n", 0));
 	}
-
 	data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
 	if (!data->img)
 	{
@@ -45,14 +42,12 @@ int	init_mlx(t_data *data)
 		free(data->mlx);
 		return (ft_printf("Image creation failed\n", 0));
 	}
-
-	/* Get the image's memory address and information */
 	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel,
-									&data->line_length, &data->endian);
+			&data->line_length, &data->endian);
 	return (1);
 }
 
-void clean_exit(t_data *data)
+void	clean_exit(t_data *data)
 {
 	if (data->img)
 	{

@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   too_complex_fractals.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: katan <katan@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: katan <katan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:29:23 by katan             #+#    #+#             */
-/*   Updated: 2024/12/03 21:20:14 by katan            ###   ########.fr       */
+/*   Updated: 2024/12/03 23:00:20 by katan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
 // Calculate how quickly a "point" escapes
-//its quite cool we use > 4.0 because its just less painful to due with (sq rt (real2 + imag2) > 2)
-int get_iterations(t_complex z, t_complex c)
+// its quite cool we use > 4.0 because its just less painful to due with
+// (sq rt (real2+ imag2) > 2)
+int	get_iterations(t_complex z, t_complex c)
 {
-	int iter;
+	int	iter;
 
 	iter = 0;
 	while (iter < MAX_ITER)
@@ -29,35 +30,33 @@ int get_iterations(t_complex z, t_complex c)
 	return (MAX_ITER);
 }
 
-int calculate_mandelbrot(t_data *data, int x, int y)
+int	calculate_mandelbrot(t_data *data, int x, int y)
 {
-	t_complex z;
-	t_complex c;
+	t_complex	z;
+	t_complex	c;
 
 	z = complex_new(0.0, 0.0);
 	c = screen_to_complex(x, y, data);
 	return (get_iterations(z, c));
 }
 
-int calculate_julia(t_data *data, int x, int y)
+int	calculate_julia(t_data *data, int x, int y)
 {
-	t_complex z;
+	t_complex	z;
 
 	z = screen_to_complex(x, y, data);
 	return (get_iterations(z, data->c));
 }
 
-
 // loops through every pixel on the screen to put colour
-void render_fractal(t_data *data)
+void	render_fractal(t_data *data)
 {
-	int			y;
-	int 		x;
-	int 		iterations;
-	int 		colour;
+	int	y;
+	int	x;
+	int	iterations;
+	int	colour;
 
 	y = 0;
-
 	while (y < HEIGHT)
 	{
 		x = 0;
@@ -71,7 +70,7 @@ void render_fractal(t_data *data)
 			my_mlx_pixel_put(data, x, y, colour);
 			x++;
 		}
-	y++;
+		y++;
 	}
 	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 }
